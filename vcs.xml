@@ -22,6 +22,10 @@
           <option name="url" value="https://sevenskys@bitbucket.org/sevenskys/sevenskysandroid.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://shan_141@bitbucket.org/tinglabs/photoapp-fx-pro.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/AndroidStudioProjects" />
