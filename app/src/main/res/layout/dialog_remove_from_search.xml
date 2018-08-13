@@ -34,7 +34,7 @@
                     android:orientation="horizontal"
                     android:padding="15dp">
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -43,7 +43,7 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <com.chicsol.marrymax.widgets.faTextView
+                    <com.chicsol.alfalah.widgets.faTextView
                         android:id="@+id/dismissBtnRemoveFromSearch"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
                     android:layout_marginTop="20dp"
                     android:orientation="vertical">
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:id="@+id/TextViewDialogRemoveFromSearch"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
 
 
 
-                    <com.chicsol.marrymax.widgets.mButton2
+                    <com.chicsol.alfalah.widgets.mButton2
                         android:id="@+id/mButtonRemoveFromSearch"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"

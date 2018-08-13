@@ -82,7 +82,7 @@
 
                     app:passwordToggleDrawable="@null">
                     <!--          android:theme="@style/TextLabel"-->
-                    <com.chicsol.marrymax.widgets.mEditText
+                    <com.chicsol.alfalah.widgets.mEditText
                         android:id="@+id/EditTextPasswordLogin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -128,7 +128,7 @@
                     android:layout_gravity="center"
                     android:orientation="horizontal">
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:id="@+id/textViewDont"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -164,7 +164,7 @@
             android:layout_height="0dp"
             android:layout_weight="1">
 
-            <com.chicsol.marrymax.widgets.mButton2
+            <com.chicsol.alfalah.widgets.mButton2
                 android:id="@+id/buttonSearchYourBestMatch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

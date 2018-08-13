@@ -12,7 +12,7 @@
     >
 
 
-    <com.chicsol.marrymax.widgets.mTextView
+    <com.chicsol.alfalah.widgets.mTextView
         android:id="@+id/lblListHeader"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

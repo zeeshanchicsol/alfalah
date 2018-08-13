@@ -1,4 +1,4 @@
-package com.chicsol.marrymax.webconfig;
+package com.chicsol.alfalah.webconfig;
 
 /**
  * Created by macintoshhd on 3/15/18.

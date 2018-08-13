@@ -52,7 +52,7 @@
                     android:layout_weight="8"
                     android:orientation="vertical">
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
@@ -66,7 +66,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="SHAH_R7"
@@ -77,7 +77,7 @@
 
                     </LinearLayout>
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="has requested you to uplaod your images"
@@ -90,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="36 years-Muslim, Sunni"
@@ -103,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pakistan | Telecommunication|Engineering"
@@ -125,7 +125,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="20dp">
 
-                            <com.chicsol.marrymax.widgets.faTextView
+                            <com.chicsol.alfalah.widgets.faTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
@@ -133,7 +133,7 @@
                                 android:text="@string/fa_icon_delete"
                                 android:textColor="@color/colorUserProfileRed" />
 
-                            <com.chicsol.marrymax.widgets.mTextView
+                            <com.chicsol.alfalah.widgets.mTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Decline"
@@ -146,7 +146,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
-                            <com.chicsol.marrymax.widgets.faTextView
+                            <com.chicsol.alfalah.widgets.faTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
@@ -154,7 +154,7 @@
                                 android:text="@string/fa_icon_accepted"
                                 android:textColor="@color/colorUserProfileTextGreen" />
 
-                            <com.chicsol.marrymax.widgets.mTextView
+                            <com.chicsol.alfalah.widgets.mTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Accept"

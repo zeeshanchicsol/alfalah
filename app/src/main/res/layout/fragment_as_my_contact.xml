@@ -22,7 +22,7 @@
             android:orientation="vertical">
 
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textColor="@color/colorUserProfileRed" />
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="We do not show your phone number to others members or third parties and allow you to make that decision."
@@ -39,7 +39,7 @@
 
                 />
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -66,13 +66,13 @@
 
                     >
 
-                    <com.chicsol.marrymax.widgets.faTextView
+                    <com.chicsol.alfalah.widgets.faTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/fa_icon_edit"
                         android:textColor="@color/colorDefaultGreen" />
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="  Edit    "
@@ -97,13 +97,13 @@
 
                     >
 
-                    <com.chicsol.marrymax.widgets.faTextView
+                    <com.chicsol.alfalah.widgets.faTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/fa_icon_delete"
                         android:textColor="@color/colorASBlue" />
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="  Delete"
@@ -136,14 +136,14 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Country  "
                             android:textColor="@color/colorBlack"
                             android:typeface="monospace" />
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewASContactCountry"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -160,7 +160,7 @@
                         android:layout_margin="5dp"
                         android:orientation="horizontal">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/mobnum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -168,7 +168,7 @@
                             android:text="Mobile Number  "
                             android:textColor="@color/colorBlack" />
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewASContactMobileNumberCode"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -177,7 +177,7 @@
                             android:text=""
                             android:textColor="@color/colorASBlue" />
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewASContactMobileNumber"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -268,14 +268,14 @@
                         android:layout_margin="5dp"
                         android:orientation="horizontal">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/mtextaasdsadf"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Landline Number  "
                             android:textColor="@color/colorBlack" />
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewASContactLandLineNumberCode"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -283,7 +283,7 @@
                             android:layout_toRightOf="@+id/mtextaasdsadf"
                             android:textColor="@color/colorASBlue" />
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewASContactLandLineNumber"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -374,13 +374,13 @@
                         android:layout_margin="5dp"
                         android:orientation="horizontal">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Name of Contact Person  "
                             android:textColor="@color/colorBlack" />
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewASContactNameContact"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -395,13 +395,13 @@
                         android:layout_margin="5dp"
                         android:orientation="horizontal">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Relationship With Member  "
                             android:textColor="@color/colorBlack" />
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewASContactRelationship"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -420,13 +420,13 @@
                         android:layout_marginTop="5dp"
                         android:orientation="horizontal">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Convenient Time to Call  "
                             android:textColor="@color/colorBlack" />
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewASContactCallTime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -445,14 +445,14 @@
                         android:orientation="horizontal"
                         android:visibility="gone">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/mTextView3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Email  "
                             android:textColor="@color/colorBlack" />
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text=""
@@ -617,7 +617,7 @@
 
                             android:orientation="vertical">
 
-                            <com.chicsol.marrymax.widgets.mTextView
+                            <com.chicsol.alfalah.widgets.mTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
@@ -670,7 +670,7 @@
                                        android:maxLength="16"
 
                               />-->
-                            <com.chicsol.marrymax.widgets.PrefixEditText
+                            <com.chicsol.alfalah.widgets.PrefixEditText
                                 android:id="@+id/EditTextAScontactMobileNumber"
 
                                 android:layout_width="match_parent"
@@ -706,7 +706,7 @@
                             android:textColorHint="@color/colorRegistrationFields">
 
 
-                            <com.chicsol.marrymax.widgets.PrefixEditText
+                            <com.chicsol.alfalah.widgets.PrefixEditText
                                 android:id="@+id/EditTextAScontactLandlineNumber"
 
                                 android:layout_width="match_parent"
@@ -768,7 +768,7 @@
 
                             android:orientation="vertical">
 
-                            <com.chicsol.marrymax.widgets.mTextView
+                            <com.chicsol.alfalah.widgets.mTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
@@ -808,7 +808,7 @@
 
                             android:orientation="vertical">
 
-                            <com.chicsol.marrymax.widgets.mTextView
+                            <com.chicsol.alfalah.widgets.mTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"

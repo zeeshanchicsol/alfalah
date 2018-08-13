@@ -106,7 +106,7 @@
 
                         </FrameLayout>
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewRegTopGeography"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
@@ -158,7 +158,7 @@
 
                         </FrameLayout>
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewRegTopAppearance"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
@@ -208,7 +208,7 @@
 
                         </FrameLayout>
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewRegTopLifeStyle"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
@@ -259,7 +259,7 @@
 
                         </FrameLayout>
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewRegTopInterest"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
@@ -309,7 +309,7 @@
 
                         </FrameLayout>
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewRegTopPersonality"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"

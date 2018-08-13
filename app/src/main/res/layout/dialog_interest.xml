@@ -34,7 +34,7 @@
                     android:orientation="horizontal"
                     android:padding="15dp">
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -43,7 +43,7 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <com.chicsol.marrymax.widgets.faTextView
+                    <com.chicsol.alfalah.widgets.faTextView
                         android:id="@+id/faButtonShowInterestdismiss"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -64,14 +64,14 @@
                     android:layout_marginTop="20dp"
                     android:orientation="vertical">
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:id="@+id/TextViewDialogInterestDetails"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textColor="@color/colorBlack" />
 
-                    <com.chicsol.marrymax.widgets.mCheckBox
+                    <com.chicsol.alfalah.widgets.mCheckBox
                         android:id="@+id/CheckBoxInterestAllowPhone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
                         android:textColor="@color/colorBlack"
                         android:visibility="gone" />
 
-                    <com.chicsol.marrymax.widgets.mCheckBox
+                    <com.chicsol.alfalah.widgets.mCheckBox
                         android:id="@+id/CheckBoxInterestAllowPics"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

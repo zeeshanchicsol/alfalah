@@ -14,7 +14,7 @@
         android:background="#4E4E4E"
         android:foregroundGravity="center">
 
-        <com.chicsol.marrymax.widgets.SquareImageView
+        <com.chicsol.alfalah.widgets.SquareImageView
             android:id="@+id/imageViewPhotoUploadPerview"
             android:layout_width="match_parent"
             android:layout_height="200dp"

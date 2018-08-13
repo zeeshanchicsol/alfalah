@@ -16,7 +16,7 @@
         android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
-        <com.chicsol.marrymax.widgets.RoundedImageView
+        <com.chicsol.alfalah.widgets.RoundedImageView
             android:id="@+id/RoundedImageViewChatListUserImage"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -90,7 +90,7 @@
 
         </LinearLayout>
 
-        <com.chicsol.marrymax.widgets.RoundedImageView
+        <com.chicsol.alfalah.widgets.RoundedImageView
             android:id="@+id/RoundedImageViewChatListUserImage1"
             android:layout_width="30dp"
             android:layout_height="30dp"

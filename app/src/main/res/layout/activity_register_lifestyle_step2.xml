@@ -65,7 +65,7 @@
                                 android:gravity="center|left"
                                 android:orientation="vertical">
 
-                                <com.chicsol.marrymax.widgets.mTextView
+                                <com.chicsol.alfalah.widgets.mTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
 
@@ -105,7 +105,7 @@
                                         app:elevation="0dp"
                                         app:fabSize="mini" />
 
-                                    <com.chicsol.marrymax.widgets.mTextView
+                                    <com.chicsol.alfalah.widgets.mTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
@@ -148,7 +148,7 @@
                                         app:elevation="0dp"
                                         app:fabSize="mini" />
 
-                                    <com.chicsol.marrymax.widgets.mTextView
+                                    <com.chicsol.alfalah.widgets.mTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
@@ -193,7 +193,7 @@
                                     android:layout_marginTop="10dp"
                                     android:orientation="vertical">
 
-                                    <com.chicsol.marrymax.widgets.mTextView
+                                    <com.chicsol.alfalah.widgets.mTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_margin="10dp"
@@ -210,7 +210,7 @@
                                         android:layout_marginRight="10dp"
                                         android:orientation="vertical">
 
-                                        <com.chicsol.marrymax.widgets.mTextView
+                                        <com.chicsol.alfalah.widgets.mTextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:text="My Sibling Position"
@@ -249,7 +249,7 @@
                                                 android:layout_height="wrap_content"
                                                 android:textColorHint="@color/colorRegistrationFields">
 
-                                                <com.chicsol.marrymax.widgets.mEditText
+                                                <com.chicsol.alfalah.widgets.mEditText
                                                     android:id="@+id/EditTextnumberOfBrothers"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -284,7 +284,7 @@
                                                 android:layout_height="wrap_content"
                                                 android:textColorHint="@color/colorRegistrationFields">
 
-                                                <com.chicsol.marrymax.widgets.mEditText
+                                                <com.chicsol.alfalah.widgets.mEditText
                                                     android:id="@+id/EditTextnumberOfSisters"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -332,7 +332,7 @@
                                     android:layout_height="match_parent"
                                     android:orientation="vertical">
 
-                                    <com.chicsol.marrymax.widgets.mTextView
+                                    <com.chicsol.alfalah.widgets.mTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="5dp"
@@ -368,7 +368,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:gravity="center"
@@ -383,7 +383,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:text="My Choice"
@@ -471,7 +471,7 @@
                                     android:layout_height="match_parent"
                                     android:orientation="vertical">
 
-                                    <com.chicsol.marrymax.widgets.mTextView
+                                    <com.chicsol.alfalah.widgets.mTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="5dp"
@@ -507,7 +507,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:gravity="center"
@@ -522,7 +522,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:text="My Choice"
@@ -612,7 +612,7 @@
                                     android:layout_height="match_parent"
                                     android:orientation="vertical">
 
-                                    <com.chicsol.marrymax.widgets.mTextView
+                                    <com.chicsol.alfalah.widgets.mTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="5dp"
@@ -648,7 +648,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:gravity="center"
@@ -663,7 +663,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:text="My Choice"
@@ -751,7 +751,7 @@
                                     android:layout_height="match_parent"
                                     android:orientation="vertical">
 
-                                    <com.chicsol.marrymax.widgets.mTextView
+                                    <com.chicsol.alfalah.widgets.mTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="5dp"
@@ -787,7 +787,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:gravity="center"
@@ -802,7 +802,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:text="My Choice"
@@ -890,7 +890,7 @@
                                     android:layout_height="match_parent"
                                     android:orientation="vertical">
 
-                                    <com.chicsol.marrymax.widgets.mTextView
+                                    <com.chicsol.alfalah.widgets.mTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="5dp"
@@ -926,7 +926,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:gravity="center"
@@ -941,7 +941,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:text="My Choice"
@@ -1030,7 +1030,7 @@
                                     android:layout_height="match_parent"
                                     android:orientation="vertical">
 
-                                    <com.chicsol.marrymax.widgets.mTextView
+                                    <com.chicsol.alfalah.widgets.mTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="5dp"
@@ -1066,7 +1066,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:gravity="center"
@@ -1081,7 +1081,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:text="My Choice"
@@ -1161,7 +1161,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
-                        <com.chicsol.marrymax.widgets.mButton2
+                        <com.chicsol.alfalah.widgets.mButton2
                             android:id="@+id/buttonBack"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1171,7 +1171,7 @@
                             android:textAllCaps="false"
                             android:textColor="@color/colorWhite" />
 
-                        <com.chicsol.marrymax.widgets.mButton2
+                        <com.chicsol.alfalah.widgets.mButton2
                             android:id="@+id/buttonContinueStep2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

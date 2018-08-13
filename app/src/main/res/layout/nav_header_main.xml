@@ -43,13 +43,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Welcome"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
                     android:id="@+id/TextViewNavUserName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
                 android:padding="15dp"
                 android:weightSum="10">
 
-                <com.chicsol.marrymax.widgets.faTextView
+                <com.chicsol.alfalah.widgets.faTextView
 
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
                     android:text="@string/fa_icon_dashboard"
                     android:textColor="@drawable/nav_text_fa_selector" />
 
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="9"
@@ -121,7 +121,7 @@
                 android:padding="15dp"
                 android:weightSum="10">
 
-                <com.chicsol.marrymax.widgets.faTextView
+                <com.chicsol.alfalah.widgets.faTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
@@ -130,7 +130,7 @@
                     android:text="@string/fa_icon_matches"
                     android:textColor="@drawable/nav_text_fa_selector" />
 
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="9"
@@ -285,7 +285,7 @@
                 android:padding="15dp"
                 android:weightSum="10">
 
-                <com.chicsol.marrymax.widgets.faTextView
+                <com.chicsol.alfalah.widgets.faTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
@@ -294,7 +294,7 @@
                     android:text="@string/fa_icon_search"
                     android:textColor="@drawable/nav_text_fa_selector" />
 
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="9"
@@ -319,7 +319,7 @@
                 android:padding="15dp"
                 android:weightSum="10">
 
-                <com.chicsol.marrymax.widgets.faTextView
+                <com.chicsol.alfalah.widgets.faTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
@@ -328,7 +328,7 @@
                     android:text="@string/fa_icon_newmessage"
                     android:textColor="@drawable/nav_text_fa_selector" />
 
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="9"
@@ -409,7 +409,7 @@
                 android:padding="15dp"
                 android:weightSum="10">
 
-                <com.chicsol.marrymax.widgets.faTextView
+                <com.chicsol.alfalah.widgets.faTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
@@ -418,7 +418,7 @@
                     android:text="@string/fa_icon_uploadphoto"
                     android:textColor="@drawable/nav_text_fa_selector" />
 
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="9"
@@ -438,7 +438,7 @@
                 android:padding="15dp"
                 android:weightSum="10">
 
-                <com.chicsol.marrymax.widgets.faTextView
+                <com.chicsol.alfalah.widgets.faTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
@@ -447,7 +447,7 @@
                     android:text="@string/fa_icon_uploadphoto"
                     android:textColor="@drawable/nav_text_fa_selector" />
 
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="9"
@@ -495,7 +495,7 @@
 
                 android:weightSum="10">
 
-                <com.chicsol.marrymax.widgets.faTextView
+                <com.chicsol.alfalah.widgets.faTextView
                     android:id="@+id/faTextView3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -505,7 +505,7 @@
                     android:text="@string/fa_icon_ac_setting"
                     android:textColor="@drawable/nav_text_fa_selector" />
 
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
                     android:id="@+id/mTextView15"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -553,7 +553,7 @@
                 android:padding="15dp"
                 android:weightSum="10">
 
-                <com.chicsol.marrymax.widgets.faTextView
+                <com.chicsol.alfalah.widgets.faTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
@@ -562,7 +562,7 @@
                     android:text="@string/fa_icon_profile_setting"
                     android:textColor="@drawable/nav_text_fa_selector" />
 
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="9"
@@ -587,7 +587,7 @@
                 android:padding="15dp"
                 android:weightSum="10">
 
-                <com.chicsol.marrymax.widgets.faTextView
+                <com.chicsol.alfalah.widgets.faTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
@@ -597,7 +597,7 @@
 
                     android:textColor="@drawable/nav_text_fa_selector" />
 
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="9"

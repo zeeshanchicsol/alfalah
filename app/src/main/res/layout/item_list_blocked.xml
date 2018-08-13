@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="6">
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:id="@+id/TextViewBlockListAlias"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
             android:layout_weight="3"
             android:gravity="center">
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:id="@+id/TextViewBlockListDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
             android:layout_weight="1"
             android:gravity="center">
 
-            <com.chicsol.marrymax.widgets.faTextView
+            <com.chicsol.alfalah.widgets.faTextView
                 android:id="@+id/faTextViewBlockListUnblock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp">
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -111,7 +111,7 @@
             android:textSize="12sp"
             android:textStyle="bold" />
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:id="@+id/TextViewBlockListUnBlockReason"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

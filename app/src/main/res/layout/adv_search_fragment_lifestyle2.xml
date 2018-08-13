@@ -12,7 +12,7 @@
         >
 
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -41,7 +41,7 @@
             android:layout_marginTop="5dp"
             android:background="#d7d7d7"></View>
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/text_size_adv_search_headings"
@@ -66,7 +66,7 @@
             android:layout_marginTop="5dp"
             android:background="#d7d7d7"></View>
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"

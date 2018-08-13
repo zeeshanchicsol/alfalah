@@ -28,7 +28,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp">
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 

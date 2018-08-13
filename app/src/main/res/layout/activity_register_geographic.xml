@@ -49,15 +49,11 @@
                         android:orientation="vertical">
 
 
-
-
-
                         <LinearLayout
-                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
                             android:orientation="vertical"
+
 
                             >
 
@@ -75,7 +71,7 @@
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
 
-                                    <com.chicsol.marrymax.widgets.mTextView
+                                    <com.chicsol.alfalah.widgets.mTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_margin="9dp"
@@ -92,7 +88,7 @@
                                         android:layout_margin="15dp"
                                         android:orientation="vertical">
 
-                                        <com.chicsol.marrymax.widgets.mTextView
+                                        <com.chicsol.alfalah.widgets.mTextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:text="Select your Origin Country"
@@ -119,8 +115,6 @@
                                     </LinearLayout>
 
 
-
-
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
@@ -135,14 +129,14 @@
                                                android:textColor="@color/colorRegistrationCheckRadio"
                                                app:backgroundTint="#999" />-->
 
-                                        <com.chicsol.marrymax.widgets.mTextView
+                                        <com.chicsol.alfalah.widgets.mTextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:text="Choose My Choice Countries"
                                             android:textColor="@color/colorSpinnerLabel"
                                             android:textSize="@dimen/text_size_spinner_label" />
 
-                                        <com.chicsol.marrymax.widgets.mTextView
+                                        <com.chicsol.alfalah.widgets.mTextView
                                             android:id="@+id/MutliChoiceOriginCountryButton"
                                             style="@style/Base.Widget.AppCompat.Spinner"
                                             android:layout_width="match_parent"
@@ -168,9 +162,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-
-                            >
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
 
                             <android.support.v7.widget.CardView
                                 android:layout_width="match_parent"
@@ -186,7 +179,7 @@
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
 
-                                    <com.chicsol.marrymax.widgets.mTextView
+                                    <com.chicsol.alfalah.widgets.mTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_margin="9dp"
@@ -203,7 +196,7 @@
                                         android:layout_margin="15dp"
                                         android:orientation="vertical">
 
-                                        <com.chicsol.marrymax.widgets.mTextView
+                                        <com.chicsol.alfalah.widgets.mTextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:text="Choose Country"
@@ -242,7 +235,7 @@
                                             android:layout_weight="5"
                                             android:orientation="vertical">
 
-                                            <com.chicsol.marrymax.widgets.mTextView
+                                            <com.chicsol.alfalah.widgets.mTextView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:text="Choose Province"
@@ -275,7 +268,7 @@
                                             android:layout_weight="5"
                                             android:orientation="vertical">
 
-                                            <com.chicsol.marrymax.widgets.mTextView
+                                            <com.chicsol.alfalah.widgets.mTextView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:text="Choose City"
@@ -318,14 +311,14 @@
                                                android:textColor="@color/colorRegistrationCheckRadio"
                                                app:backgroundTint="#999" />-->
 
-                                        <com.chicsol.marrymax.widgets.mTextView
+                                        <com.chicsol.alfalah.widgets.mTextView
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:text="Choose My Choice Countries"
                                             android:textColor="@color/colorSpinnerLabel"
                                             android:textSize="@dimen/text_size_spinner_label" />
 
-                                        <com.chicsol.marrymax.widgets.mTextView
+                                        <com.chicsol.alfalah.widgets.mTextView
                                             android:id="@+id/MutliChoiceButton"
                                             style="@style/Base.Widget.AppCompat.Spinner"
                                             android:layout_width="match_parent"
@@ -369,7 +362,7 @@
                                     android:layout_margin="10dp"
                                     android:orientation="vertical">
 
-                                    <com.chicsol.marrymax.widgets.mTextView
+                                    <com.chicsol.alfalah.widgets.mTextView
                                         android:id="@+id/textView"
                                         android:layout_width="wrap_content"
 
@@ -407,7 +400,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
 
@@ -422,7 +415,7 @@
                                                 android:layout_weight="2.5"
                                                 android:gravity="center">
 
-                                                <com.chicsol.marrymax.widgets.mTextView
+                                                <com.chicsol.alfalah.widgets.mTextView
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:text="My Choice"

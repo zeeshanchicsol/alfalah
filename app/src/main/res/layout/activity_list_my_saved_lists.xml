@@ -66,7 +66,7 @@
                         android:gravity="center">
 
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/mTextView14"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                         android:layout_margin="10dp"
                         android:orientation="horizontal">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Find Matches &amp; Save &amp; Name Your Searches! "
@@ -163,7 +163,7 @@
             android:layout_marginBottom="9dp"
             android:layout_marginTop="9dp">
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:id="@+id/mTextView20"
                 android:layout_width="wrap_content"
 

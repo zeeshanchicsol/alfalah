@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.chicsol.marrymax.fragments.DashMain.DashMembersFragment">
+    tools:context="com.chicsol.alfalah.fragments.DashMain.DashMembersFragment">
 
 
     <!--
@@ -125,7 +125,7 @@
 
                             android:orientation="horizontal">
 
-                            <com.chicsol.marrymax.widgets.mTextView
+                            <com.chicsol.alfalah.widgets.mTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"

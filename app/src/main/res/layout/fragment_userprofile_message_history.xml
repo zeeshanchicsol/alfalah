@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorUserProfileTab">
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -34,7 +34,7 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Dear Username123 ,You alredy have previous chat history."
@@ -83,7 +83,7 @@
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal">
 
-                <com.chicsol.marrymax.widgets.RoundedImageView
+                <com.chicsol.alfalah.widgets.RoundedImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
@@ -97,14 +97,14 @@
                     android:orientation="vertical"
                     android:padding="5dp">
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Hello Its me. aasdsa asd asd asd asd asdsad asd sad asdsad sads a sa d as dasd asd asdasdas asdsad asdasdsadas asd sa d"
                         android:textColor="@color/colorBlack"
                         android:textSize="11sp" />
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
@@ -134,7 +134,7 @@
                     android:orientation="vertical"
                     android:padding="5dp">
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
@@ -142,7 +142,7 @@
                         android:textColor="@color/colorBlack"
                         android:textSize="11sp" />
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
@@ -153,7 +153,7 @@
 
                 </LinearLayout>
 
-                <com.chicsol.marrymax.widgets.RoundedImageView
+                <com.chicsol.alfalah.widgets.RoundedImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -172,7 +172,7 @@
                 android:paddingTop="3dp"
                 android:weightSum="10">
 
-                <com.chicsol.marrymax.widgets.mEditText
+                <com.chicsol.alfalah.widgets.mEditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -208,7 +208,7 @@
                         app:elevation="0dp"
                         app:fabSize="mini" />
 
-                    <com.chicsol.marrymax.widgets.faTextView
+                    <com.chicsol.alfalah.widgets.faTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

@@ -20,7 +20,7 @@
             android:orientation="vertical">
 
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -29,7 +29,7 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textColor="@color/colorUserProfileRed" />
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -60,7 +60,7 @@
                         android:layout_marginTop="15dp"
                         android:orientation="horizontal">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Thank you for using MarryMax.com, if there is anything we can do to keep you with us."
@@ -76,7 +76,7 @@
 
                         android:orientation="vertical">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -134,7 +134,7 @@
                         android:layout_marginRight="10dp"
                         android:orientation="horizontal">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Please enter &quot; CLOSE &quot; and your password below to confirm that you wish to close your account: "

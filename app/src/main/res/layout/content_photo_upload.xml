@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/colorDashboardBackground"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.chicsol.marrymax.activities.PhotoUpload"
+    tools:context="com.chicsol.alfalah.activities.PhotoUpload"
     tools:showIn="@layout/activity_photo_upload">
 
     <LinearLayout
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-    <com.chicsol.marrymax.widgets.mTextView
+    <com.chicsol.alfalah.widgets.mTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -23,7 +23,7 @@
         android:text="Upload Profile Images"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textColor="@color/colorUserProfileRed" />
-    <com.chicsol.marrymax.widgets.mTextView
+    <com.chicsol.alfalah.widgets.mTextView
         android:id="@+id/TextViewPhotoUploadDosDonts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
 
 
 
-            <com.chicsol.marrymax.widgets.GridRecyclerView
+            <com.chicsol.alfalah.widgets.GridRecyclerView
                 android:id="@+id/RecyclerViewMemberUploadPictures"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

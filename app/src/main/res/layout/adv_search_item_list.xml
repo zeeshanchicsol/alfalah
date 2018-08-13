@@ -10,12 +10,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <com.chicsol.marrymax.widgets.mCheckBox
+        <com.chicsol.alfalah.widgets.mCheckBox
             android:id="@+id/checkboxItemAdvSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:id="@+id/TextViewItemAdvSearchName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

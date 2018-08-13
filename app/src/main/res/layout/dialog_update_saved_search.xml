@@ -34,7 +34,7 @@
                     android:orientation="horizontal"
                     android:padding="15dp">
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -43,7 +43,7 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <com.chicsol.marrymax.widgets.faTextView
+                    <com.chicsol.alfalah.widgets.faTextView
                         android:id="@+id/dismissBtnGeoInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -64,13 +64,13 @@
                     android:layout_marginTop="20dp"
                     android:orientation="vertical">
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Enter Search Name: "
                         android:textColor="@color/colorBlack" />
 
-                    <com.chicsol.marrymax.widgets.mEditText
+                    <com.chicsol.alfalah.widgets.mEditText
                         android:id="@+id/EditTextMemberNotes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

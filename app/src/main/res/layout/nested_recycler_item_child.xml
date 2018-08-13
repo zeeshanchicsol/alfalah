@@ -9,7 +9,7 @@
         android:id="@+id/RelativeLayoutHeadSubItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_item_recycler_parent_header"
+        android:background="@color/colorPrimary"
         android:orientation="horizontal"
         android:padding="10dp"
         android:visibility="gone">

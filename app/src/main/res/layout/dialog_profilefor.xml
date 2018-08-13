@@ -34,7 +34,7 @@
                     android:orientation="horizontal"
                     android:padding="15dp">
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
                         android:textColor="@color/colorDefaultGreen"
                         android:textSize="16sp"
                         android:textStyle="bold" />
-                    <com.chicsol.marrymax.widgets.faTextView
+                    <com.chicsol.alfalah.widgets.faTextView
                         android:id="@+id/dismissBtn"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
@@ -110,7 +110,7 @@
                     android:background="@color/colorDialogHeadButtons"
                     android:padding="15dp">
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Don't "
@@ -189,7 +189,7 @@
                     android:visibility="gone"
                     android:textSize="16sp" />-->
 
-                <com.chicsol.marrymax.widgets.mButton2
+                <com.chicsol.alfalah.widgets.mButton2
                     android:id="@+id/okDialog"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"

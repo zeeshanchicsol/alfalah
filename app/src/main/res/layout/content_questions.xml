@@ -7,7 +7,7 @@
     android:background="@color/colorDashboardBackground"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.chicsol.marrymax.activities.PhotoUpload"
+    tools:context="com.chicsol.alfalah.activities.PhotoUpload"
     tools:showIn="@layout/activity_questions">
 
 
@@ -118,7 +118,7 @@
         android:orientation="vertical">
 
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"

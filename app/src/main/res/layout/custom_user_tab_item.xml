@@ -14,7 +14,7 @@
         android:layout_weight="9.8"
         android:gravity="center">
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:id="@+id/tab_title1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

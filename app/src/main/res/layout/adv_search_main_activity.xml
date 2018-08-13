@@ -137,7 +137,7 @@
 
             <fragment
                 android:id="@+id/fragmentItemsList"
-                android:name="com.chicsol.marrymax.activities.search.AdvanceSearchFragments.ListViewAdvSearchFragment"
+                android:name="com.chicsol.alfalah.activities.search.AdvanceSearchFragments.ListViewAdvSearchFragment"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -188,7 +188,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_reset_icon" />
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Reset"
@@ -235,7 +235,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_save_search" />
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:id="@+id/mTextView22"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -285,7 +285,7 @@
                         android:src="@drawable/ic_search_nav"
                         android:textColor="@color/colorWhite" />
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Search"

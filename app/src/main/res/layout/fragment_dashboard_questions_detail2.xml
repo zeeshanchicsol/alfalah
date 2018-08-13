@@ -65,7 +65,7 @@
                 android:gravity="right|center_vertical"
                 android:visibility="visible">
 
-                <com.chicsol.marrymax.widgets.faTextView
+                <com.chicsol.alfalah.widgets.faTextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginRight="3dp"
@@ -112,7 +112,7 @@
             android:textColor="@color/colorBlack"
             android:textSize="14sp" />
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:id="@+id/TextViewMessageDetailMaritalStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
             android:textSize="14sp" />
 
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:id="@+id/TextViewMessageDetailEthnicbg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -129,7 +129,7 @@
             android:textColor="@color/colorBlack"
             android:textSize="14sp" />
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:id="@+id/TextViewMessageDetailReligious"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

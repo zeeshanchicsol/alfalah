@@ -32,7 +32,7 @@
                     android:orientation="horizontal"
                     android:padding="15dp">
 
-                    <com.chicsol.marrymax.widgets.mTextView
+                    <com.chicsol.alfalah.widgets.mTextView
                         android:id="@+id/TextViewChoiceCountriesTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <com.chicsol.marrymax.widgets.faTextView
+                    <com.chicsol.alfalah.widgets.faTextView
                         android:id="@+id/mButtonDismissDialogBlock"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

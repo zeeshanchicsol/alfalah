@@ -1,4 +1,4 @@
-package com.chicsol.marrymax;
+package com.chicsol.alfalah;
 
 public class dsadsad {
 }

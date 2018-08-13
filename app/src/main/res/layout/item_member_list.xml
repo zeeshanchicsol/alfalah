@@ -66,7 +66,7 @@
 
                             />
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewListUsername"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
                             android:textSize="16dp"
                             android:textStyle="bold" />
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewListAge"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -109,7 +109,7 @@
                             android:minWidth="14sp"
                             android:scaleType="fitCenter"/>
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewMemListCountry"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -124,13 +124,13 @@
                         android:layout_height="wrap_content"
                         android:visibility="gone">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Call Time:"
                             android:textColor="#333333" />
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:id="@+id/TextViewMyContactListCallTime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -185,7 +185,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_weight="1">
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -194,7 +194,7 @@
                     android:textStyle="bold"
                     android:text="Marital Status: "
                     android:textColor="@color/colorBlack" />
-                <com.chicsol.marrymax.widgets.mTextView
+                <com.chicsol.alfalah.widgets.mTextView
                     android:id="@+id/TextViewListMaritalStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -229,7 +229,7 @@
                                     android:layout_marginRight="4dp"
                                     android:background="#888"></View>-->
 
-                <com.chicsol.marrymax.widgets.faTextView
+                <com.chicsol.alfalah.widgets.faTextView
                     android:id="@+id/faTextViewMyContactItemRemove"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

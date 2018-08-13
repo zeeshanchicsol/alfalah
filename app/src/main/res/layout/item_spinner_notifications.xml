@@ -35,7 +35,7 @@
             android:layout_weight="8"
             android:orientation="vertical">
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:id="@+id/TextViewDashNotificationUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
                 android:textColor="@color/colorUserProfileRed"
                 android:textStyle="bold" />
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:id="@+id/TextViewDashNotificationDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

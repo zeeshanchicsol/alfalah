@@ -19,7 +19,7 @@
             android:orientation="vertical">
 
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -52,7 +52,7 @@
                         android:paddingBottom="5dp"
                         android:paddingTop="5dp">
 
-                        <com.chicsol.marrymax.widgets.mTextView
+                        <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Please select the options to get email notifications delivered to your inbox." />

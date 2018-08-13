@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/marrymaxandroid/AndroidStudioProjects/marrymax/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xxhdpi-v4/values-xxhdpi-v4.xml",
+            "outputFile": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xxhdpi-v4/values-xxhdpi-v4.xml",
             "map": [
                 {
-                    "source": "/Users/marrymaxandroid/AndroidStudioProjects/marrymax/app/src/main/res/values-xxhdpi/dimens.xml",
+                    "source": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/src/main/res/values-xxhdpi/dimens.xml",
                     "from": {
                         "startLines": "4,25,21,16,11,12,23,20,24,8,7,6,22,29,32,30,15,35",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

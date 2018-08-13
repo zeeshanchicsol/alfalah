@@ -87,7 +87,7 @@ android:layout_marginRight="5dp"
             android:layout_weight="1.5"
             android:gravity="top|right">
 
-            <com.chicsol.marrymax.widgets.RoundedImageView
+            <com.chicsol.alfalah.widgets.RoundedImageView
 
                 android:id="@+id/RoundedImageViewNotiArchiveUserImage"
                 android:layout_width="wrap_content"

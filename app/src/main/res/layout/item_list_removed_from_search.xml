@@ -71,7 +71,7 @@
                     android:tint="@color/colorGrey"
                     app:srcCompat="@drawable/ic_cancel_black_24dp" />
 
-                <com.chicsol.marrymax.widgets.faTextView
+                <com.chicsol.alfalah.widgets.faTextView
                     android:id="@+id/faTextViewRemoveSearchesUnremove"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -5,7 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorGrey">#808080</color>
     <color name="colorDefaultGreen">#216917</color>
-    <color name="colorTextRed">#9a0606</color>
+    <color name="colorTextRed">#88B14B</color>
     <color name="colorSpinnerLabel">@color/colorGrey</color>
 
 
@@ -16,18 +16,18 @@
     <color name="colorUnderline">#d7d7d7</color>
     <color name="colorCursor">#019644</color>
     <!--RegistrationColors-->
-    <color name="colorRegistrationActionBar">#9a0606</color>
+    <color name="colorRegistrationActionBar">#88B14B</color>
     <color name="colorRegistrationLine">#cacaca</color>
     <color name="colorRegistrationCheckRadio">#0e0e0e</color>
 
 
     <color name="colorRegistrationInputField">#000</color>
-    <color name="colorRegGender">#9a0606</color>
+    <color name="colorRegGender">#88B14B</color>
 
 
     <color name="colorRegistrationStepComplete">#299001</color>
-    <color name="colorRegistrationStepOnGoing">#9a0606</color>
-    <color name="colorRegStart">#9a0606</color>
+    <color name="colorRegistrationStepOnGoing">#88B14B</color>
+    <color name="colorRegStart">#88B14B</color>
     <!--    <color name="colorRegistrationCheckBoxTextField">#0e0e0e</color>-->
 
 
@@ -52,7 +52,7 @@
     <color name="colorDashboardBackground">#d9d9d9</color>
 
     <color name="colorDashboardMainBox">#EEEEEE</color>
-    <color name="colorDashboardMainTextRed">#960606</color>
+    <color name="colorDashboardMainTextRed">#88B14B</color>
 
     <color name="colorDashboardMainTextb1">#028461</color>
     <color name="colorDashboardMainTextb2">#c74c83</color>
@@ -78,7 +78,7 @@
 
     <!--UserProfile-->
     <color name="colorUserProfileTopBar">#757575</color>
-    <color name="colorUserProfileRed">#9a0606</color>
+    <color name="colorUserProfileRed">#88B14B</color>
     <color name="colorUserProfileTab">#CECECE</color>
     <color name="colorUserProfileTextLight">#6f6f6f</color>
     <color name="colorUserProfileTextGreen">#216917</color>
@@ -95,12 +95,4 @@
     <color name="colorSubscriptionGreen">#017562</color>
     <color name="colorSubscriptionYellow">#C57B00</color>
     <color name="colorSubscriptionDarkGrey">#666</color>
-
-
-
-
-
-    <!--    recyclerview parent-->
-    <color name="color_item_recycler_parent_bg">#f8f8f8</color>
-    <color name="color_item_recycler_parent_header">#f0eff4</color>
 </resources>

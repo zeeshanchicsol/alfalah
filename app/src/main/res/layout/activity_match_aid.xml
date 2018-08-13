@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
 
-    tools:context="com.chicsol.marrymax.activities.MatchAidActivity">
+    tools:context="com.chicsol.alfalah.activities.MatchAidActivity">
 
 
     <LinearLayout
@@ -78,7 +78,7 @@
                             android:gravity="center">
 
 
-                            <com.chicsol.marrymax.widgets.mTextView
+                            <com.chicsol.alfalah.widgets.mTextView
                                 android:id="@+id/mTextView14"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -110,7 +110,7 @@
                             android:gravity="center"
                             android:orientation="horizontal">
 
-                            <com.chicsol.marrymax.widgets.mTextView
+                            <com.chicsol.alfalah.widgets.mTextView
 
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -224,7 +224,7 @@
                             android:gravity="center">
 
 
-                            <com.chicsol.marrymax.widgets.mTextView
+                            <com.chicsol.alfalah.widgets.mTextView
                                 android:id="@+id/mTextView14"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -256,7 +256,7 @@
                             android:gravity="center"
                             android:orientation="horizontal">
 
-                            <com.chicsol.marrymax.widgets.mTextView
+                            <com.chicsol.alfalah.widgets.mTextView
 
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"

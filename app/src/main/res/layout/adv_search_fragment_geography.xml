@@ -13,7 +13,7 @@
         >
 
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="7dp"
@@ -39,7 +39,7 @@
             android:layout_marginTop="5dp"
             android:background="#d7d7d7"></View>
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="7dp"
@@ -72,7 +72,7 @@
             android:layout_marginTop="5dp"
             android:background="#d7d7d7"></View>
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="7dp"
@@ -90,7 +90,7 @@
             android:layout_height="100dp"
             android:orientation="vertical">
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:id="@+id/TextViewAdvSearchStateError"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
             android:layout_marginTop="5dp"
             android:background="#d7d7d7"></View>
 
-        <com.chicsol.marrymax.widgets.mTextView
+        <com.chicsol.alfalah.widgets.mTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="7dp"
@@ -130,7 +130,7 @@
             android:layout_height="200dp"
             android:orientation="vertical">
 
-            <com.chicsol.marrymax.widgets.mTextView
+            <com.chicsol.alfalah.widgets.mTextView
                 android:id="@+id/TextViewAdvSearchCityError"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
