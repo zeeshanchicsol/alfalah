@@ -63,14 +63,14 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
     private Button bt_register_free, bt_back;
     private LinearLayout llMainSecondMarriage, llcbViewEconomy, llcbViewReligious, llcbViewEthnic, llcbViewMarital, llcbViewChildren, llChildren, llcbViewMarriage;
     private RadioGroup rgEconomy, rgReligious, rgEthnic, rgMarital, rgChildren, rgMarriage;
-    private List<WebArd> languageDataList, marriageDataList, educationDataList, myEducationDataList, educationFieldDataList, castesDataList, religiousDataList, ethnicDataList, martialDataList, occupationDataList, myOccupationDataList, childrenDataList, incomeDataList, economyDataList, graduationYearDataList;
+    private List<WebArd> languageDataList, spokenLanguageDataList, myChoiceLanguageDataList, marriageDataList, educationDataList, myEducationDataList, educationFieldDataList, castesDataList, religiousDataList, ethnicDataList, martialDataList, occupationDataList, myOccupationDataList, childrenDataList, incomeDataList, economyDataList, graduationYearDataList;
     private Members members_obj;
     private Spinner spMyLanguage, spMyEducation, spMyEducationalField, spMyGraduationYear, spMyOccupation, spMyGradYear, spMyAnnualIncomeLevel;
     private MySpinnerAdapter spAdapterMyLanguage, spAdapterMyEducation, spAdapterMyGradYear, spAdapterMyEducationalField, spAdapterMyGraduationyear, spAdapterMyOccupation, spAdapterMyAnnualIncome;
     private boolean updateData = true;
     private TextView tvMcMyChoiceEducation, tvMcMyChoiceOccupation, tvMutliChoiceMyChoiceLanguage, tvMutliChoiceMySpokenLanguage;
 
-    private ArrayList selectedEducationIdDataList, selectedOccupationIdDataList, selectedOccupationDataList;
+    private ArrayList selectedEducationIdDataList, selectedOccupationIdDataList, selectedOccupationDataList, selectedMyLanguageDataList, selectedSpokenLanguageDataList;
     private EditText etGraduatedFrom, etNoOfGirls, etNoOfBoys, etMinAge, etMaxAge;
     private AutoCompleteTextView acMyCaste;
     private String mcOccupationText = null, mcEducationText = null;
@@ -161,6 +161,8 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
         spMyLanguage = (Spinner) findViewById(R.id.spinnerMyLanguage);
 
         languageDataList = new ArrayList<>();
+        spokenLanguageDataList = new ArrayList<>();
+        myChoiceLanguageDataList = new ArrayList<>();
 
         spAdapterMyLanguage = new MySpinnerAdapter(this,
                 android.R.layout.simple_spinner_item, languageDataList);
@@ -245,10 +247,15 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
 
         tvMcMyChoiceEducation = (TextView) findViewById(R.id.MutliChoiceMyChoiceEducation);
         tvMcMyChoiceOccupation = (TextView) findViewById(R.id.MutliChoiceMyChoiceOccupation);
+
         selectedEducationIdDataList = new ArrayList();
+        selectedMyLanguageDataList = new ArrayList();
+        selectedSpokenLanguageDataList = new ArrayList();
+
         //   selectedEducatonDataList = new ArrayList();
         selectedOccupationIdDataList = new ArrayList();
         selectedOccupationDataList = new ArrayList();
+
         //   spAdapterMyGraduationyear.updateDataList(graduationYearDataList);
 
 
@@ -429,7 +436,7 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
             @Override
             public void onClick(View v) {
                 Gson gson = new Gson();
-                dialogMultiChoice newFragment = dialogMultiChoice.newInstance(gson.toJson(occupationDataList), 2, "My Choice Occupation");
+                dialogMultiChoice newFragment = dialogMultiChoice.newInstance(gson.toJson(myChoiceLanguageDataList), 3, "My Choice Language");
                 newFragment.show(getSupportFragmentManager(), "dialog");
 
             }
@@ -439,7 +446,7 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
             @Override
             public void onClick(View v) {
                 Gson gson = new Gson();
-                dialogMultiChoice newFragment = dialogMultiChoice.newInstance(gson.toJson(occupationDataList), 2, "My Choice Occupation");
+                dialogMultiChoice newFragment = dialogMultiChoice.newInstance(gson.toJson(spokenLanguageDataList), 4, "My spoken Language");
                 newFragment.show(getSupportFragmentManager(), "dialog");
 
             }
@@ -481,6 +488,11 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
                     WebArd mMyAnnualIncomeObj = (WebArd) spMyAnnualIncomeLevel.getSelectedItem();
                     String income_level_id = mMyAnnualIncomeObj.getId();
 
+
+                    WebArd mMyLanguageObj = (WebArd) spMyLanguage.getSelectedItem();
+                    String primary_language_id = mMyLanguageObj.getId();
+
+
                     //mychoice edu==========
                     MarryMax max = new MarryMax(null);
 
@@ -488,7 +500,9 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
                     //Selected edu
                     StringBuilder sbSelectedMyChoiceOccupation = new StringBuilder();
                     sbSelectedMyChoiceOccupation = max.getSelectedIdsFromList(occupationDataList);
-                    Log.e("sel Occupation ids :", sbSelectedMyChoiceOccupation + "");
+
+
+                    //    Log.e("sel Occupation ids :", sbSelectedMyChoiceOccupation + "");
                  /*   for (int i = 0; i < selectedOccupationDataList.size(); i++) {
                         sbSelectedMyChoiceOccupation.append(occupationDataList.get((Integer) selectedOccupationDataList.get(i)).getId());
                         if (i != selectedOccupationDataList.size() - 1) {
@@ -546,8 +560,14 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
 
                     //Selected Education
                     StringBuilder sbSelectedMyChoiceEdu = new StringBuilder();
-
                     sbSelectedMyChoiceEdu = max.getSelectedIdsFromList(educationDataList);
+
+
+                    StringBuilder sbSelectedMyChoiceLanguage = new StringBuilder();
+                    sbSelectedMyChoiceLanguage = max.getSelectedIdsFromList(myChoiceLanguageDataList);
+
+                    StringBuilder sbSelectedMySpokenLanguage = new StringBuilder();
+                    sbSelectedMySpokenLanguage = max.getSelectedIdsFromList(spokenLanguageDataList);
 
 
                     JSONObject params = new JSONObject();
@@ -594,6 +614,12 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
                         params.put("caste_name", acMyCaste.getText().toString());
                         params.put("my_id", my_id);
                         params.put("about_member_id", about_member_id);
+
+                        params.put("choice_my_language_ids", sbSelectedMyChoiceLanguage.toString());
+                        params.put("spoken_language_ids", sbSelectedMySpokenLanguage.toString());
+
+
+                        params.put("primary_language_id", primary_language_id);
 
 
                         if (Integer.parseInt(second_marriage_reason_id) == -1) {
@@ -802,6 +828,8 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
         viewGenerator.selectSpinnerItemById(spMyGraduationYear, members_obj.get_about_type_id(), graduationYearDataList);
         viewGenerator.selectSpinnerItemById(spMyAnnualIncomeLevel, members_obj.get_income_level_id(), incomeDataList);
 
+        viewGenerator.selectSpinnerItemById(spMyLanguage, members_obj.getPrimary_language_id(), languageDataList);
+
 
         Members member = SharedPreferenceManager.getUserObject(getApplicationContext());
         if (member.get_member_status() >= 2 && member.get_member_status() < 7) {
@@ -899,7 +927,7 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
             }
 
         }
-//=-====================================================================
+//=-===========================Choice Occupation=========================================
 
         {
             Log.e("choice Ocu", members_obj.get_choice_occupation_ids());
@@ -932,7 +960,75 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
         }
 
 
+        //=-===========================My Choice Language=========================================
+
+        {
+            Log.e("choice languages", members_obj.getChoice_my_language_ids());
+            String[] cids = members_obj.getChoice_my_language_ids().split(",");
+            //multi choice selection
+            selectedMyLanguageDataList.clear();
+            for (int i = 0; i < cids.length; i++) {
+                selectedMyLanguageDataList.add((cids[i]));
+            }
+            if (!selectedMyLanguageDataList.isEmpty()) {
+
+                for (int i = 0; i < myChoiceLanguageDataList.size(); i++) {
+
+                    for (int j = 0; j < selectedMyLanguageDataList.size(); j++) {
+
+                        if (myChoiceLanguageDataList.get(i).getId().equals(selectedMyLanguageDataList.get(j))) {
+                            myChoiceLanguageDataList.get(j).setSelected(true);
+
+                        }
+
+                    }
+
+                }
+
+
+                tvMutliChoiceMyChoiceLanguage.setText(marryMax.getSelectedTextFromList(myChoiceLanguageDataList, "My Choice Language"));
+
+            }
+
+        }
+
+
+        //=-===========================My Spoken Language=========================================
+
+        {
+            Log.e("choice ", members_obj.getChoice_my_language_ids());
+            String[] cids = members_obj.getSpoken_language_ids().split(",");
+            //multi choice selection
+            selectedSpokenLanguageDataList.clear();
+            for (int i = 0; i < cids.length; i++) {
+                selectedSpokenLanguageDataList.add((cids[i]));
+            }
+            if (!selectedSpokenLanguageDataList.isEmpty()) {
+
+                for (int i = 0; i < spokenLanguageDataList.size(); i++) {
+
+                    for (int j = 0; j < selectedSpokenLanguageDataList.size(); j++) {
+
+                        if (spokenLanguageDataList.get(i).getId().equals(selectedSpokenLanguageDataList.get(j))) {
+                            spokenLanguageDataList.get(j).setSelected(true);
+
+                        }
+
+                    }
+
+                }
+
+
+                tvMutliChoiceMySpokenLanguage.setText(marryMax.getSelectedTextFromList(spokenLanguageDataList, "My Spoken Language"));
+
+            }
+
+        }
+
+
     }
+
+
 
    /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -987,6 +1083,8 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
                             JSONArray jsonArrayEconomy = response.getJSONArray("economy");
                             JSONArray jsonArrayMarriage = response.getJSONArray("marriage");
 
+                            JSONArray jsonArrayLanguage = response.getJSONArray("language");
+
 
                             Gson gsonc;
 
@@ -1014,6 +1112,12 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
                             economyDataList = (List<WebArd>) gsonc.fromJson(jsonArrayEconomy.toString(), listType);
                             marriageDataList = (List<WebArd>) gsonc.fromJson(jsonArrayMarriage.toString(), listType);
 
+                            languageDataList = (List<WebArd>) gsonc.fromJson(jsonArrayLanguage.toString(), listType);
+
+                            spokenLanguageDataList = (List<WebArd>) gsonc.fromJson(jsonArrayLanguage.toString(), listType);
+
+                            myChoiceLanguageDataList = (List<WebArd>) gsonc.fromJson(jsonArrayLanguage.toString(), listType);
+
 
                             myEducationDataList.remove(0);
                             myOccupationDataList.remove(0);
@@ -1024,12 +1128,15 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
                             incomeDataList.add(0, new WebArd("-1", "Please Select"));
                             educationFieldDataList.add(0, new WebArd("-1", "Please Select"));
 
+                            languageDataList.add(0, new WebArd("-1", "Please Select"));
+
 
                             spAdapterMyAnnualIncome.updateDataList(incomeDataList);
 
                             spAdapterMyEducation.updateDataList(myEducationDataList);
                             spAdapterMyEducationalField.updateDataList(educationFieldDataList);
                             spAdapterMyOccupation.updateDataList(myOccupationDataList);
+                            spAdapterMyLanguage.updateDataList(languageDataList);
 
 
                             ArrayList mcList = new ArrayList();
@@ -1372,6 +1479,26 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
             MarryMax max = new MarryMax(null);
 
             tvMcMyChoiceOccupation.setText(max.getSelectedTextFromList(occupationDataList, "My Choice Occupation"));
+            //  Log.e("selected id is", max.getSelectedIdsFromList(occupationDataList) + "");
+        } else if (which == 3) {
+
+            myChoiceLanguageDataList.clear();
+            myChoiceLanguageDataList.addAll(s);
+
+
+            MarryMax max = new MarryMax(null);
+
+            tvMutliChoiceMyChoiceLanguage.setText(max.getSelectedTextFromList(myChoiceLanguageDataList, "My Choice Language"));
+            //  Log.e("selected id is", max.getSelectedIdsFromList(occupationDataList) + "");
+        } else if (which == 4) {
+
+            spokenLanguageDataList.clear();
+            spokenLanguageDataList.addAll(s);
+
+
+            MarryMax max = new MarryMax(null);
+
+            tvMutliChoiceMySpokenLanguage.setText(max.getSelectedTextFromList(spokenLanguageDataList, "My Spoken Language"));
             //  Log.e("selected id is", max.getSelectedIdsFromList(occupationDataList) + "");
         }
 

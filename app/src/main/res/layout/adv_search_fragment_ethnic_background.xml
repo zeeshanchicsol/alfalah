@@ -17,11 +17,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="7dp"
-            android:textSize="@dimen/text_size_adv_search_headings"
-
             android:layout_marginTop="10dp"
+
             android:text="Ethnic Background"
             android:textColor="@color/colorUserProfileRed"
+            android:textSize="@dimen/text_size_adv_search_headings"
             android:textStyle="bold" />
 
         <android.support.v4.widget.NestedScrollView
@@ -40,16 +40,18 @@
             android:layout_height="1dp"
             android:layout_marginTop="5dp"
             android:background="#d7d7d7"></View>
-        <com.chicsol.alfalah.widgets.mTextView
-            android:textSize="@dimen/text_size_adv_search_headings"
 
+        <com.chicsol.alfalah.widgets.mTextView
             android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
             android:layout_marginLeft="7dp"
             android:layout_marginTop="10dp"
             android:text="Religious Sect"
             android:textColor="@color/colorUserProfileRed"
+            android:textSize="@dimen/text_size_adv_search_headings"
             android:textStyle="bold" />
+
         <LinearLayout
             android:id="@+id/LinearLayoutAdvSearchReligiousSect"
             android:layout_width="wrap_content"
@@ -57,38 +59,45 @@
             android:orientation="vertical">
 
 
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#d7d7d7"></View>
+
+            <com.chicsol.alfalah.widgets.mTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+
+                android:layout_marginTop="10dp"
+                android:text="Caste"
+                android:textColor="@color/colorUserProfileRed"
+                android:textSize="@dimen/text_size_adv_search_headings"
+                android:textStyle="bold" />
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:id="@+id/LinearLayoutAdvSearchCaste"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="5dp"
-            android:background="#d7d7d7"></View>
 
-        <com.chicsol.alfalah.widgets.mTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/text_size_adv_search_headings"
-
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="10dp"
-            android:text="Caste"
-            android:textColor="@color/colorUserProfileRed"
-            android:textStyle="bold" />
-
-        <android.support.v4.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scrollbars="vertical">
-
-            <LinearLayout
-                android:id="@+id/LinearLayoutAdvSearchCaste"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
-        </android.support.v4.widget.NestedScrollView>
     </LinearLayout>
 
 

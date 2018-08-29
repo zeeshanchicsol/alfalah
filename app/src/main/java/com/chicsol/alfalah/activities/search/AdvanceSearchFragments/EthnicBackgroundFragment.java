@@ -27,7 +27,8 @@ import static com.chicsol.alfalah.utils.Constants.jsonArraySearch;
 
 public class EthnicBackgroundFragment extends Fragment implements CompoundButton.OnCheckedChangeListener {
 
-    private LinearLayout LinearLayoutAdvSearchEthnicBackground, LinearLayoutAdvSearchReligiousSect, LinearLayoutAdvSearchCaste;
+    private LinearLayout LinearLayoutAdvSearchEthnicBackground, LinearLayoutAdvSearchReligiousSect;
+   // LinearLayoutAdvSearchCaste
 
     private ViewGenerator viewGenerator;
 
@@ -59,7 +60,7 @@ public class EthnicBackgroundFragment extends Fragment implements CompoundButton
         viewGenerator = new ViewGenerator(getContext());
         LinearLayoutAdvSearchEthnicBackground = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchEthnicBackground);
         LinearLayoutAdvSearchReligiousSect = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchReligiousSect);
-        LinearLayoutAdvSearchCaste = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchCaste);
+        //LinearLayoutAdvSearchCaste = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchCaste);
 
         Gson gsonc;
         GsonBuilder gsonBuilderc = new GsonBuilder();
@@ -69,15 +70,15 @@ public class EthnicBackgroundFragment extends Fragment implements CompoundButton
 
 
         try {
-            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(6).toString(), listType);
+            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(5).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList0, LinearLayoutAdvSearchEthnicBackground, "ethnic");
 
-            List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(18).toString(), listType);
+            List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(19).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList1, LinearLayoutAdvSearchReligiousSect, "religious");
 
 
-            List<WebArd> dataList2 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(23).toString(), listType);
-            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList2, LinearLayoutAdvSearchCaste, "caste");
+         //   List<WebArd> dataList2 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(23).toString(), listType);
+        //    viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList2, LinearLayoutAdvSearchCaste, "caste");
 
 
         } catch (JSONException e) {
@@ -98,7 +99,7 @@ public class EthnicBackgroundFragment extends Fragment implements CompoundButton
 
             viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchEthnicBackground, defaultSelectionsObj.get_choice_ethnic_bground_ids());
             viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchReligiousSect, defaultSelectionsObj.get_choice_religious_sect_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchCaste, defaultSelectionsObj.get_choice_caste_ids());
+        //    viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchCaste, defaultSelectionsObj.get_choice_caste_ids());
         }
 
     }
@@ -122,7 +123,8 @@ public class EthnicBackgroundFragment extends Fragment implements CompoundButton
                 }
             }
         }
-        {
+
+   /*     {
             int childcount = LinearLayoutAdvSearchCaste.getChildCount();
             for (int i = 0; i < childcount; i++) {
                 View sv = LinearLayoutAdvSearchCaste.getChildAt(i);
@@ -130,7 +132,7 @@ public class EthnicBackgroundFragment extends Fragment implements CompoundButton
                     ((CheckBox) sv).setOnCheckedChangeListener(this);
                 }
             }
-        }
+        }*/
     }
 
     @Override
@@ -146,9 +148,10 @@ public class EthnicBackgroundFragment extends Fragment implements CompoundButton
                 if (buttonView.getTag().equals("religious")) {
                     defaultSelectionsObj.set_choice_religious_sect_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchReligiousSect));
                 }
-                if (buttonView.getTag().equals("caste")) {
+
+            /*    if (buttonView.getTag().equals("caste")) {
                     defaultSelectionsObj.set_choice_caste_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchCaste));
-                }
+                }*/
             }
         }
     }

@@ -77,7 +77,7 @@ public class RegisterGeographicActivity extends BaseRegistrationActivity impleme
     private mTextView tvSpMultiChoice, tvSpMultiChoiceOrigin;
     private Button bt_register_free;
     // seletedCountriesDataList
-    private ArrayList seletedCountriesDataListTemp, seletedCountriesIdDataList;
+    private ArrayList seletedCountriesDataListTemp, seletedCountriesIdDataList, seletedOriginCountriesIdDataList;
     private boolean updateData = false;
     private AdapterView.OnItemSelectedListener spMyCountryListener, spMyCountryStateListener, spMyCountryCityListener;
     private AdapterView.OnItemSelectedListener statesListener, countriesListener;
@@ -139,6 +139,7 @@ public class RegisterGeographicActivity extends BaseRegistrationActivity impleme
         // seletedCountriesDataList = new ArrayList();
         //  seletedCountriesDataListTemp = new ArrayList();
         seletedCountriesIdDataList = new ArrayList();
+        seletedOriginCountriesIdDataList = new ArrayList();
         //spinners
         spMyCountry = (Spinner) findViewById(R.id.spinnerMyCountryg);
 
@@ -296,6 +297,11 @@ public class RegisterGeographicActivity extends BaseRegistrationActivity impleme
                     WebArd mCountryObj = (WebArd) spMyCountry.getSelectedItem();
                     String country_id = mCountryObj.getId();
 
+
+                    WebArd mOriginCountryObj = (WebArd) spMyCountry.getSelectedItem();
+                    String origin_country_id = mOriginCountryObj.getId();
+
+
                     String state_id = "";
 
                     WebArd mStateObj = (WebArd) spMyCountryState.getSelectedItem();
@@ -312,14 +318,17 @@ public class RegisterGeographicActivity extends BaseRegistrationActivity impleme
 
                     //Selected Countries
                     StringBuilder sbSelectedCountries = new StringBuilder();
-
+                    StringBuilder sbChoiceOrigin = new StringBuilder();
 
                     MarryMax max = new MarryMax(null);
 
                     sbSelectedCountries = max.getSelectedIdsFromList(MyChoiceCountryDataList);
 
+                    sbChoiceOrigin = max.getSelectedIdsFromList(MyChoiceOriginCountryDataList);
 
-                    showLog("selected country ids :  " + sbSelectedCountries.toString() + "");
+                    showLog("sbChoiceOrigin country ids :  " + sbChoiceOrigin.toString() + "");
+
+                    showLog("sbChoiceOrigin country ids :  " + sbSelectedCountries.toString() + "");
 
 
                     //================== Visa Reidency my choice
@@ -334,7 +343,7 @@ public class RegisterGeographicActivity extends BaseRegistrationActivity impleme
                     ViewGenerator viewGenerator = new ViewGenerator(getApplicationContext());
                     String sbSelectedVisaMyChoice = viewGenerator.getSelectionFromCheckbox(llCheckboxView);
                     if (ConnectCheck.isConnected(findViewById(android.R.id.content))) {
-                        UpdateGeoGraphy(country_id, state_id, city_id, visa_status_id, sbSelectedCountries.toString(), sbSelectedVisaMyChoice.toString());
+                        UpdateGeoGraphy(country_id, state_id, city_id, visa_status_id, sbSelectedCountries.toString(), sbSelectedVisaMyChoice.toString(), origin_country_id, sbChoiceOrigin.toString());
                     }
                 }
             }
@@ -365,6 +374,12 @@ public class RegisterGeographicActivity extends BaseRegistrationActivity impleme
             errorText.setError("");
             errorText.setTextColor(getResources().getColor(R.color.colorTextRed));//just to highlight that this is an error
             errorText.setText("Please select Country");
+            ck = true;
+        } else if (spCountryOrigin.getSelectedItemId() == 0) {
+            TextView errorText = (TextView) spCountryOrigin.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(getResources().getColor(R.color.colorTextRed));//just to highlight that this is an error
+            errorText.setText("Please select Origin Country");
             ck = true;
         } else if (spMyCountryState.getSelectedItemId() == 0) {
             TextView errorText = (TextView) spMyCountryState.getSelectedView();
@@ -406,6 +421,7 @@ public class RegisterGeographicActivity extends BaseRegistrationActivity impleme
         spMyCountryState.setOnItemSelectedListener(null);
 
         selectSpinnerItemByValue(spMyCountry, members_obj.get_country_id(), MyCountryDataList);
+        selectSpinnerItemByValue(spCountryOrigin, members_obj.getOrigin_country_id(), MyCountryDataList);
         //disable country
 
 
@@ -418,6 +434,8 @@ public class RegisterGeographicActivity extends BaseRegistrationActivity impleme
 
         selectSpinnerItemByValue(spMyCountryState, members_obj.get_state_id(), MyCountryStateDataList);
         selectSpinnerItemByValue(spMyCountryCity, members_obj.get_city_id(), MyCountryCityDataList);
+
+
         Log.e("choice countrr", members_obj.get_choice_country_ids());
         String[] cids = members_obj.get_choice_country_ids().split(",");
 
@@ -463,6 +481,54 @@ public class RegisterGeographicActivity extends BaseRegistrationActivity impleme
 
         }
         //=======end
+
+
+        Log.e("choice countrro", members_obj.getChoice_origin_country_ids());
+        String[] coids = members_obj.getChoice_origin_country_ids().split(",");
+
+
+        Log.e("co idddddssssss", "" + coids.length);
+
+        //multi choice selection
+        seletedOriginCountriesIdDataList.clear();
+        for (int i = 0; i < coids.length; i++) {
+            seletedOriginCountriesIdDataList.add((coids[i]));
+        }
+        Log.e("co idddddssssss", "" + seletedOriginCountriesIdDataList.size());
+
+
+        if (!seletedOriginCountriesIdDataList.isEmpty()) {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            if (seletedOriginCountriesIdDataList.size() == 0) {
+
+                tvSpMultiChoiceOrigin.setText("Select");
+            } else {
+
+
+                for (int i = 0; i < seletedOriginCountriesIdDataList.size(); i++) {
+                    int id = Integer.parseInt(seletedOriginCountriesIdDataList.get(i).toString());
+
+                    for (int j = 0; j < MyChoiceOriginCountryDataList.size(); j++) {
+
+                        if (Integer.parseInt(MyChoiceOriginCountryDataList.get(j).getId()) == id) {
+                            MyChoiceOriginCountryDataList.get(j).setSelected(true);
+
+
+                        }
+
+                    }
+                }
+
+
+            }
+            MarryMax max = new MarryMax(null);
+
+            tvSpMultiChoiceOrigin.setText(max.getSelectedTextFromList(MyChoiceOriginCountryDataList, "My Choice Origin Countries"));
+
+        }
+        //=======end
+
 
         radioGroup.check((int) members_obj.get_visa_status_id());
 //==============checkbox
@@ -558,7 +624,7 @@ public class RegisterGeographicActivity extends BaseRegistrationActivity impleme
                             MyChoiceCountryDataList.addAll(MyCountryDataList);
                             MyChoiceCountryDataList.add(0, new WebArd("-1", "Any"));
 
-                            MyChoiceOriginCountryDataList.addAll(MyCountryDataList);
+                            MyChoiceOriginCountryDataList = (List<WebArd>) gsonc.fromJson(jsonCountryObj.toString(), listType);
                             MyChoiceOriginCountryDataList.add(0, new WebArd("-1", "Any"));
 
                             MyCountryDataList.add(0, new WebArd("-1", "Please Select"));
@@ -780,13 +846,15 @@ public class RegisterGeographicActivity extends BaseRegistrationActivity impleme
     }
 
 
-    private void UpdateGeoGraphy(String country_id, String state_id, String city_id, String visa_status_id, String choice_country_ids, String choice_visa_status_ids) {
+    private void UpdateGeoGraphy(String country_id, String state_id, String city_id, String visa_status_id, String choice_country_ids, String choice_visa_status_ids, String origin_country_id, String sbChoiceOrigin) {
 
         pDialog.show();
         //   RequestQueue rq = Volley.newRequestQueue(getActivity().getApplicationContext());
 
         JSONObject params = new JSONObject();
         try {
+
+            params.put("origin_country_id", origin_country_id);
             params.put("country_id", country_id);
             params.put("state_id", state_id);
             params.put("city_id", city_id);
@@ -794,6 +862,8 @@ public class RegisterGeographicActivity extends BaseRegistrationActivity impleme
             params.put("postal_code", "");
             params.put("choice_country_ids", choice_country_ids);
             params.put("choice_visa_status_ids", choice_visa_status_ids);
+            params.put("choice_origin_country_ids", sbChoiceOrigin);
+
             params.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
         } catch (JSONException e) {
             e.printStackTrace();

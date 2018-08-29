@@ -120,11 +120,11 @@ public class AppearanceFragment extends Fragment implements CompoundButton.OnChe
             viewGenerator.generateDynamicCheckBoxesLL(dataList1, llAdvSearchComplexion);
 
 
-            List<WebArd> dataList2 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(9).toString(), listType);
+            List<WebArd> dataList2 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(10).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLL(dataList2, llAdvSearchHairColor);
 
 
-            List<WebArd> dataList3 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(7).toString(), listType);
+            List<WebArd> dataList3 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(8).toString(), listType);
 
 
             viewGenerator.generateDynamicCheckBoxesLL(dataList3, llAdvSearchEyeColor);

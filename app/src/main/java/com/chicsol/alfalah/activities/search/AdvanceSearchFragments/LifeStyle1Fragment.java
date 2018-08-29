@@ -26,7 +26,7 @@ import static com.chicsol.alfalah.utils.Constants.jsonArraySearch;
 
 
 public class LifeStyle1Fragment extends Fragment implements CompoundButton.OnCheckedChangeListener {
-    private LinearLayout LinearLayoutAdvSearchRaisedWhere, LinearLayoutAdvSearchHijab, LinearLayoutAdvSearchFamilyValues, LinearLayoutAdvSearchLivingArrangement;
+    private LinearLayout LinearLayoutAdvSearchRaisedWhere,LinearLayoutAdvSearchLanguage, LinearLayoutAdvSearchHijab, LinearLayoutAdvSearchFamilyValues, LinearLayoutAdvSearchLivingArrangement;
 
     private ViewGenerator viewGenerator;
 
@@ -57,6 +57,8 @@ public class LifeStyle1Fragment extends Fragment implements CompoundButton.OnChe
 
         viewGenerator = new ViewGenerator(getContext());
         LinearLayoutAdvSearchRaisedWhere = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchRaisedWhere);
+        LinearLayoutAdvSearchLanguage = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchLanguage);
+
         LinearLayoutAdvSearchHijab = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchHijab);
         LinearLayoutAdvSearchFamilyValues = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchFamilyValues);
         LinearLayoutAdvSearchLivingArrangement = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchLivingArrangement);
@@ -70,17 +72,21 @@ public class LifeStyle1Fragment extends Fragment implements CompoundButton.OnChe
 
 
         try {
-            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(17).toString(), listType);
+            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(18).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList0, LinearLayoutAdvSearchRaisedWhere, "raised");
 
-            List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(11).toString(), listType);
+
+            List<WebArd> dataList5 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(5).toString(), listType);
+            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList5, LinearLayoutAdvSearchLanguage, "language");
+
+            List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(12).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList1, LinearLayoutAdvSearchHijab, "hijab");
 
 
-            List<WebArd> dataList2 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(8).toString(), listType);
+            List<WebArd> dataList2 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(9).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList2, LinearLayoutAdvSearchFamilyValues, "family");
 
-            List<WebArd> dataList3 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(13).toString(), listType);
+            List<WebArd> dataList3 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(14).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList3, LinearLayoutAdvSearchLivingArrangement, "living");
 
 
@@ -94,6 +100,7 @@ public class LifeStyle1Fragment extends Fragment implements CompoundButton.OnChe
         if (defaultSelectionsObj != null) {
 
             viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchRaisedWhere, defaultSelectionsObj.get_choice_raised_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchLanguage, defaultSelectionsObj.getSpoken_language_ids());
             viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchHijab, defaultSelectionsObj.get_choice_hijab_ids());
             viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchFamilyValues, defaultSelectionsObj.get_choice_family_values_ids());
             viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchLivingArrangement, defaultSelectionsObj.get_choice_living_arangment_ids());
@@ -140,6 +147,16 @@ public class LifeStyle1Fragment extends Fragment implements CompoundButton.OnChe
             }
         }
 
+        {
+            int childcount = LinearLayoutAdvSearchLanguage.getChildCount();
+            for (int i = 0; i < childcount; i++) {
+                View sv = LinearLayoutAdvSearchLanguage.getChildAt(i);
+                if (sv instanceof CheckBox) {
+                    ((CheckBox) sv).setOnCheckedChangeListener(this);
+                }
+            }
+        }
+
     }
 
     @Override
@@ -155,6 +172,9 @@ public class LifeStyle1Fragment extends Fragment implements CompoundButton.OnChe
 
             } else if (buttonView.getTag().equals("living")) {
                 defaultSelectionsObj.set_choice_living_arangment_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchLivingArrangement));
+            }
+            else if (buttonView.getTag().equals("language")) {
+              //  defaultSelectionsObj.set_choice_living_arangment_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchLanguage));
             }
         }
 

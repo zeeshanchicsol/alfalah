@@ -68,7 +68,7 @@ public class MaritalStatusFragment extends Fragment implements CompoundButton.On
 
 
         try {
-            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(14).toString(), listType);
+            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(15).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLL(dataList0, LinearLayoutAdvSearchMaritalStatus);
 
             List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(1).toString(), listType);

@@ -130,7 +130,7 @@ public class GeographyFragment extends Fragment implements CheckBoxAdvSearchCSCR
 
         List<WebCSC> countriesDataList = null;
         try {
-            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(21).toString(), listType);
+            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(22).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLL(dataList0, LinearLayoutAdvSearchVisaStatus);
 
             countriesDataList = (List<WebCSC>) gsonc.fromJson(jsonArraySearch.getJSONArray(3).toString(), listTypeWebCsc);

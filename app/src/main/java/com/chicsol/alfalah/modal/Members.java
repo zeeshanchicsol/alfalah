@@ -588,6 +588,66 @@ public class Members {
     private long _privilege_type_id;
 
 
+    @SerializedName("origin_country_id")
+    private long origin_country_id;
+
+
+    @SerializedName("choice_origin_country_ids")
+    private String choice_origin_country_ids;
+
+
+    @SerializedName("primary_language_id")
+    private Long primary_language_id;
+
+
+    @SerializedName("spoken_language_ids")
+    private String spoken_language_ids;
+
+
+    @SerializedName("choice_my_language_ids")
+    private String choice_my_language_ids;
+
+
+    public Long getPrimary_language_id() {
+        return primary_language_id;
+    }
+
+    public void setPrimary_language_id(Long primary_language_id) {
+        this.primary_language_id = primary_language_id;
+    }
+
+    public String getSpoken_language_ids() {
+        return spoken_language_ids;
+    }
+
+    public void setSpoken_language_ids(String spoken_language_ids) {
+        this.spoken_language_ids = spoken_language_ids;
+    }
+
+    public String getChoice_my_language_ids() {
+        return choice_my_language_ids;
+    }
+
+    public void setChoice_my_language_ids(String choice_my_language_ids) {
+        this.choice_my_language_ids = choice_my_language_ids;
+    }
+
+    public long getOrigin_country_id() {
+        return origin_country_id;
+    }
+
+    public void setOrigin_country_id(long origin_country_id) {
+        this.origin_country_id = origin_country_id;
+    }
+
+    public String getChoice_origin_country_ids() {
+        return choice_origin_country_ids;
+    }
+
+    public void setChoice_origin_country_ids(String choice_origin_country_ids) {
+        this.choice_origin_country_ids = choice_origin_country_ids;
+    }
+
     public void setUserpath(String userpath) {
         this.userpath = userpath;
     }

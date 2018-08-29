@@ -31,11 +31,49 @@
 
         </LinearLayout>
 
+
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="5dp"
             android:background="#d7d7d7"></View>
+
+        <com.chicsol.alfalah.widgets.mTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Language"
+            android:textColor="@color/colorUserProfileRed"
+            android:textSize="@dimen/text_size_adv_search_headings"
+
+            android:textStyle="bold" />
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+        <LinearLayout
+            android:id="@+id/LinearLayoutAdvSearchLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+
+
+
+
+
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#d7d7d7"></View>
+
 
         <com.chicsol.alfalah.widgets.mTextView
             android:layout_width="wrap_content"

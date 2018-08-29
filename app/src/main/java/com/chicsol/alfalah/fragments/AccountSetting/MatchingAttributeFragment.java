@@ -138,13 +138,13 @@ public class MatchingAttributeFragment extends Fragment implements CompoundButto
                 if (selectedIds != null) {
                     String[] arrayList = selectedIds.split(",");
 
-                    if (arrayList.length < 4) {
+                    if (arrayList.length < 6) {
 
-                        Snackbar snackbarNotVerified = Snackbar.make(getActivity().findViewById(android.R.id.content), "minimium four matching attributes should be selected", Snackbar.LENGTH_SHORT);
+                        Snackbar snackbarNotVerified = Snackbar.make(getActivity().findViewById(android.R.id.content), "minimium six matching attributes should be selected", Snackbar.LENGTH_SHORT);
                         snackbarNotVerified.show();
-                    } else if (arrayList.length > 4) {
+                    } else if (arrayList.length > 6) {
 
-                        Snackbar snackbarNotVerified = Snackbar.make(getActivity().findViewById(android.R.id.content), "Max four matching attributes should be selected", Snackbar.LENGTH_SHORT);
+                        Snackbar snackbarNotVerified = Snackbar.make(getActivity().findViewById(android.R.id.content), "Max six matching attributes should be selected", Snackbar.LENGTH_SHORT);
                         snackbarNotVerified.show();
                     } else if (!selectedIds.equals("")) {
 
@@ -318,8 +318,8 @@ public class MatchingAttributeFragment extends Fragment implements CompoundButto
             String[] arrayList = personality_ids.split(",");
 
 
-            if (arrayList.length > 4) {
-                Toast.makeText(getContext(), " Only four matching attributes can be selected. To change matching attributes, un-check any selected one and then select attribute of your choice and adjust your preferences accordingly.", Toast.LENGTH_LONG).show();
+            if (arrayList.length > 6) {
+                Toast.makeText(getContext(), " Only six matching attributes can be selected. To change matching attributes, un-check any selected one and then select attribute of your choice and adjust your preferences accordingly.", Toast.LENGTH_LONG).show();
                 compoundButton.setChecked(!b);
                 // Snackbar snackbarNotVerified = Snackbar.make(getActivity().findViewById(android.R.id.content), " Only four matching attributes can be selected. To change matching attributes, un-check any selected one and then select attribute of your choice and adjust your preferences accordingly.", Snackbar.LENGTH_SHORT);
                 // snackbarNotVerified.show();

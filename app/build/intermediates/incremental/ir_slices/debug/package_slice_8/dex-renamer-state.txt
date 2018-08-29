@@ -1,4 +1,4 @@
-#Mon Aug 13 14:48:13 PKT 2018
-base.0=/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/transforms/dexMerger/debug/25
+#Wed Aug 29 17:58:37 PKT 2018
+base.0=/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/transforms/dexMerger/debug/8
 path.0=classes.dex
 renamed.0=classes.dex

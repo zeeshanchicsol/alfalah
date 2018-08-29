@@ -100,10 +100,10 @@ public class BasicsFragment extends Fragment implements CompoundButton.OnChecked
 
         if (jsonArraySearch != null && members != null) {
             try {
-                List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(15).toString(), listType);
+                List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(16).toString(), listType);
                 viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList0, LinearLayoutAdvSearchProfileCreatedFor, "profilefor");
 
-                List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(22).toString(), listType);
+                List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(23).toString(), listType);
                 viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList1, LinearLayoutAdvSearchZodiacSign, "zodiacsign");
             } catch (JSONException e) {
                 e.printStackTrace();
