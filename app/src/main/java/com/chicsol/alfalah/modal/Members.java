@@ -604,9 +604,19 @@ public class Members {
     private String spoken_language_ids;
 
 
-    @SerializedName("choice_my_language_ids")
-    private String choice_my_language_ids;
+ /*   @SerializedName("choice_my_language_ids")
+    private String choice_my_language_ids;*/
 
+    @SerializedName("choice_language_ids")
+    private String choice_language_ids;
+
+    public String getChoice_language_ids() {
+        return choice_language_ids;
+    }
+
+    public void setChoice_language_ids(String choice_language_ids) {
+        this.choice_language_ids = choice_language_ids;
+    }
 
     public Long getPrimary_language_id() {
         return primary_language_id;
@@ -624,13 +634,13 @@ public class Members {
         this.spoken_language_ids = spoken_language_ids;
     }
 
-    public String getChoice_my_language_ids() {
+  /*  public String getChoice_my_language_ids() {
         return choice_my_language_ids;
     }
 
     public void setChoice_my_language_ids(String choice_my_language_ids) {
         this.choice_my_language_ids = choice_my_language_ids;
-    }
+    }*/
 
     public long getOrigin_country_id() {
         return origin_country_id;

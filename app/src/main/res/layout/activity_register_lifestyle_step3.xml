@@ -1,0 +1,1424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e7e7e7"
+    android:orientation="vertical"
+    tools:context=".activities.registration.RegisterLifeStyleActivity2">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:openDrawer="start">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                layout="@layout/toolbar_dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <include
+                layout="@layout/registration_top_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"></include>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#e7e7e7">
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="10">
+
+                            <LinearLayout
+
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4.5"
+                                android:gravity="center|left"
+                                android:orientation="vertical">
+
+                                <com.chicsol.alfalah.widgets.mTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    android:text="LifeStyle Features"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:weightSum="1">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.8">
+
+
+                                    <android.support.design.widget.FloatingActionButton
+                                        android:id="@+id/fabLifeStyle1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:clickable="false"
+                                        app:backgroundTint="@color/colorCircleDim"
+                                        app:elevation="0dp"
+                                        app:fabSize="mini" />
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+
+                                        android:elevation="7dp"
+                                        android:text="1"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="@dimen/reg_circle_text" />
+
+
+                                </FrameLayout>
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:weightSum="1">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.8">
+
+
+                                    <android.support.design.widget.FloatingActionButton
+                                        android:id="@+id/fabLifeStyle2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:clickable="false"
+                                        app:backgroundTint="@color/colorCircleDim"
+                                        app:elevation="0dp"
+                                        app:fabSize="mini" />
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+
+                                        android:elevation="7dp"
+                                        android:text="2"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="@dimen/reg_circle_text" />
+
+
+                                </FrameLayout>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:weightSum="1">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+
+                                    android:layout_weight="0.8">
+
+
+                                    <android.support.design.widget.FloatingActionButton
+                                        android:id="@+id/fabLifeStyle3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:clickable="false"
+                                        app:backgroundTint="@color/colorTextRed"
+                                        app:elevation="0dp"
+                                        app:fabSize="mini" />
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+
+                                        android:text="3"
+                                        android:textColor="@android:color/white"
+
+                                        android:textSize="@dimen/reg_circle_text" />
+
+                                </FrameLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <!--===============================starting multi-->
+                        <!--                        Relocation-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical"
+
+
+
+                            >
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+
+                                android:layout_height="match_parent"
+                                android:background="@color/colorWhite"
+                                app:cardElevation="4dp"
+                                app:cardUseCompatPadding="true"
+                                card_view:cardBackgroundColor="@android:color/white"
+
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:orientation="vertical">
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="9dp"
+                                        android:text="Relocation"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Relocation"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <Spinner
+                                            android:id="@+id/spinnerMyRelocation"
+                                            android:layout_width="match_parent"
+
+                                            android:layout_height="wrap_content"
+
+
+                                            />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Choice Relocation"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:id="@+id/MutliChoiceMyChoiceRelocation"
+                                            style="@style/Base.Widget.AppCompat.Spinner"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="My Choice Relocation"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+                                            android:textColor="@color/colorBlack" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+                        <!--                        Marrytime-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical"
+
+
+
+                            >
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+
+                                android:layout_height="match_parent"
+                                android:background="@color/colorWhite"
+                                app:cardElevation="4dp"
+                                app:cardUseCompatPadding="true"
+                                card_view:cardBackgroundColor="@android:color/white"
+
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:orientation="vertical">
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="9dp"
+                                        android:text="Marrytime"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Marrytime"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <Spinner
+                                            android:id="@+id/spinnerMyMarrytime"
+                                            android:layout_width="match_parent"
+
+                                            android:layout_height="wrap_content"
+
+
+                                            />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Choice Marrytime"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:id="@+id/MutliChoiceMyChoiceMarrytime"
+                                            style="@style/Base.Widget.AppCompat.Spinner"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="My Choice Marrytime"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+                                            android:textColor="@color/colorBlack" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+
+                        <!--                        Want Children-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical"
+
+
+
+                            >
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+
+                                android:layout_height="match_parent"
+                                android:background="@color/colorWhite"
+                                app:cardElevation="4dp"
+                                app:cardUseCompatPadding="true"
+                                card_view:cardBackgroundColor="@android:color/white"
+
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:orientation="vertical">
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="9dp"
+                                        android:text="Want Children"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Want Children"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <Spinner
+                                            android:id="@+id/spinnerMyWantChildren"
+                                            android:layout_width="match_parent"
+
+                                            android:layout_height="wrap_content"
+
+
+                                            />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Choice Want Children"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:id="@+id/MutliChoiceMyChoiceWantChildren"
+                                            style="@style/Base.Widget.AppCompat.Spinner"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="My Choice Want Children"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+                                            android:textColor="@color/colorBlack" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+
+                        <!--                        Physically Challenged-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical"
+
+
+                            >
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+
+                                android:layout_height="match_parent"
+                                android:background="@color/colorWhite"
+                                app:cardElevation="4dp"
+                                app:cardUseCompatPadding="true"
+                                card_view:cardBackgroundColor="@android:color/white"
+
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:orientation="vertical">
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="9dp"
+                                        android:text="Physically Challenged"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Education"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <Spinner
+                                            android:id="@+id/spinnerMyPhysicallyChallenged"
+                                            android:layout_width="match_parent"
+
+                                            android:layout_height="wrap_content"
+
+
+                                            />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Want Physically Challenged Choice"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:id="@+id/MutliChoiceMyChoicePhysicallyChallenged"
+                                            style="@style/Base.Widget.AppCompat.Spinner"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="Want Physically Challenged Choice"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+                                            android:textColor="@color/colorBlack" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+
+                        <!--                        Revert-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical"
+
+
+                            >
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+
+                                android:layout_height="match_parent"
+                                android:background="@color/colorWhite"
+                                app:cardElevation="4dp"
+                                app:cardUseCompatPadding="true"
+                                card_view:cardBackgroundColor="@android:color/white"
+
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:orientation="vertical">
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="9dp"
+                                        android:text="Revert"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Revert"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <Spinner
+                                            android:id="@+id/spinnerMyRevert"
+                                            android:layout_width="match_parent"
+
+                                            android:layout_height="wrap_content"
+
+
+                                            />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Choice Education"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:id="@+id/MutliChoiceMyChoiceRevert"
+                                            style="@style/Base.Widget.AppCompat.Spinner"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="My Choice Revert"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+                                            android:textColor="@color/colorBlack" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+
+                        <!--                        Keep Halal-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+
+                            android:orientation="vertical"
+
+                            >
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+
+                                android:layout_height="match_parent"
+                                android:background="@color/colorWhite"
+                                app:cardElevation="4dp"
+                                app:cardUseCompatPadding="true"
+                                card_view:cardBackgroundColor="@android:color/white"
+
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:orientation="vertical">
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="9dp"
+                                        android:text=" Keep Halal"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My  Keep Halal"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <Spinner
+                                            android:id="@+id/spinnerMyKeepHalal"
+                                            android:layout_width="match_parent"
+
+                                            android:layout_height="wrap_content"
+
+
+                                            />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Choice Keep Halal"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:id="@+id/MutliChoiceMyChoiceKeepHalal"
+                                            style="@style/Base.Widget.AppCompat.Spinner"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="My Choice Keep Halal"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+                                            android:textColor="@color/colorBlack" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+
+                        <!--                        Religious-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+
+                            android:orientation="vertical"
+
+                            >
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+
+                                android:layout_height="match_parent"
+                                android:background="@color/colorWhite"
+                                app:cardElevation="4dp"
+                                app:cardUseCompatPadding="true"
+                                card_view:cardBackgroundColor="@android:color/white"
+
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:orientation="vertical">
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="9dp"
+                                        android:text="Religious"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Religious"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <Spinner
+                                            android:id="@+id/spinnerMyReligious"
+                                            android:layout_width="match_parent"
+
+                                            android:layout_height="wrap_content"
+
+
+                                            />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:id="@+id/mTextView4"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Choice Religious"
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:id="@+id/MutliChoiceMyChoiceReligious"
+                                            style="@style/Base.Widget.AppCompat.Spinner"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="My Choice Religious"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+                                            android:textColor="@color/colorBlack" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+
+                        <!-- ====================================end multi-->
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+
+                                android:layout_height="match_parent"
+                                android:background="@color/colorWhite"
+                                app:cardElevation="8dp"
+                                card_view:cardBackgroundColor="@android:color/white"
+
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:orientation="vertical">
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="10dp"
+                                        android:text="Sibling Detail"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="vertical">
+
+                                        <com.chicsol.alfalah.widgets.mTextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="My Sibling Position"
+
+                                            android:textColor="@color/colorSpinnerLabel"
+                                            android:textSize="@dimen/text_size_spinner_label" />
+
+                                        <Spinner
+                                            android:id="@+id/SpinnerSiblingPosition"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_margin="10dp"
+                                            android:background="#d7d7d7"></View>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:orientation="horizontal">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:orientation="vertical">
+
+                                            <android.support.design.widget.TextInputLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColorHint="@color/colorRegistrationFields">
+
+                                                <com.chicsol.alfalah.widgets.mEditText
+                                                    android:id="@+id/EditTextnumberOfBrothers"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+
+                                                    android:hint="No of Brothers"
+                                                    android:inputType="number"
+
+                                                    android:maxLength="1"
+
+                                                    android:singleLine="true"
+                                                    android:textColor="@color/colorRegistrationFields"
+
+
+                                                    app:backgroundTint="@color/colorUnderline"
+
+                                                    />
+                                            </android.support.design.widget.TextInputLayout>
+
+
+                                        </LinearLayout>
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:orientation="vertical">
+
+
+                                            <android.support.design.widget.TextInputLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColorHint="@color/colorRegistrationFields">
+
+                                                <com.chicsol.alfalah.widgets.mEditText
+                                                    android:id="@+id/EditTextnumberOfSisters"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+
+                                                    android:hint="No of Sisters"
+                                                    android:inputType="number"
+                                                    android:maxLength="1"
+                                                    android:singleLine="true"
+                                                    android:textColor="@color/colorRegistrationFields"
+
+
+                                                    app:backgroundTint="@color/colorUnderline"
+
+                                                    />
+                                            </android.support.design.widget.TextInputLayout>
+
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="20dp"
+
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/white"
+                                app:cardElevation="8dp"
+                                card_view:cardBackgroundColor="@android:color/white">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Beard"
+                                        android:textColor="@android:color/black"
+
+                                        android:textStyle="bold" />
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="10dp"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:weightSum="10">
+
+                                            <LinearLayout
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="5">
+
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="2.5"
+                                                android:gravity="center">
+
+                                                <com.chicsol.alfalah.widgets.mTextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:text="MySelf"
+                                                    android:textColor="@color/colorRegistrationCheckRadio" />
+                                            </LinearLayout>
+
+
+                                            <LinearLayout
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="2.5"
+                                                android:gravity="center">
+
+                                                <com.chicsol.alfalah.widgets.mTextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="My Choice"
+                                                    android:textColor="@color/colorRegistrationCheckRadio" />
+
+                                            </LinearLayout>
+
+
+                                        </LinearLayout>
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:weightSum="10">
+
+                                            <LinearLayout
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="6.5"
+                                                android:gravity="center"
+                                                android:orientation="vertical">
+
+                                                <RadioGroup
+                                                    android:id="@+id/RadioGroupBeard"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginLeft="10dp">
+                                                    <!--  <com.chicsol.marrymax.widgets.mRadioButton
+
+                                                          android:id="@+id/mRadioButton"
+                                                          android:layout_width="match_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:layoutDirection="rtl"
+                                                          android:text="Citizen"
+                                                          android:textColor="@color/colorRegistrationCheckRadio" />-->
+
+                                                </RadioGroup>
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/LinearLayoutMyChoiceBeard"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="3.5"
+                                                android:gravity="center"
+                                                android:orientation="vertical">
+                                                <!--    <android.support.v7.widget.AppCompatCheckBox
+                                                        android:id="@+id/checkBox"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+
+
+                                                        />-->
+
+                                            </LinearLayout>
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="20dp"
+
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/white"
+                                app:cardElevation="8dp"
+                                card_view:cardBackgroundColor="@android:color/white">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Salah "
+                                        android:textColor="@android:color/black"
+
+                                        android:textStyle="bold" />
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="10dp"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:weightSum="10">
+
+                                            <LinearLayout
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="5">
+
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="2.5"
+                                                android:gravity="center">
+
+                                                <com.chicsol.alfalah.widgets.mTextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:text="MySelf"
+                                                    android:textColor="@color/colorRegistrationCheckRadio" />
+                                            </LinearLayout>
+
+
+                                            <LinearLayout
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="2.5"
+                                                android:gravity="center">
+
+                                                <com.chicsol.alfalah.widgets.mTextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="My Choice"
+                                                    android:textColor="@color/colorRegistrationCheckRadio" />
+
+                                            </LinearLayout>
+
+
+                                        </LinearLayout>
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:weightSum="10">
+
+                                            <LinearLayout
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="6.5"
+                                                android:gravity="center"
+                                                android:orientation="vertical">
+
+                                                <RadioGroup
+                                                    android:id="@+id/RadioGroupSalah"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginLeft="10dp">
+                                                    <!--  <com.chicsol.marrymax.widgets.mRadioButton
+
+                                                          android:id="@+id/mRadioButton"
+                                                          android:layout_width="match_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:layoutDirection="rtl"
+                                                          android:text="Citizen"
+                                                          android:textColor="@color/colorRegistrationCheckRadio" />-->
+
+                                                </RadioGroup>
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/LinearLayoutMyChoiceSalah"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="3.5"
+                                                android:gravity="center"
+                                                android:orientation="vertical">
+                                                <!--    <android.support.v7.widget.AppCompatCheckBox
+                                                        android:id="@+id/checkBox"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+
+
+                                                        />-->
+
+                                            </LinearLayout>
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <com.chicsol.alfalah.widgets.mButton2
+                            android:id="@+id/buttonBack"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/colorGrey"
+                            android:text="Back"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorWhite" />
+
+                        <com.chicsol.alfalah.widgets.mButton2
+                            android:id="@+id/buttonContinueStep2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="#216917"
+                            android:text="Continue to Step 4"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorWhite" />
+                    </LinearLayout>
+                </FrameLayout>
+            </FrameLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <!-- <include layout="@layout/drawer_navigation_view" />-->
+
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

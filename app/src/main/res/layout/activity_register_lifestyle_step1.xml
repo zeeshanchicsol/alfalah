@@ -161,6 +161,46 @@
 
                             </LinearLayout>
 
+                            <LinearLayout
+
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:weightSum="1">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+
+                                    android:layout_weight="0.8">
+
+
+                                    <android.support.design.widget.FloatingActionButton
+                                        android:id="@+id/fabLifeStyle3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:clickable="false"
+                                        app:backgroundTint="@color/colorCircleDim"
+                                        app:elevation="0dp"
+                                        app:fabSize="mini" />
+
+                                    <com.chicsol.alfalah.widgets.mTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+
+                                        android:text="3"
+                                        android:textColor="@android:color/white"
+
+                                        android:textSize="@dimen/reg_circle_text" />
+
+                                </FrameLayout>
+
+                            </LinearLayout>
 
                         </LinearLayout>
 
@@ -1900,7 +1940,7 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <include layout="@layout/drawer_navigation_view" />
+        <!-- <include layout="@layout/drawer_navigation_view" />-->
 
     </android.support.v4.widget.DrawerLayout>
 </LinearLayout>

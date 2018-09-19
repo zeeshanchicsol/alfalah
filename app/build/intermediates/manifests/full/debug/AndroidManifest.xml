@@ -93,6 +93,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name="com.chicsol.alfalah.activities.registration.RegisterLifeStyleActivity3"
+            android:label="Lifestyle"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="com.chicsol.alfalah.activities.registration.RegisterInterest"
             android:label="Interest"
             android:screenOrientation="portrait"

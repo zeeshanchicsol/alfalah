@@ -79,7 +79,7 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
     private long my_id;
     private NestedScrollView scrollMain;
     private ProgressDialog pDialog;
-    private FloatingActionButton fabLifeStyle1, fabLifeStyle2;
+    private FloatingActionButton fabLifeStyle1, fabLifeStyle2, fabLifeStyle3;
     private AppCompatImageButton btRemoveChildren, btRemoveSchool;
 
     private long removeChildrenMyid;
@@ -149,6 +149,7 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
 
         fabLifeStyle1 = (FloatingActionButton) findViewById(R.id.fabLifeStyle1);
         fabLifeStyle2 = (FloatingActionButton) findViewById(R.id.fabLifeStyle2);
+        fabLifeStyle3 = (FloatingActionButton) findViewById(R.id.fabLifeStyle3);
 
 
         //  if (BuildConfig.FLAVOR.equals("alfalah")) {
@@ -349,6 +350,15 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
                 marryMax.getProfileProgress(cls, RegisterLifeStyleActivity1.this, getApplicationContext(), SharedPreferenceManager.getUserObject(getApplicationContext()));
             }
         });
+
+        fabLifeStyle3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Class cls = RegisterLifeStyleActivity3.class;
+                marryMax.getProfileProgress(cls, RegisterLifeStyleActivity1.this, getApplicationContext(), SharedPreferenceManager.getUserObject(getApplicationContext()));
+            }
+        });
+
 
         acMyCaste.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -963,8 +973,8 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
         //=-===========================My Choice Language=========================================
 
         {
-            Log.e("choice languages", members_obj.getChoice_my_language_ids());
-            String[] cids = members_obj.getChoice_my_language_ids().split(",");
+            Log.e("choice languages", members_obj.getChoice_language_ids());
+            String[] cids = members_obj.getChoice_language_ids().split(",");
             //multi choice selection
             selectedMyLanguageDataList.clear();
             for (int i = 0; i < cids.length; i++) {
@@ -996,7 +1006,7 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
         //=-===========================My Spoken Language=========================================
 
         {
-            Log.e("choice ", members_obj.getChoice_my_language_ids());
+            Log.e("choice ", members_obj.getChoice_language_ids());
             String[] cids = members_obj.getSpoken_language_ids().split(",");
             //multi choice selection
             selectedSpokenLanguageDataList.clear();
@@ -1162,7 +1172,7 @@ public class RegisterLifeStyleActivity1 extends BaseRegistrationActivity impleme
                             gson = gsonBuilder.create();
                             Log.e("Aliaaaaaaaasss", jsonGrography.get(0).toString());
                             members_obj = gson.fromJson(jsonGrography.get(0).toString(), Members.class);
-                            Log.e("Aliaaaaaaaasss", members_obj.get_country_id() + "");
+                            Log.e("Aliaaaaaaaasss", members_obj.get_education_id() + "");
 
 
                         } catch (JSONException e) {

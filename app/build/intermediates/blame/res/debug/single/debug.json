@@ -16,12 +16,12 @@
         "source": "/Users/marrymaxandroid/.gradle/caches/transforms-1/files-1.1/android.joda-2.9.9.aar/e52a0d8d9427571d29e11ebd22b1732f/res/raw/joda_asia_jayapura"
     },
     {
-        "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/layout_item_list_my_contacts.xml.flat",
-        "source": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/src/main/res/layout/item_list_my_contacts.xml"
-    },
-    {
         "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "/Users/marrymaxandroid/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/90af972411fe8310e9cf38ac3612c685/res/drawable-mdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/layout_item_list_my_contacts.xml.flat",
+        "source": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/src/main/res/layout/item_list_my_contacts.xml"
     },
     {
         "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/raw_joda_europe_simferopol.flat",
@@ -36,16 +36,16 @@
         "source": "/Users/marrymaxandroid/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/90af972411fe8310e9cf38ac3612c685/res/drawable-ldrtl-xxhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "/Users/marrymaxandroid/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/8c2c4afad0d8bbacf6614a69bd9703c3/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
+        "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/raw_joda_america_recife.flat",
+        "source": "/Users/marrymaxandroid/.gradle/caches/transforms-1/files-1.1/android.joda-2.9.9.aar/e52a0d8d9427571d29e11ebd22b1732f/res/raw/joda_america_recife"
     },
     {
         "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/raw_joda_america_indiana_winamac.flat",
         "source": "/Users/marrymaxandroid/.gradle/caches/transforms-1/files-1.1/android.joda-2.9.9.aar/e52a0d8d9427571d29e11ebd22b1732f/res/raw/joda_america_indiana_winamac"
     },
     {
-        "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/raw_joda_america_recife.flat",
-        "source": "/Users/marrymaxandroid/.gradle/caches/transforms-1/files-1.1/android.joda-2.9.9.aar/e52a0d8d9427571d29e11ebd22b1732f/res/raw/joda_america_recife"
+        "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/Users/marrymaxandroid/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/8c2c4afad0d8bbacf6614a69bd9703c3/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
     },
     {
         "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/menu_menu_mymatches.xml.flat",
@@ -5530,6 +5530,10 @@
     {
         "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/raw_joda_indian_chagos.flat",
         "source": "/Users/marrymaxandroid/.gradle/caches/transforms-1/files-1.1/android.joda-2.9.9.aar/e52a0d8d9427571d29e11ebd22b1732f/res/raw/joda_indian_chagos"
+    },
+    {
+        "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/layout_activity_register_lifestyle_step3.xml.flat",
+        "source": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/src/main/res/layout/activity_register_lifestyle_step3.xml"
     },
     {
         "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_pressed_holo_light.9.png.flat",

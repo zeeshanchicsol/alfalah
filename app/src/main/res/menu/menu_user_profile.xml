@@ -17,9 +17,9 @@
         <item
             android:id="@+id/menu_up_request"
             android:name="Request" />-->
-    <item
+  <!--  <item
         android:id="@+id/menu_up_ask_questions"
-        android:title="Ask Questions  " />
+        android:title="Ask Questions  " />-->
     <item
         android:id="@+id/menu_up_request_permissions"
         android:title="Request and Permissions" />

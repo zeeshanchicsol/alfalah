@@ -43,6 +43,9 @@ public class Urls {
     public static String removeChildren = baseUrl + "/api/WebArd/RemoveChildren/";
     public static String removeSchool = baseUrl + "/api/WebArd/RemoveSchool/";
 
+    public static String RegGetLifeStyle1Url3 = baseUrl + "/api/WebArd/GetProfileLifeStyle3/";
+    public static String updateLifestyleUrl3 = baseUrl + "/api/WebArd/EditLifeStyle3";
+
 
     //interest=====================================
 
