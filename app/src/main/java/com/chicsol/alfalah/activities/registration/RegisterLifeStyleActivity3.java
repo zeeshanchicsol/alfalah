@@ -26,8 +26,10 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.chicsol.alfalah.R;
 import com.chicsol.alfalah.adapters.MySpinnerAdapter;
+import com.chicsol.alfalah.dialogs.dialogMultiChoice;
 import com.chicsol.alfalah.modal.Members;
 import com.chicsol.alfalah.modal.WebArd;
+import com.chicsol.alfalah.other.MarryMax;
 import com.chicsol.alfalah.preferences.SharedPreferenceManager;
 import com.chicsol.alfalah.urls.Urls;
 import com.chicsol.alfalah.utils.ConnectCheck;
@@ -47,16 +49,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
+public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity implements dialogMultiChoice.onMultiChoiceSaveListener {
     private Button bt_register_free, bt_back;
     private LinearLayout llcbViewBeard, llcbViewSalah;
     private RadioGroup rgBeard, rgSalah;
 
     private List<WebArd> beardDataList, salahDataList, marrytimeDataList, relocationDataList, wantchildrenDataList, physicallychallengedDataList, revertDataList, keephalalDataList, religiousDataList;
 
+    private List<WebArd> myMarrytimeDataList, myRelocationDataList, myWantchildrenDataList, myPhysicallychallengedDataList, myRevertDataList, myKeephalalDataList, myReligiousDataList;
+
     private Members members_obj;
-    private Spinner spMySiblingPosition;
-    private MySpinnerAdapter spAdapterMySiblingPosition;
+
+
     private boolean updateData = true;
     private EditText etNoOfSisters, etNoOfBrothers;
     private ProgressDialog pDialog;
@@ -64,8 +68,11 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
 
     private FloatingActionButton fabLifeStyle1, fabLifeStyle2, fabLifeStyle3;
 
-    private Spinner  spMyRelocation, spMyMarryTime, spMyPhysicallyChallenged, spMyWantChildren, spMyKeepHalal,  spMyRevert, spMyReligious;
-    private MySpinnerAdapter spAdapterMyRelocation,spAdapterMyMarryTime,spAdapterMyPhysicsallyChallenge,spAdapterMyWantChildren,spAdapterMyKeepHalal,spAdapterMyRevert,spAdapterMyReligious;
+    private Spinner spMyRelocation, spMyMarryTime, spMyPhysicallyChallenged, spMyWantChildren, spMyKeepHalal, spMyRevert, spMyReligious;
+    private MySpinnerAdapter spAdapterMyRelocation, spAdapterMyMarryTime, spAdapterMyPhysicsallyChallenge, spAdapterMyWantChildren, spAdapterMyKeepHalal, spAdapterMyRevert, spAdapterMyReligious;
+
+    private TextView tvMcMyChoiceRelocation, tvMcMyChoiceMarrytime, tvMcMyChoiceWantChildren, tvMcMyChoicePhysicallyChallenged, tvMcMyChoiceRevert, tvMcMyChoiceKeepHalal, tvMcMyChoiceReligious;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,25 +109,42 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
         fabLifeStyle2 = (FloatingActionButton) findViewById(R.id.fabLifeStyle2);
         fabLifeStyle3 = (FloatingActionButton) findViewById(R.id.fabLifeStyle3);
 
+
+        tvMcMyChoiceRelocation = (TextView) findViewById(R.id.MutliChoiceMyChoiceRelocation);
+        tvMcMyChoiceMarrytime = (TextView) findViewById(R.id.MutliChoiceMyChoiceMarrytime);
+        tvMcMyChoiceWantChildren = (TextView) findViewById(R.id.MutliChoiceMyChoiceWantChildren);
+        tvMcMyChoicePhysicallyChallenged = (TextView) findViewById(R.id.MutliChoiceMyChoicePhysicallyChallenged);
+        tvMcMyChoiceRevert = (TextView) findViewById(R.id.MutliChoiceMyChoiceRevert);
+        tvMcMyChoiceKeepHalal = (TextView) findViewById(R.id.MutliChoiceMyChoiceKeepHalal);
+        tvMcMyChoiceReligious = (TextView) findViewById(R.id.MutliChoiceMyChoiceReligious);
+
+
         beardDataList = new ArrayList<>();
         salahDataList = new ArrayList<>();
 
         marrytimeDataList = new ArrayList<>();
         physicallychallengedDataList = new ArrayList<>();
-
-
         relocationDataList = new ArrayList<>();
         wantchildrenDataList = new ArrayList<>();
-        physicallychallengedDataList = new ArrayList<>();
-        marrytimeDataList = new ArrayList<>();
+        revertDataList = new ArrayList<>();
+        religiousDataList = new ArrayList<>();
+        keephalalDataList = new ArrayList<>();
+
+        myMarrytimeDataList = new ArrayList<>();
+        myPhysicallychallengedDataList = new ArrayList<>();
+        myRelocationDataList = new ArrayList<>();
+        myWantchildrenDataList = new ArrayList<>();
+        myRevertDataList = new ArrayList<>();
+        myReligiousDataList = new ArrayList<>();
+        myKeephalalDataList = new ArrayList<>();
 
 
-        spMySiblingPosition = (Spinner) findViewById(R.id.SpinnerSiblingPosition);
+/*        spMySiblingPosition = (Spinner) findViewById(R.id.SpinnerSiblingPosition);
 
         spAdapterMySiblingPosition = new MySpinnerAdapter(this,
                 android.R.layout.simple_spinner_item, beardDataList);
         spAdapterMySiblingPosition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spMySiblingPosition.setAdapter(spAdapterMySiblingPosition);
+        spMySiblingPosition.setAdapter(spAdapterMySiblingPosition);*/
 
         etNoOfBrothers = (EditText) findViewById(R.id.EditTextnumberOfBrothers);
         etNoOfSisters = (EditText) findViewById(R.id.EditTextnumberOfSisters);
@@ -147,17 +171,45 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
 
 
         spAdapterMyRelocation = new MySpinnerAdapter(this,
-                android.R.layout.simple_spinner_item,relocationDataList );
+                android.R.layout.simple_spinner_item, relocationDataList);
         spAdapterMyRelocation.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spMyRelocation.setAdapter(spAdapterMyRelocation);
 
 
         spAdapterMyMarryTime = new MySpinnerAdapter(this,
-                android.R.layout.simple_spinner_item,marrytimeDataList );
+                android.R.layout.simple_spinner_item, marrytimeDataList);
         spAdapterMyMarryTime.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spMyMarryTime.setAdapter(spAdapterMyMarryTime);
 
 
+        spAdapterMyWantChildren = new MySpinnerAdapter(this,
+                android.R.layout.simple_spinner_item, wantchildrenDataList);
+        spAdapterMyWantChildren.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spMyWantChildren.setAdapter(spAdapterMyWantChildren);
+
+
+        spAdapterMyPhysicsallyChallenge = new MySpinnerAdapter(this,
+                android.R.layout.simple_spinner_item, myPhysicallychallengedDataList);
+        spAdapterMyPhysicsallyChallenge.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spMyPhysicallyChallenged.setAdapter(spAdapterMyPhysicsallyChallenge);
+
+
+        spAdapterMyRevert = new MySpinnerAdapter(this,
+                android.R.layout.simple_spinner_item, revertDataList);
+        spAdapterMyRevert.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spMyRevert.setAdapter(spAdapterMyRevert);
+
+
+        spAdapterMyKeepHalal = new MySpinnerAdapter(this,
+                android.R.layout.simple_spinner_item, keephalalDataList);
+        spAdapterMyKeepHalal.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spMyKeepHalal.setAdapter(spAdapterMyKeepHalal);
+
+
+        spAdapterMyReligious = new MySpinnerAdapter(this,
+                android.R.layout.simple_spinner_item, religiousDataList);
+        spAdapterMyReligious.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spMyReligious.setAdapter(spAdapterMyReligious);
 
 
         if (marryMax.getUpdateCheck(getApplicationContext())) {
@@ -168,6 +220,103 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
     }
 
     private void setListeners() {
+        tvMcMyChoiceRelocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Gson gson = new Gson();
+                dialogMultiChoice newFragment = dialogMultiChoice.newInstance(gson.toJson(relocationDataList), 1, "My Choice Relocation");
+                newFragment.show(getSupportFragmentManager(), "dialog");
+
+
+            }
+        });
+
+        tvMcMyChoiceMarrytime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Gson gson = new Gson();
+                dialogMultiChoice newFragment = dialogMultiChoice.newInstance(gson.toJson(marrytimeDataList), 2, "My Choice Marrytime");
+                newFragment.show(getSupportFragmentManager(), "dialog");
+
+
+            }
+        });
+
+
+        tvMcMyChoiceWantChildren.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Gson gson = new Gson();
+                dialogMultiChoice newFragment = dialogMultiChoice.newInstance(gson.toJson(wantchildrenDataList), 3, "Want Children Choice");
+                newFragment.show(getSupportFragmentManager(), "dialog");
+
+
+            }
+        });
+
+
+        tvMcMyChoicePhysicallyChallenged.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Gson gson = new Gson();
+                dialogMultiChoice newFragment = dialogMultiChoice.newInstance(gson.toJson(physicallychallengedDataList), 4, "Want Physically Challenged Choice");
+                newFragment.show(getSupportFragmentManager(), "dialog");
+
+
+            }
+        });
+
+
+        tvMcMyChoiceRevert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Gson gson = new Gson();
+                dialogMultiChoice newFragment = dialogMultiChoice.newInstance(gson.toJson(revertDataList), 5, "My Choice Revert");
+                newFragment.show(getSupportFragmentManager(), "dialog");
+
+
+            }
+        });
+
+
+        tvMcMyChoiceKeepHalal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Gson gson = new Gson();
+                dialogMultiChoice newFragment = dialogMultiChoice.newInstance(gson.toJson(keephalalDataList), 6, "My Keep Halal");
+                newFragment.show(getSupportFragmentManager(), "dialog");
+
+
+            }
+        });
+
+
+        tvMcMyChoiceReligious.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Gson gson = new Gson();
+                dialogMultiChoice newFragment = dialogMultiChoice.newInstance(gson.toJson(religiousDataList), 7, "My Choice Religious");
+                newFragment.show(getSupportFragmentManager(), "dialog");
+
+
+            }
+        });
+
+
         fabLifeStyle1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -198,8 +347,8 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
                 if (!checkFieldsSelection(v)) {
 
                     ViewGenerator vg = new ViewGenerator(RegisterLifeStyleActivity3.this);
-                    WebArd mMySibObj = (WebArd) spMySiblingPosition.getSelectedItem();
-                    String sibling_id = mMySibObj.getId();
+                    //  WebArd mMySibObj = (WebArd) spMySiblingPosition.getSelectedItem();
+                    ////    String sibling_id = mMySibObj.getId();
 
 
                     String brothers_count = etNoOfBrothers.getText().toString();
@@ -217,7 +366,7 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
                     try {
 
 
-                        params.put("sibling_id", sibling_id);
+                        // params.put("sibling_id", sibling_id);
 
                         if (TextUtils.isEmpty(brothers_count)) {
                             brothers_count = "0";
@@ -284,13 +433,19 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
 
         ViewGenerator viewGenerator = new ViewGenerator(RegisterLifeStyleActivity3.this);
 
-        //Log.e("eddddddddd", "" + members_obj.get_about_type_id());
+        //    Log.e("getPhysically_challe  " + myPhysicallychallengedDataList.get(myPhysicallychallengedDataList.size() - 1).getName(), "" + members_obj.getPhysically_challenged_id());
 
 
-        viewGenerator.selectSpinnerItemById(spMySiblingPosition, members_obj.get_sibling_id(), revertDataList);
+        viewGenerator.selectSpinnerItemById(spMyRelocation, members_obj.getRelocation_id(), myRelocationDataList);
+        viewGenerator.selectSpinnerItemById(spMyMarryTime, members_obj.getMarrytime_id(), myMarrytimeDataList);
+        viewGenerator.selectSpinnerItemById(spMyWantChildren, members_obj.getWant_children_id(), myWantchildrenDataList);
+        viewGenerator.selectSpinnerItemById(spMyPhysicallyChallenged, members_obj.getPhysically_challenged_id(), myPhysicallychallengedDataList);
+        viewGenerator.selectSpinnerItemById(spMyRevert, members_obj.getRevert_id(), myRevertDataList);
+        viewGenerator.selectSpinnerItemById(spMyReligious, members_obj.getReligious_id(), myReligiousDataList);
+        viewGenerator.selectSpinnerItemById(spMyKeepHalal, members_obj.getKeep_halal_id(), myKeephalalDataList);
 
-        viewGenerator.selectCheckRadio(rgBeard, members_obj.get_family_values_id(), llcbViewBeard, members_obj.get_choice_family_values_ids());
-        viewGenerator.selectCheckRadio(rgSalah, members_obj.get_living_arrangement_id(), llcbViewSalah, members_obj.get_choice_living_arangment_ids());
+        viewGenerator.selectCheckRadio(rgBeard, (int) members_obj.getBeard_id(), llcbViewBeard, members_obj.getChoice_beard_ids());
+        viewGenerator.selectCheckRadio(rgSalah, (int) members_obj.getSalah_id(), llcbViewSalah, members_obj.getChoice_salah_ids());
 
         // viewGenerator.selectCheckRadio(rgHijab, members_obj.get_hijab_id(), llcbViewHijab, members_obj.get_choice_hijab_ids());
 
@@ -314,16 +469,66 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
 
         }*/
 
-        etNoOfBrothers.setText(members_obj.get_brothers_count() + "");
-        etNoOfSisters.setText(members_obj.get_sisters_count() + "");
+      /*  etNoOfBrothers.setText(members_obj.get_brothers_count() + "");
+        etNoOfSisters.setText(members_obj.get_sisters_count() + "");*/
 
+
+        selectChoices(members_obj.getChoice_relocation_ids(), relocationDataList, tvMcMyChoiceRelocation);
+
+
+    }
+
+
+    private void selectChoices(String choiceIds, List<WebArd> dataList, TextView tvChoice) {
+
+        List<String> selectedIdsDataList = new ArrayList();
+        {
+            Log.e("choice Education", choiceIds + "===");
+            String[] cids = choiceIds.split(",");
+            Log.e("choices length", cids.length + "===");
+            //multi choice selection
+
+            for (int i = 0; i < cids.length; i++) {
+                selectedIdsDataList.add((cids[i]));
+            }
+
+
+            if (!selectedIdsDataList.isEmpty()) {
+
+                StringBuilder stringBuilder = new StringBuilder();
+                for (int i = 0; i < selectedIdsDataList.size(); i++) {
+                    int id = Integer.parseInt(selectedIdsDataList.get(i).toString());
+
+                    for (int j = 0; j < dataList.size(); j++) {
+
+                        if (Integer.parseInt(dataList.get(j).getId()) == id) {
+                            dataList.get(j).setSelected(true);
+                            stringBuilder.append(dataList.get(j).getName());
+                            Log.e("choices name", dataList.get(j).getName() + "====");
+                            if (i != selectedIdsDataList.size() - 1) {
+                                stringBuilder.append(",");
+                            }
+
+
+                        }
+
+                    }
+                }
+
+                Log.e("choices stringBuilder", stringBuilder.toString() + "===");
+                tvChoice.setText(stringBuilder);
+
+
+            }
+
+        }
 
     }
 
     private boolean checkFieldsSelection(View v) {
         boolean ck = false;
 
-        if (spMySiblingPosition.getSelectedItemId() == 0) {
+/*        if (spMySiblingPosition.getSelectedItemId() == 0) {
             TextView errorText = (TextView) spMySiblingPosition.getSelectedView();
             errorText.setError("");
             errorText.setTextColor(getResources().getColor(R.color.colorTextRed));//just to highlight that this is an error
@@ -331,7 +536,8 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
             Snackbar.make(v, "Please select Sibling Position", Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show();
             ck = true;
-        } else if (rgBeard.getCheckedRadioButtonId() == -1) {
+        } else*/
+        if (rgBeard.getCheckedRadioButtonId() == -1) {
             Snackbar.make(v, "Please select Family Values", Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show();
             ck = true;
@@ -423,22 +629,54 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
                             salahDataList = (List<WebArd>) gsonc.fromJson(jsonArraySalah.toString(), listType);
 
                             relocationDataList = (List<WebArd>) gsonc.fromJson(jsonArrayRelocation.toString(), listType);
-
                             marrytimeDataList = (List<WebArd>) gsonc.fromJson(jsonArrayMarrytime.toString(), listType);
-
                             wantchildrenDataList = (List<WebArd>) gsonc.fromJson(jsonArrayWantchildren.toString(), listType);
                             physicallychallengedDataList = (List<WebArd>) gsonc.fromJson(jsonArrayPhysicallychallenged.toString(), listType);
-
                             revertDataList = (List<WebArd>) gsonc.fromJson(jsonArrayRevert.toString(), listType);
-
                             keephalalDataList = (List<WebArd>) gsonc.fromJson(jsonArrayKeephalal.toString(), listType);
-
                             religiousDataList = (List<WebArd>) gsonc.fromJson(jsonArrayReligious.toString(), listType);
+
+
+                            myRelocationDataList = (List<WebArd>) gsonc.fromJson(jsonArrayRelocation.toString(), listType);
+                            myMarrytimeDataList = (List<WebArd>) gsonc.fromJson(jsonArrayMarrytime.toString(), listType);
+                            myWantchildrenDataList = (List<WebArd>) gsonc.fromJson(jsonArrayWantchildren.toString(), listType);
+                            myPhysicallychallengedDataList = (List<WebArd>) gsonc.fromJson(jsonArrayPhysicallychallenged.toString(), listType);
+                            myRevertDataList = (List<WebArd>) gsonc.fromJson(jsonArrayRevert.toString(), listType);
+                            myKeephalalDataList = (List<WebArd>) gsonc.fromJson(jsonArrayKeephalal.toString(), listType);
+                            myReligiousDataList = (List<WebArd>) gsonc.fromJson(jsonArrayReligious.toString(), listType);
+
+
+                            myRelocationDataList.add(0, new WebArd("-1", "Please select"));
+                            myMarrytimeDataList.add(0, new WebArd("-1", "Please select"));
+                            myWantchildrenDataList.add(0, new WebArd("-1", "Please select"));
+                            myPhysicallychallengedDataList.add(0, new WebArd("-1", "Please select"));
+                            myRevertDataList.add(0, new WebArd("-1", "Please select"));
+                            myKeephalalDataList.add(0, new WebArd("-1", "Please select"));
+                            myReligiousDataList.add(0, new WebArd("-1", "Please select"));
+
+
+                            myRelocationDataList.remove(myRelocationDataList.size() - 1);
+                            myMarrytimeDataList.remove(myMarrytimeDataList.size() - 1);
+                            myWantchildrenDataList.remove(myWantchildrenDataList.size() - 1);
+                            myPhysicallychallengedDataList.remove(myPhysicallychallengedDataList.size() - 1);
+                            myRevertDataList.remove(myRevertDataList.size() - 1);
+                            myKeephalalDataList.remove(myKeephalalDataList.size() - 1);
+                            myReligiousDataList.remove(myReligiousDataList.size() - 1);
 
 
                             //   revertDataList.add(0, new WebArd("-1", "Please select"));
 
                             //   spAdapterMySiblingPosition.updateDataList(revertDataList);
+
+
+                            spAdapterMyRelocation.updateDataList(myRelocationDataList);
+                            spAdapterMyMarryTime.updateDataList(myMarrytimeDataList);
+                            spAdapterMyWantChildren.updateDataList(myWantchildrenDataList);
+                            spAdapterMyPhysicsallyChallenge.updateDataList(myPhysicallychallengedDataList);
+                            spAdapterMyRevert.updateDataList(myRevertDataList);
+                            spAdapterMyKeepHalal.updateDataList(myKeephalalDataList);
+                            spAdapterMyReligious.updateDataList(myReligiousDataList);
+
 
                             //=================================parsing object
                             Gson gson;
@@ -448,7 +686,7 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
                             gson = gsonBuilder.create();
                             //  Log.e("Aliaaaaaaaasss", jsonGrography.get(0).toString());
                             members_obj = gson.fromJson(jsonGrography.get(0).toString(), Members.class);
-                            //  Log.e("Aliaaaaaaaasss", members_obj.get_country_id() + "");
+                            //  Log.e("Aliaaaaaaaasss", members_obj.getBeard_id() + "");
 
 
                         } catch (JSONException e) {
@@ -460,14 +698,16 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
 
                         ViewGenerator viewGenerator = new ViewGenerator(RegisterLifeStyleActivity3.this);
 
-                  /*      if (members_obj.get_family_values_id() == 0) {
+
+                        Log.e("members_obj", "" + members_obj.getBeard_id());
+                        if (members_obj.getBeard_id() == 0) {
                             updateData = false;
 
                         } else {
                             updateData = true;
 
                         }
-*/
+
                         if (updateData) {
                             viewGenerator.addDynamicCheckRdioButtons(beardDataList, rgBeard, llcbViewBeard);
                             viewGenerator.addDynamicCheckRdioButtons(salahDataList, rgSalah, llcbViewSalah);
@@ -476,7 +716,7 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
                             viewGenerator.addDynamicCheckRdioButtons(wantchildrenDataList, rgSmoke, llcbViewSmoke);
                             viewGenerator.addDynamicCheckRdioButtons(physicallychallengedDataList, rgDrink, llcbViewDrink);*/
 
-                            // selectFormData(members_obj);
+                            selectFormData(members_obj);
 
                         } else {
                             viewGenerator.addDynamicCheckRdioButtons(beardDataList, rgBeard, llcbViewBeard);
@@ -616,4 +856,50 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity {
     }
 
 
+    @Override
+    public void onMultiChoiceSave(List<WebArd> s, int which) {
+        if (which == 1) {
+
+            relocationDataList.clear();
+            relocationDataList.addAll(s);
+
+
+            MarryMax max = new MarryMax(null);
+
+            tvMcMyChoiceRelocation.setText(max.getSelectedTextFromList(relocationDataList, "My Choice Relocation"));
+            // Log.e("selected id is", max.getSelectedIdsFromList(educationDataList) + "");
+        }
+
+        /*  else if (which == 2) {
+
+            occupationDataList.clear();
+            occupationDataList.addAll(s);
+
+
+            MarryMax max = new MarryMax(null);
+
+            tvMcMyChoiceOccupation.setText(max.getSelectedTextFromList(occupationDataList, "My Choice Occupation"));
+            //  Log.e("selected id is", max.getSelectedIdsFromList(occupationDataList) + "");
+        } else if (which == 3) {
+
+            myChoiceLanguageDataList.clear();
+            myChoiceLanguageDataList.addAll(s);
+
+
+            MarryMax max = new MarryMax(null);
+
+            tvMutliChoiceMyChoiceLanguage.setText(max.getSelectedTextFromList(myChoiceLanguageDataList, "My Choice Language"));
+            //  Log.e("selected id is", max.getSelectedIdsFromList(occupationDataList) + "");
+        } else if (which == 4) {
+
+            spokenLanguageDataList.clear();
+            spokenLanguageDataList.addAll(s);
+
+
+            MarryMax max = new MarryMax(null);
+
+            tvMutliChoiceMySpokenLanguage.setText(max.getSelectedTextFromList(spokenLanguageDataList, "My Spoken Language"));
+            //  Log.e("selected id is", max.getSelectedIdsFromList(occupationDataList) + "");
+        }*/
+    }
 }

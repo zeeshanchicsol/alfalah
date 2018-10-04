@@ -597,7 +597,7 @@ public class Members {
 
 
     @SerializedName("primary_language_id")
-    private Long primary_language_id;
+    private long primary_language_id;
 
 
     @SerializedName("spoken_language_ids")
@@ -610,6 +610,190 @@ public class Members {
     @SerializedName("choice_language_ids")
     private String choice_language_ids;
 
+
+    @SerializedName("relocation_id")
+    private long relocation_id;
+    @SerializedName("marrytime_id")
+    private long marrytime_id;
+    @SerializedName("want_children_id")
+    private long want_children_id;
+    @SerializedName("physically_challenged_id")
+    private long physically_challenged_id;
+    @SerializedName("revert_id")
+    private long revert_id;
+    @SerializedName("beard_id")
+    private long beard_id;
+    @SerializedName("keep_halal_id")
+    private long keep_halal_id;
+    @SerializedName("salah_id")
+    private long salah_id;
+    @SerializedName("religious_id")
+    private long religious_id;
+
+
+    @SerializedName("choice_relocation_ids")
+    private String choice_relocation_ids;
+    @SerializedName("choice_marrytime_ids")
+    private String choice_marrytime_ids;
+    @SerializedName("choice_want_children_ids")
+    private String choice_want_children_ids;
+    @SerializedName("choice_physically_challenged_ids")
+    private String choice_physically_challenged_ids;
+    @SerializedName("choice_revert_ids")
+    private String choice_revert_ids;
+    @SerializedName("choice_beard_ids")
+    private String choice_beard_ids;
+    @SerializedName("choice_keep_halal_ids")
+    private String choice_keep_halal_ids;
+    @SerializedName("choice_salah_ids")
+    private String choice_salah_ids;
+    @SerializedName("choice_religious_ids")
+    private String choice_religious_ids;
+
+    public long getRelocation_id() {
+        return relocation_id;
+    }
+
+    public void setRelocation_id(long relocation_id) {
+        this.relocation_id = relocation_id;
+    }
+
+    public long getMarrytime_id() {
+        return marrytime_id;
+    }
+
+    public void setMarrytime_id(long marrytime_id) {
+        this.marrytime_id = marrytime_id;
+    }
+
+    public long getWant_children_id() {
+        return want_children_id;
+    }
+
+    public void setWant_children_id(long want_children_id) {
+        this.want_children_id = want_children_id;
+    }
+
+    public long getPhysically_challenged_id() {
+        return physically_challenged_id;
+    }
+
+    public void setPhysically_challenged_id(long physically_challenged_id) {
+        this.physically_challenged_id = physically_challenged_id;
+    }
+
+    public long getRevert_id() {
+        return revert_id;
+    }
+
+    public void setRevert_id(long revert_id) {
+        this.revert_id = revert_id;
+    }
+
+    public long getBeard_id() {
+        return beard_id;
+    }
+
+    public void setBeard_id(long beard_id) {
+        this.beard_id = beard_id;
+    }
+
+    public long getKeep_halal_id() {
+        return keep_halal_id;
+    }
+
+    public void setKeep_halal_id(long keep_halal_id) {
+        this.keep_halal_id = keep_halal_id;
+    }
+
+    public long getSalah_id() {
+        return salah_id;
+    }
+
+    public void setSalah_id(long salah_id) {
+        this.salah_id = salah_id;
+    }
+
+    public long getReligious_id() {
+        return religious_id;
+    }
+
+    public void setReligious_id(long religious_id) {
+        this.religious_id = religious_id;
+    }
+
+    public String getChoice_relocation_ids() {
+        return choice_relocation_ids;
+    }
+
+    public void setChoice_relocation_ids(String choice_relocation_ids) {
+        this.choice_relocation_ids = choice_relocation_ids;
+    }
+
+    public String getChoice_marrytime_ids() {
+        return choice_marrytime_ids;
+    }
+
+    public void setChoice_marrytime_ids(String choice_marrytime_ids) {
+        this.choice_marrytime_ids = choice_marrytime_ids;
+    }
+
+    public String getChoice_want_children_ids() {
+        return choice_want_children_ids;
+    }
+
+    public void setChoice_want_children_ids(String choice_want_children_ids) {
+        this.choice_want_children_ids = choice_want_children_ids;
+    }
+
+    public String getChoice_physically_challenged_ids() {
+        return choice_physically_challenged_ids;
+    }
+
+    public void setChoice_physically_challenged_ids(String choice_physically_challenged_ids) {
+        this.choice_physically_challenged_ids = choice_physically_challenged_ids;
+    }
+
+    public String getChoice_revert_ids() {
+        return choice_revert_ids;
+    }
+
+    public void setChoice_revert_ids(String choice_revert_ids) {
+        this.choice_revert_ids = choice_revert_ids;
+    }
+
+    public String getChoice_beard_ids() {
+        return choice_beard_ids;
+    }
+
+    public void setChoice_beard_ids(String choice_beard_ids) {
+        this.choice_beard_ids = choice_beard_ids;
+    }
+
+    public String getChoice_keep_halal_ids() {
+        return choice_keep_halal_ids;
+    }
+
+    public void setChoice_keep_halal_ids(String choice_keep_halal_ids) {
+        this.choice_keep_halal_ids = choice_keep_halal_ids;
+    }
+
+    public String getChoice_salah_ids() {
+        return choice_salah_ids;
+    }
+
+    public void setChoice_salah_ids(String choice_salah_ids) {
+        this.choice_salah_ids = choice_salah_ids;
+    }
+
+    public String getChoice_religious_ids() {
+        return choice_religious_ids;
+    }
+
+    public void setChoice_religious_ids(String choice_religious_ids) {
+        this.choice_religious_ids = choice_religious_ids;
+    }
+
     public String getChoice_language_ids() {
         return choice_language_ids;
     }
@@ -618,11 +802,11 @@ public class Members {
         this.choice_language_ids = choice_language_ids;
     }
 
-    public Long getPrimary_language_id() {
+    public long getPrimary_language_id() {
         return primary_language_id;
     }
 
-    public void setPrimary_language_id(Long primary_language_id) {
+    public void setPrimary_language_id(long primary_language_id) {
         this.primary_language_id = primary_language_id;
     }
 
@@ -2644,5 +2828,6 @@ public class Members {
     public void set_privilege_type_id(long _privilege_type_id) {
         this._privilege_type_id = _privilege_type_id;
     }
+
 
 }
