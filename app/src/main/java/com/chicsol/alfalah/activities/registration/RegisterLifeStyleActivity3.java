@@ -346,56 +346,93 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity impleme
 
                 if (!checkFieldsSelection(v)) {
 
+                    MarryMax max = new MarryMax(null);
                     ViewGenerator vg = new ViewGenerator(RegisterLifeStyleActivity3.this);
-                    //  WebArd mMySibObj = (WebArd) spMySiblingPosition.getSelectedItem();
-                    ////    String sibling_id = mMySibObj.getId();
 
 
-                    String brothers_count = etNoOfBrothers.getText().toString();
-                    String sisters_count = etNoOfSisters.getText().toString();
+                    WebArd objRel = (WebArd) spMyRelocation.getSelectedItem();
+                    String relocation_id = objRel.getId();
+
+                    WebArd objMarry = (WebArd) spMyMarryTime.getSelectedItem();
+                    String marrytime_id = objMarry.getId();
+
+                    WebArd objWant = (WebArd) spMyWantChildren.getSelectedItem();
+                    String want_children_id = objWant.getId();
+
+                    WebArd objPhysically = (WebArd) spMyPhysicallyChallenged.getSelectedItem();
+                    String physically_challenged_id = objPhysically.getId();
+
+                    WebArd objRevert = (WebArd) spMyRevert.getSelectedItem();
+                    String revert_id = objRevert.getId();
+
+                    WebArd objKeep = (WebArd) spMyKeepHalal.getSelectedItem();
+                    String religious_id = objKeep.getId();
+
+                    WebArd objReligious = (WebArd) spMyReligious.getSelectedItem();
+                    String keep_halal_id = objReligious.getId();
 
 
-                    String family_values_id = String.valueOf(rgBeard.getCheckedRadioButtonId());
-                    String choice_family_values_ids = vg.getSelectionFromCheckbox(llcbViewBeard);
+                    String beard_id = String.valueOf(rgBeard.getCheckedRadioButtonId());
+                    String choice_beard_ids = vg.getSelectionFromCheckbox(llcbViewBeard);
 
-                    String living_arrangement_id = String.valueOf(rgSalah.getCheckedRadioButtonId());
-                    String choice_living_arangment_ids = vg.getSelectionFromCheckbox(llcbViewSalah);
+                    String salah_id = String.valueOf(rgSalah.getCheckedRadioButtonId());
+                    String choice_salah_ids = vg.getSelectionFromCheckbox(llcbViewSalah);
 
+                    //==========================================================
+
+
+                    StringBuilder choice_relocation_ids = new StringBuilder();
+                    choice_relocation_ids = max.getSelectedIdsFromList(relocationDataList);
+
+                    StringBuilder choice_marrytime_ids = new StringBuilder();
+                    choice_marrytime_ids = max.getSelectedIdsFromList(marrytimeDataList);
+
+                    StringBuilder choice_want_children_ids = new StringBuilder();
+                    choice_want_children_ids = max.getSelectedIdsFromList(wantchildrenDataList);
+
+                    StringBuilder choice_physically_challenged_ids = new StringBuilder();
+                    choice_physically_challenged_ids = max.getSelectedIdsFromList(physicallychallengedDataList);
+
+                    StringBuilder choice_revert_ids = new StringBuilder();
+                    choice_revert_ids = max.getSelectedIdsFromList(revertDataList);
+
+                    StringBuilder choice_keep_halal_ids = new StringBuilder();
+                    choice_keep_halal_ids = max.getSelectedIdsFromList(keephalalDataList);
+
+                    StringBuilder choice_religious_ids = new StringBuilder();
+                    choice_religious_ids = max.getSelectedIdsFromList(religiousDataList);
 
                     JSONObject params = new JSONObject();
                     try {
+                        params.put("beard_id", beard_id);
+                        params.put("choice_beard_ids", choice_beard_ids);
+
+                        params.put("salah_id", salah_id);
+                        params.put("choice_salah_ids", choice_salah_ids);
+                        ///================================================
+
+                        params.put("relocation_id", relocation_id);
+                        params.put("choice_relocation_ids", choice_relocation_ids.toString());
+
+                        params.put("marrytime_id", marrytime_id);
+                        params.put("choice_marrytime_ids", choice_marrytime_ids);
+
+                        params.put("want_children_id", want_children_id);
+                        params.put("choice_want_children_ids", choice_want_children_ids);
 
 
-                        // params.put("sibling_id", sibling_id);
+                        params.put("physically_challenged_id", physically_challenged_id);
+                        params.put("choice_physically_challenged_ids", choice_physically_challenged_ids);
 
-                        if (TextUtils.isEmpty(brothers_count)) {
-                            brothers_count = "0";
-                        }
-                        if (TextUtils.isEmpty(sisters_count)) {
-                            sisters_count = "0";
-                        }
-                        params.put("brothers_count", brothers_count);
-
-                        params.put("sisters_count", sisters_count);
-
-                        params.put("family_values_id", family_values_id);
-                        params.put("choice_family_values_ids", choice_family_values_ids);
-
-                        params.put("living_arrangement_id", living_arrangement_id);
-                        params.put("choice_living_arangment_ids", choice_living_arangment_ids);
-
-                     /*   params.put("raised_id", raised_id);
-                        params.put("choice_raised_ids", choice_raised_ids);
-
-                        params.put("hijab_id", hijab_id);
-                        params.put("choice_hijab_ids", choice_hijab_ids);
-
-                        params.put("drink_id", drink_id);
-                        params.put("choice_drink_ids", choice_drink_ids);
+                        params.put("revert_id", revert_id);
+                        params.put("choice_revert_ids", choice_revert_ids);
 
 
-                        params.put("smoking_id", smoking_id);
-                        params.put("choice_smoking_ids", choice_smoking_ids);*/
+                        params.put("religious_id", religious_id);
+                        params.put("choice_keep_halal_ids", choice_keep_halal_ids);
+
+                        params.put("keep_halal_id", keep_halal_id);
+                        params.put("choice_religious_ids", choice_religious_ids);
 
 
                         params.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
@@ -474,6 +511,12 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity impleme
 
 
         selectChoices(members_obj.getChoice_relocation_ids(), relocationDataList, tvMcMyChoiceRelocation);
+        selectChoices(members_obj.getChoice_marrytime_ids(), marrytimeDataList, tvMcMyChoiceMarrytime);
+        selectChoices(members_obj.getChoice_want_children_ids(), wantchildrenDataList, tvMcMyChoiceWantChildren);
+        selectChoices(members_obj.getChoice_physically_challenged_ids(), physicallychallengedDataList, tvMcMyChoicePhysicallyChallenged);
+        selectChoices(members_obj.getChoice_revert_ids(), revertDataList, tvMcMyChoiceRevert);
+        selectChoices(members_obj.getChoice_keep_halal_ids(), keephalalDataList, tvMcMyChoiceKeepHalal);
+        selectChoices(members_obj.getChoice_religious_ids(), religiousDataList, tvMcMyChoiceReligious);
 
 
     }
@@ -528,24 +571,103 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity impleme
     private boolean checkFieldsSelection(View v) {
         boolean ck = false;
 
-/*        if (spMySiblingPosition.getSelectedItemId() == 0) {
-            TextView errorText = (TextView) spMySiblingPosition.getSelectedView();
+
+        if (spMyRelocation.getSelectedItemId() == 0) {
+            TextView errorText = (TextView) spMyRelocation.getSelectedView();
             errorText.setError("");
             errorText.setTextColor(getResources().getColor(R.color.colorTextRed));//just to highlight that this is an error
-            errorText.setText("Please select ");
-            Snackbar.make(v, "Please select Sibling Position", Snackbar.LENGTH_SHORT)
+            errorText.setText("Please select Language");
+
+         /*   Snackbar.make(v, "Please select Education", Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show();
+*/
             ck = true;
-        } else*/
+        }
+        if (spMyMarryTime.getSelectedItemId() == 0) {
+            TextView errorText = (TextView) spMyMarryTime.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(getResources().getColor(R.color.colorTextRed));//just to highlight that this is an error
+            errorText.setText("Please select Language");
+
+         /*   Snackbar.make(v, "Please select Education", Snackbar.LENGTH_SHORT)
+                    .setAction("Action", null).show();
+*/
+            ck = true;
+        }
+        if (spMyWantChildren.getSelectedItemId() == 0) {
+            TextView errorText = (TextView) spMyWantChildren.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(getResources().getColor(R.color.colorTextRed));//just to highlight that this is an error
+            errorText.setText("Please select Language");
+
+         /*   Snackbar.make(v, "Please select Education", Snackbar.LENGTH_SHORT)
+                    .setAction("Action", null).show();
+*/
+            ck = true;
+        }
+        if (spMyPhysicallyChallenged.getSelectedItemId() == 0) {
+            TextView errorText = (TextView) spMyPhysicallyChallenged.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(getResources().getColor(R.color.colorTextRed));//just to highlight that this is an error
+            errorText.setText("Please select Physically Challenged");
+
+         /*   Snackbar.make(v, "Please select Education", Snackbar.LENGTH_SHORT)
+                    .setAction("Action", null).show();
+*/
+            ck = true;
+        }
+        if (spMyRevert.getSelectedItemId() == 0) {
+            TextView errorText = (TextView) spMyRevert.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(getResources().getColor(R.color.colorTextRed));//just to highlight that this is an error
+            errorText.setText("Please select Revert");
+
+         /*   Snackbar.make(v, "Please select Education", Snackbar.LENGTH_SHORT)
+                    .setAction("Action", null).show();
+*/
+            ck = true;
+        }
+        if (spMyReligious.getSelectedItemId() == 0) {
+            TextView errorText = (TextView) spMyReligious.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(getResources().getColor(R.color.colorTextRed));//just to highlight that this is an error
+            errorText.setText("Please select Religious");
+
+         /*   Snackbar.make(v, "Please select Education", Snackbar.LENGTH_SHORT)
+                    .setAction("Action", null).show();
+*/
+            ck = true;
+        }
+        if (spMyKeepHalal.getSelectedItemId() == 0) {
+            TextView errorText = (TextView) spMyKeepHalal.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(getResources().getColor(R.color.colorTextRed));//just to highlight that this is an error
+            errorText.setText("Please select Keep Halal");
+
+         /*   Snackbar.make(v, "Please select Education", Snackbar.LENGTH_SHORT)
+                    .setAction("Action", null).show();
+*/
+            ck = true;
+        }
+
+
         if (rgBeard.getCheckedRadioButtonId() == -1) {
-            Snackbar.make(v, "Please select Family Values", Snackbar.LENGTH_SHORT)
+            Snackbar.make(v, "Please select Beard", Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show();
             ck = true;
         } else if (rgSalah.getCheckedRadioButtonId() == -1) {
-            Snackbar.make(v, "Please select Living Arrangements", Snackbar.LENGTH_SHORT)
+            Snackbar.make(v, "Please select Salah", Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show();
             ck = true;
-        } /*else if (rgRaisedWhere.getCheckedRadioButtonId() == -1) {
+        }
+
+
+
+
+
+
+
+        /*else if (rgRaisedWhere.getCheckedRadioButtonId() == -1) {
             Snackbar.make(v, "Please select Raised Where", Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show();
             ck = true;
@@ -868,38 +990,66 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity impleme
 
             tvMcMyChoiceRelocation.setText(max.getSelectedTextFromList(relocationDataList, "My Choice Relocation"));
             // Log.e("selected id is", max.getSelectedIdsFromList(educationDataList) + "");
-        }
+        } else if (which == 2) {
 
-        /*  else if (which == 2) {
-
-            occupationDataList.clear();
-            occupationDataList.addAll(s);
+            marrytimeDataList.clear();
+            marrytimeDataList.addAll(s);
 
 
             MarryMax max = new MarryMax(null);
 
-            tvMcMyChoiceOccupation.setText(max.getSelectedTextFromList(occupationDataList, "My Choice Occupation"));
+            tvMcMyChoiceMarrytime.setText(max.getSelectedTextFromList(marrytimeDataList, "My Choice Marrytime"));
             //  Log.e("selected id is", max.getSelectedIdsFromList(occupationDataList) + "");
         } else if (which == 3) {
 
-            myChoiceLanguageDataList.clear();
-            myChoiceLanguageDataList.addAll(s);
+            wantchildrenDataList.clear();
+            wantchildrenDataList.addAll(s);
 
 
             MarryMax max = new MarryMax(null);
 
-            tvMutliChoiceMyChoiceLanguage.setText(max.getSelectedTextFromList(myChoiceLanguageDataList, "My Choice Language"));
+            tvMcMyChoiceWantChildren.setText(max.getSelectedTextFromList(wantchildrenDataList, "My Choice Want Children"));
             //  Log.e("selected id is", max.getSelectedIdsFromList(occupationDataList) + "");
         } else if (which == 4) {
 
-            spokenLanguageDataList.clear();
-            spokenLanguageDataList.addAll(s);
+            physicallychallengedDataList.clear();
+            physicallychallengedDataList.addAll(s);
 
 
             MarryMax max = new MarryMax(null);
 
-            tvMutliChoiceMySpokenLanguage.setText(max.getSelectedTextFromList(spokenLanguageDataList, "My Spoken Language"));
+            tvMcMyChoicePhysicallyChallenged.setText(max.getSelectedTextFromList(physicallychallengedDataList, "My Choice Physically Challenged"));
             //  Log.e("selected id is", max.getSelectedIdsFromList(occupationDataList) + "");
-        }*/
+        } else if (which == 5) {
+
+            revertDataList.clear();
+            revertDataList.addAll(s);
+
+
+            MarryMax max = new MarryMax(null);
+
+            tvMcMyChoiceRevert.setText(max.getSelectedTextFromList(revertDataList, "My Choice Revert"));
+            //  Log.e("selected id is", max.getSelectedIdsFromList(occupationDataList) + "");
+        } else if (which == 6) {
+
+            keephalalDataList.clear();
+            keephalalDataList.addAll(s);
+
+
+            MarryMax max = new MarryMax(null);
+
+            tvMcMyChoiceKeepHalal.setText(max.getSelectedTextFromList(keephalalDataList, "My Choice Keep Halal"));
+            //  Log.e("selected id is", max.getSelectedIdsFromList(occupationDataList) + "");
+        } else if (which == 7) {
+
+            religiousDataList.clear();
+            religiousDataList.addAll(s);
+
+
+            MarryMax max = new MarryMax(null);
+
+            tvMcMyChoiceReligious.setText(max.getSelectedTextFromList(religiousDataList, "My Choice Religious"));
+            //  Log.e("selected id is", max.getSelectedIdsFromList(occupationDataList) + "");
+        }
     }
 }
