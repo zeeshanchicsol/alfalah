@@ -891,7 +891,7 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity impleme
 
         Log.e("Params", "" + params);
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.PUT,
-                Urls.updateLifestyleUrl2, params,
+                Urls.updateLifestyleUrl3, params,
                 new Response.Listener<JSONObject>() {
 
                     @Override
