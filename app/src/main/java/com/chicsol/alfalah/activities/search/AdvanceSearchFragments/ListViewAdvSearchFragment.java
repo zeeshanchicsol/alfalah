@@ -97,6 +97,7 @@ public class ListViewAdvSearchFragment extends Fragment {
         dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu6, R.drawable.ic_adv_s_menu6_active, "Showers", new GeographyFragment()));
         dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu7, R.drawable.ic_adv_s_menu7_active, "Showers", new LifeStyle1Fragment()));
         dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu7, R.drawable.ic_adv_s_menu7_active, "Showers", new LifeStyle2Fragment()));
+        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu7, R.drawable.ic_adv_s_menu7_active, "Showers", new LifeStyle3Fragment()));
 
 
         //  dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu3, "Snow"));

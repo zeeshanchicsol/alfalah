@@ -15,78 +15,241 @@
         <com.chicsol.alfalah.widgets.mTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:layout_marginLeft="7dp"
             android:layout_marginTop="10dp"
-            android:text="Sibling Position"
-            android:textSize="@dimen/text_size_adv_search_headings"
-
-            android:textColor="@color/colorUserProfileRed" />
-
-
-    <LinearLayout
-        android:id="@+id/LinearLayoutAdvSearchSiblingPosition"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-
-
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="5dp"
-            android:background="#d7d7d7"></View>
-
-        <com.chicsol.alfalah.widgets.mTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/text_size_adv_search_headings"
-
-            android:textStyle="bold"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="10dp"
-            android:text="Smoking"
-            android:textColor="@color/colorUserProfileRed" />
-    <LinearLayout
-        android:id="@+id/LinearLayoutAdvSearchSmoking"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="5dp"
-            android:background="#d7d7d7"></View>
-
-        <com.chicsol.alfalah.widgets.mTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="10dp"
-            android:textSize="@dimen/text_size_adv_search_headings"
-
-
-            android:text="Drink"
+            android:text="Relocation "
             android:textColor="@color/colorUserProfileRed"
-            android:id="@+id/mTextView16" />
+            android:textSize="@dimen/text_size_adv_search_headings"
 
-    <LinearLayout
-        android:id="@+id/LinearLayoutAdvSearchDrink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+            android:textStyle="bold" />
 
 
+        <LinearLayout
+            android:id="@+id/LinearLayoutAdvSearchRelocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#d7d7d7"></View>
+
+        <com.chicsol.alfalah.widgets.mTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+
+            android:layout_marginTop="10dp"
+            android:text="Marrytime"
+            android:textColor="@color/colorUserProfileRed"
+            android:textSize="@dimen/text_size_adv_search_headings"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutAdvSearchMarrytime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#d7d7d7"></View>
+
+        <com.chicsol.alfalah.widgets.mTextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:text="Want Children"
+
+
+            android:textColor="@color/colorUserProfileRed"
+            android:textSize="@dimen/text_size_adv_search_headings"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutAdvSearchWantChildren"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#d7d7d7"></View>
+
+        <com.chicsol.alfalah.widgets.mTextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:text="Physically Challenged "
+
+
+            android:textColor="@color/colorUserProfileRed"
+            android:textSize="@dimen/text_size_adv_search_headings"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutAdvSearchPhysicallyChallenged"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#d7d7d7"></View>
+
+        <com.chicsol.alfalah.widgets.mTextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:text="Revert "
+
+
+            android:textColor="@color/colorUserProfileRed"
+            android:textSize="@dimen/text_size_adv_search_headings"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutAdvSearchRevert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#d7d7d7"></View>
+
+        <com.chicsol.alfalah.widgets.mTextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:text="Beard "
+
+
+            android:textColor="@color/colorUserProfileRed"
+            android:textSize="@dimen/text_size_adv_search_headings"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutAdvSearchBeard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#d7d7d7"></View>
+
+        <com.chicsol.alfalah.widgets.mTextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:text="Keep halal "
+
+
+            android:textColor="@color/colorUserProfileRed"
+            android:textSize="@dimen/text_size_adv_search_headings"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutAdvSearchKeepHalal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#d7d7d7"></View>
+
+        <com.chicsol.alfalah.widgets.mTextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:text="Salah "
+
+
+            android:textColor="@color/colorUserProfileRed"
+            android:textSize="@dimen/text_size_adv_search_headings"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutAdvSearchSalah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#d7d7d7"></View>
+
+        <com.chicsol.alfalah.widgets.mTextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:text="Religious "
+
+
+            android:textColor="@color/colorUserProfileRed"
+            android:textSize="@dimen/text_size_adv_search_headings"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutAdvSearchReligious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
         </LinearLayout>
 

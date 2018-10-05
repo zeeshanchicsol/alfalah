@@ -25,7 +25,8 @@ import static com.chicsol.alfalah.utils.Constants.defaultSelectionsObj;
 import static com.chicsol.alfalah.utils.Constants.jsonArraySearch;
 
 public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnCheckedChangeListener {
-    private LinearLayout LinearLayoutAdvSearchSiblingPosition, LinearLayoutAdvSearchSmoking, LinearLayoutAdvSearchDrink;
+    private LinearLayout LinearLayoutAdvSearchRelocation, LinearLayoutAdvSearchMarrytime, LinearLayoutAdvSearchWantChildren,
+            LinearLayoutAdvSearchPhysicallyChallenged,LinearLayoutAdvSearchRevert,LinearLayoutAdvSearchBeard,LinearLayoutAdvSearchKeepHalal,LinearLayoutAdvSearchSalah,LinearLayoutAdvSearchReligious;
 
     private ViewGenerator viewGenerator;
 
@@ -39,9 +40,9 @@ public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnChe
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.adv_search_fragment_lifestyle2,
+        View view = inflater.inflate(R.layout.adv_search_fragment_lifestyle3,
                 container, false);
-        initialize(view);
+         initialize(view);
 
         return view;
     }
@@ -49,16 +50,24 @@ public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnChe
     @Override
     public void onResume() {
         super.onResume();
-        setSelection();
-        setListeners();
+      //   setSelection();
+       //    setListeners();
     }
 
     private void initialize(View view) {
 
         viewGenerator = new ViewGenerator(getContext());
-        LinearLayoutAdvSearchSiblingPosition = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchSiblingPosition);
-        LinearLayoutAdvSearchSmoking = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchSmoking);
-        LinearLayoutAdvSearchDrink = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchDrink);
+        LinearLayoutAdvSearchRelocation = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchRelocation);
+        LinearLayoutAdvSearchMarrytime = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchMarrytime);
+        LinearLayoutAdvSearchWantChildren = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchWantChildren);
+
+        LinearLayoutAdvSearchPhysicallyChallenged = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchPhysicallyChallenged);
+        LinearLayoutAdvSearchRevert = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchRevert);
+        LinearLayoutAdvSearchBeard = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchBeard);
+        LinearLayoutAdvSearchKeepHalal = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchKeepHalal);
+
+        LinearLayoutAdvSearchSalah = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchSalah);
+        LinearLayoutAdvSearchReligious = (LinearLayout) view.findViewById(R.id.LinearLayoutAdvSearchReligious);
 
 
         Gson gsonc;
@@ -69,15 +78,32 @@ public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnChe
 
 
         try {
-            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(20).toString(), listType);
-            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList0, LinearLayoutAdvSearchSiblingPosition, "sibling");
+            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(26).toString(), listType);
+            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList0, LinearLayoutAdvSearchRelocation, "relocation");
 
-            List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(21).toString(), listType);
-            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList1, LinearLayoutAdvSearchSmoking, "smoke");
+            List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(27).toString(), listType);
+            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList1, LinearLayoutAdvSearchMarrytime, "marrytime");
 
+            List<WebArd> dataList2 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(28).toString(), listType);
+            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList2, LinearLayoutAdvSearchWantChildren, "wantchildren");
 
-            List<WebArd> dataList2 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(4).toString(), listType);
-            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList2, LinearLayoutAdvSearchDrink, "drink");
+            List<WebArd> dataList3 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(29).toString(), listType);
+            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList3, LinearLayoutAdvSearchPhysicallyChallenged, "physicallychallenged");
+
+            List<WebArd> dataList4 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(30).toString(), listType);
+            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList4, LinearLayoutAdvSearchRevert, "revert");
+
+            List<WebArd> dataList5 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(31).toString(), listType);
+            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList5, LinearLayoutAdvSearchBeard, "beard");
+
+            List<WebArd> dataList6 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(32).toString(), listType);
+            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList6, LinearLayoutAdvSearchKeepHalal, "keephalal");
+
+            List<WebArd> dataList7 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(33).toString(), listType);
+            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList7, LinearLayoutAdvSearchSalah, "salah");
+
+            List<WebArd> dataList8 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(34).toString(), listType);
+            viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList8, LinearLayoutAdvSearchReligious, "religious");
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -88,9 +114,17 @@ public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnChe
 
         if (defaultSelectionsObj != null) {
 
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchSiblingPosition, defaultSelectionsObj.get_choice_sibling_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchSmoking, defaultSelectionsObj.get_choice_smoking_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchDrink, defaultSelectionsObj.get_choice_drink_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchRelocation, defaultSelectionsObj.getChoice_relocation_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchMarrytime, defaultSelectionsObj.getChoice_marrytime_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchWantChildren, defaultSelectionsObj.getChoice_want_children_ids());
+
+          /*  viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchPhysicallyChallenged, defaultSelectionsObj.getChoice_relocation_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchMarrytime, defaultSelectionsObj.getChoice_marrytime_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchWantChildren, defaultSelectionsObj.getChoice_want_children_ids());
+
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchRelocation, defaultSelectionsObj.getChoice_relocation_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchMarrytime, defaultSelectionsObj.getChoice_marrytime_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchWantChildren, defaultSelectionsObj.getChoice_want_children_ids());*/
 
         }
 
@@ -98,27 +132,27 @@ public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnChe
 
     private void setListeners() {
         {
-            int childcount = LinearLayoutAdvSearchSiblingPosition.getChildCount();
+            int childcount = LinearLayoutAdvSearchRelocation.getChildCount();
             for (int i = 0; i < childcount; i++) {
-                View sv = LinearLayoutAdvSearchSiblingPosition.getChildAt(i);
+                View sv = LinearLayoutAdvSearchRelocation.getChildAt(i);
                 if (sv instanceof CheckBox) {
                     ((CheckBox) sv).setOnCheckedChangeListener(this);
                 }
             }
         }
         {
-            int childcount = LinearLayoutAdvSearchSmoking.getChildCount();
+            int childcount = LinearLayoutAdvSearchMarrytime.getChildCount();
             for (int i = 0; i < childcount; i++) {
-                View sv = LinearLayoutAdvSearchSmoking.getChildAt(i);
+                View sv = LinearLayoutAdvSearchMarrytime.getChildAt(i);
                 if (sv instanceof CheckBox) {
                     ((CheckBox) sv).setOnCheckedChangeListener(this);
                 }
             }
         }
         {
-            int childcount = LinearLayoutAdvSearchDrink.getChildCount();
+            int childcount = LinearLayoutAdvSearchWantChildren.getChildCount();
             for (int i = 0; i < childcount; i++) {
-                View sv = LinearLayoutAdvSearchDrink.getChildAt(i);
+                View sv = LinearLayoutAdvSearchWantChildren.getChildAt(i);
                 if (sv instanceof CheckBox) {
                     ((CheckBox) sv).setOnCheckedChangeListener(this);
                 }
@@ -132,17 +166,17 @@ public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnChe
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
         if (buttonView.getTag() != null) {
-          //  Log.e("sibling ids",""+ defaultSelectionsObj.get_choice_raised_ids());
+            //  Log.e("sibling ids",""+ defaultSelectionsObj.get_choice_raised_ids());
             if (buttonView.getTag().equals("sibling")) {
-                defaultSelectionsObj.set_choice_sibling_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchSiblingPosition));
+                defaultSelectionsObj.set_choice_sibling_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchRelocation));
 
 
             }
             if (buttonView.getTag().equals("smoke")) {
-                defaultSelectionsObj.set_choice_smoking_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchSmoking));
+                defaultSelectionsObj.set_choice_smoking_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchMarrytime));
             }
             if (buttonView.getTag().equals("drink")) {
-                defaultSelectionsObj.set_choice_drink_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchDrink));
+                defaultSelectionsObj.set_choice_drink_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchWantChildren));
             }
 
 
