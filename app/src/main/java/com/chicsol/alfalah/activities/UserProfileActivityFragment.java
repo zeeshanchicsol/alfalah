@@ -550,10 +550,10 @@ public class UserProfileActivityFragment extends Fragment implements PicturesFra
 
         }
 
-        if (BuildConfig.FLAVOR.equals("alfalah")) {
+       /* if (BuildConfig.FLAVOR.equals("alfalah")) {
             MenuItem menuItem = popupUp.getMenu().findItem(R.id.menu_up_ask_questions);
             menuItem.setVisible(false);
-        }
+        }*/
 
 
        /* if (member.get_is == 1) {
@@ -729,7 +729,7 @@ public class UserProfileActivityFragment extends Fragment implements PicturesFra
                 popupUp.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
-                            case R.id.menu_up_ask_questions:
+                       /*     case R.id.menu_up_ask_questions:
                                 //  Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show();
                                 boolean qcheck = marryMax.statusBaseChecks(member, context, 7, getFragmentManager(), UserProfileActivityFragment.this, v, null, null, null, null);
                                 if (qcheck) {
@@ -737,7 +737,7 @@ public class UserProfileActivityFragment extends Fragment implements PicturesFra
                                     intent.putExtra("userpath", userpath);
                                     startActivity(intent);
                                 }
-                                break;
+                                break;*/
 
 
                             case R.id.menu_up_request_permissions:

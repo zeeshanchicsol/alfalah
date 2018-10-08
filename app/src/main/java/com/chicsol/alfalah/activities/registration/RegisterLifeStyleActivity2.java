@@ -62,7 +62,7 @@ public class RegisterLifeStyleActivity2 extends BaseRegistrationActivity {
     private ProgressDialog pDialog;
 
 
-    private FloatingActionButton fabLifeStyle1, fabLifeStyle2;
+    private FloatingActionButton fabLifeStyle1, fabLifeStyle2, fabLifeStyle3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +109,7 @@ public class RegisterLifeStyleActivity2 extends BaseRegistrationActivity {
 
         fabLifeStyle1 = (FloatingActionButton) findViewById(R.id.fabLifeStyle1);
         fabLifeStyle2 = (FloatingActionButton) findViewById(R.id.fabLifeStyle2);
+        fabLifeStyle3 = (FloatingActionButton) findViewById(R.id.fabLifeStyle3);
 
         familyValuesDataList = new ArrayList<>();
         livingArrangementsDataList = new ArrayList<>();
@@ -164,6 +165,14 @@ public class RegisterLifeStyleActivity2 extends BaseRegistrationActivity {
                 marryMax.getProfileProgress(cls, RegisterLifeStyleActivity2.this, getApplicationContext(), SharedPreferenceManager.getUserObject(getApplicationContext()));
             }
         });
+        fabLifeStyle3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Class cls = RegisterLifeStyleActivity3.class;
+                marryMax.getProfileProgress(cls, RegisterLifeStyleActivity2.this, getApplicationContext(), SharedPreferenceManager.getUserObject(getApplicationContext()));
+            }
+        });
+
 
         bt_register_free.setOnClickListener(new View.OnClickListener() {
             @Override

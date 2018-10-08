@@ -4,7 +4,7 @@
             "outputFile": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/a73716a96c043254b45abcb5d4372baf/res/values-v24/values-v24.xml",
+                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/fc07aaa53f5171e2a254fee2b71bbacb/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/90af972411fe8310e9cf38ac3612c685/res/values-v24/values-v24.xml",
+                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/d74d9748319307f02cf49685f84f2214/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
