@@ -1593,7 +1593,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
+
                     android:layout_marginTop="10dp">
 
                     <com.chicsol.alfalah.widgets.mTextView
@@ -1605,6 +1605,53 @@
 
                     <com.chicsol.alfalah.widgets.mTextView
                         android:id="@+id/TextViewUPChoiceDrink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Languages: "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:id="@+id/TextViewUPChoiceLanguages"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp">
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Spoken Laguages: "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:id="@+id/TextViewUPChoiceSpokenLanguage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 

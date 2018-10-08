@@ -26,7 +26,7 @@ import static com.chicsol.alfalah.utils.Constants.jsonArraySearch;
 
 public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnCheckedChangeListener {
     private LinearLayout LinearLayoutAdvSearchRelocation, LinearLayoutAdvSearchMarrytime, LinearLayoutAdvSearchWantChildren,
-            LinearLayoutAdvSearchPhysicallyChallenged,LinearLayoutAdvSearchRevert,LinearLayoutAdvSearchBeard,LinearLayoutAdvSearchKeepHalal,LinearLayoutAdvSearchSalah,LinearLayoutAdvSearchReligious;
+            LinearLayoutAdvSearchPhysicallyChallenged, LinearLayoutAdvSearchRevert, LinearLayoutAdvSearchBeard, LinearLayoutAdvSearchKeepHalal, LinearLayoutAdvSearchSalah, LinearLayoutAdvSearchReligious;
 
     private ViewGenerator viewGenerator;
 
@@ -42,7 +42,7 @@ public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnChe
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.adv_search_fragment_lifestyle3,
                 container, false);
-         initialize(view);
+        initialize(view);
 
         return view;
     }
@@ -50,8 +50,8 @@ public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnChe
     @Override
     public void onResume() {
         super.onResume();
-      //   setSelection();
-       //    setListeners();
+        setSelection();
+        setListeners();
     }
 
     private void initialize(View view) {
@@ -118,13 +118,16 @@ public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnChe
             viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchMarrytime, defaultSelectionsObj.getChoice_marrytime_ids());
             viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchWantChildren, defaultSelectionsObj.getChoice_want_children_ids());
 
-          /*  viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchPhysicallyChallenged, defaultSelectionsObj.getChoice_relocation_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchMarrytime, defaultSelectionsObj.getChoice_marrytime_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchWantChildren, defaultSelectionsObj.getChoice_want_children_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchPhysicallyChallenged, defaultSelectionsObj.getChoice_physically_challenged_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchRevert, defaultSelectionsObj.getChoice_revert_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchBeard, defaultSelectionsObj.getChoice_beard_ids());
 
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchRelocation, defaultSelectionsObj.getChoice_relocation_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchMarrytime, defaultSelectionsObj.getChoice_marrytime_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchWantChildren, defaultSelectionsObj.getChoice_want_children_ids());*/
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchKeepHalal, defaultSelectionsObj.getChoice_keep_halal_ids());
+
+
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchSalah, defaultSelectionsObj.getChoice_salah_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchReligious, defaultSelectionsObj.getChoice_religious_ids());
+
 
         }
 
@@ -159,6 +162,61 @@ public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnChe
             }
         }
 
+        {
+            int childcount = LinearLayoutAdvSearchPhysicallyChallenged.getChildCount();
+            for (int i = 0; i < childcount; i++) {
+                View sv = LinearLayoutAdvSearchPhysicallyChallenged.getChildAt(i);
+                if (sv instanceof CheckBox) {
+                    ((CheckBox) sv).setOnCheckedChangeListener(this);
+                }
+            }
+        }
+        {
+            int childcount = LinearLayoutAdvSearchRevert.getChildCount();
+            for (int i = 0; i < childcount; i++) {
+                View sv = LinearLayoutAdvSearchRevert.getChildAt(i);
+                if (sv instanceof CheckBox) {
+                    ((CheckBox) sv).setOnCheckedChangeListener(this);
+                }
+            }
+        }
+        {
+            int childcount = LinearLayoutAdvSearchBeard.getChildCount();
+            for (int i = 0; i < childcount; i++) {
+                View sv = LinearLayoutAdvSearchBeard.getChildAt(i);
+                if (sv instanceof CheckBox) {
+                    ((CheckBox) sv).setOnCheckedChangeListener(this);
+                }
+            }
+        }
+        {
+            int childcount = LinearLayoutAdvSearchKeepHalal.getChildCount();
+            for (int i = 0; i < childcount; i++) {
+                View sv = LinearLayoutAdvSearchKeepHalal.getChildAt(i);
+                if (sv instanceof CheckBox) {
+                    ((CheckBox) sv).setOnCheckedChangeListener(this);
+                }
+            }
+        }
+        {
+            int childcount = LinearLayoutAdvSearchSalah.getChildCount();
+            for (int i = 0; i < childcount; i++) {
+                View sv = LinearLayoutAdvSearchSalah.getChildAt(i);
+                if (sv instanceof CheckBox) {
+                    ((CheckBox) sv).setOnCheckedChangeListener(this);
+                }
+            }
+        }
+        {
+            int childcount = LinearLayoutAdvSearchReligious.getChildCount();
+            for (int i = 0; i < childcount; i++) {
+                View sv = LinearLayoutAdvSearchReligious.getChildAt(i);
+                if (sv instanceof CheckBox) {
+                    ((CheckBox) sv).setOnCheckedChangeListener(this);
+                }
+            }
+        }
+
 
     }
 
@@ -167,16 +225,34 @@ public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnChe
 
         if (buttonView.getTag() != null) {
             //  Log.e("sibling ids",""+ defaultSelectionsObj.get_choice_raised_ids());
-            if (buttonView.getTag().equals("sibling")) {
-                defaultSelectionsObj.set_choice_sibling_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchRelocation));
 
+            if (buttonView.getTag().equals("relocation")) {
+                defaultSelectionsObj.setChoice_relocation_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchRelocation));
 
             }
-            if (buttonView.getTag().equals("smoke")) {
-                defaultSelectionsObj.set_choice_smoking_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchMarrytime));
+            if (buttonView.getTag().equals("marrytime")) {
+                defaultSelectionsObj.setChoice_marrytime_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchMarrytime));
             }
-            if (buttonView.getTag().equals("drink")) {
-                defaultSelectionsObj.set_choice_drink_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchWantChildren));
+            if (buttonView.getTag().equals("wantchildren")) {
+                defaultSelectionsObj.setChoice_want_children_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchWantChildren));
+            }
+            if (buttonView.getTag().equals("physicallychallenged")) {
+                defaultSelectionsObj.setChoice_physically_challenged_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchPhysicallyChallenged));
+            }
+            if (buttonView.getTag().equals("revert")) {
+                defaultSelectionsObj.setChoice_revert_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchRevert));
+            }
+            if (buttonView.getTag().equals("beard")) {
+                defaultSelectionsObj.setChoice_beard_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchBeard));
+            }
+            if (buttonView.getTag().equals("keephalal")) {
+                defaultSelectionsObj.setChoice_keep_halal_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchKeepHalal));
+            }
+            if (buttonView.getTag().equals("salah")) {
+                defaultSelectionsObj.setChoice_keep_halal_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchSalah));
+            }
+            if (buttonView.getTag().equals("religious")) {
+                defaultSelectionsObj.setChoice_religious_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchReligious));
             }
 
 
