@@ -4088,12 +4088,12 @@
         "source": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/src/main/res/layout/app_bar_main_bottom_navigation.xml"
     },
     {
-        "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/layout_registration_top_bar.xml.flat",
-        "source": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/src/main/res/layout/registration_top_bar.xml"
-    },
-    {
         "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/layout_adv_search_fragment_lifestyle3.xml.flat",
         "source": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/src/main/res/layout/adv_search_fragment_lifestyle3.xml"
+    },
+    {
+        "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/layout_registration_top_bar.xml.flat",
+        "source": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/src/main/res/layout/registration_top_bar.xml"
     },
     {
         "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/raw_joda_antarctica_mawson.flat",

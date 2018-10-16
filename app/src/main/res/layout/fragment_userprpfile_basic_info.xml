@@ -20,8 +20,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:paddingBottom="5dp"
                 android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:text="Basic Information"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/colorUserProfileRed" />
@@ -43,8 +43,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorUserProfileRed"
-                    android:paddingBottom="5dp"
                     android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:src="@drawable/ic_person_white_24dp" />
 
             </LinearLayout>
@@ -104,7 +104,7 @@
                         android:textSize="@dimen/text_size_up_descripton" />
 
                 </LinearLayout>
-            <!--    android:textColor="#2e2e2e"-->
+                <!--    android:textColor="#2e2e2e"-->
 
                 <LinearLayout
                     android:id="@+id/LinearLayoutUserProfileMTO"
@@ -221,8 +221,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorUserProfileRed"
-                    android:paddingBottom="5dp"
                     android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:src="@drawable/ic_web_white_24dp" />
 
             </LinearLayout>
@@ -419,8 +419,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorUserProfileRed"
-                    android:paddingBottom="5dp"
                     android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:src="@drawable/ic_incognito_white_24dp" />
 
             </LinearLayout>
@@ -565,7 +565,7 @@
                 </LinearLayout>
 
 
-                <LinearLayout
+                <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp">
@@ -586,7 +586,7 @@
                         android:textStyle="bold" />
 
 
-                </LinearLayout>
+                </LinearLayout>-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -689,6 +689,121 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
+                        android:text="Relocation Type: "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:id="@+id/TextViewUPRelocationType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Marrytime Type : "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:id="@+id/TextViewUPMarrytimeType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Want Children Type : "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:id="@+id/TextViewUPWantChildrenType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Keep Halal Type: "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:id="@+id/TextViewUPKeepHalalType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Religious Type: "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:id="@+id/TextViewUPReligiousType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
                         android:text="Martial Status: "
                         android:textColor="@color/colorBlack" />
 
@@ -726,28 +841,28 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
+                <!--        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
 
-                    <com.chicsol.alfalah.widgets.mTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                            <com.chicsol.alfalah.widgets.mTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
 
-                        android:text="Children Detail: "
-                        android:textColor="@color/colorBlack" />
+                                android:text="Children Detail: "
+                                android:textColor="@color/colorBlack" />
 
-                    <com.chicsol.alfalah.widgets.mTextView
-                        android:id="@+id/TextViewUPChildrenDetail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                            <com.chicsol.alfalah.widgets.mTextView
+                                android:id="@+id/TextViewUPChildrenDetail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
 
-                        android:textColor="@color/colorBlack"
-                        android:textStyle="bold" />
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold" />
 
 
-                </LinearLayout>
+                        </LinearLayout>-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -934,6 +1049,125 @@
                 </LinearLayout>
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Language: "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:id="@+id/TextViewUPLanguage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Physically challenged Type: "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:id="@+id/TextViewUPPhysicallyChallengeType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Revert Type: "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:id="@+id/TextViewUPRevertType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Beard Type: "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:id="@+id/TextViewUPBeardType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Sslah Type: "
+                        android:textColor="@color/colorBlack" />
+
+                    <com.chicsol.alfalah.widgets.mTextView
+                        android:id="@+id/TextViewUPSalahType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -959,8 +1193,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorUserProfileRed"
-                    android:paddingBottom="5dp"
                     android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:src="@drawable/ic_xbox_controller_white_24dp" />
 
             </LinearLayout>
@@ -1001,8 +1235,8 @@
                     android:id="@+id/FlexboxLaoutInterests"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
 
                     app:alignContent="stretch"
                     app:alignItems="stretch"
@@ -1039,8 +1273,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorGreenButtonHighlight"
-                    android:paddingBottom="5dp"
                     android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:src="@drawable/ic_web_white_24dp" />
 
             </LinearLayout>
@@ -1236,8 +1470,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorGreenButtonHighlight"
-                    android:paddingBottom="5dp"
                     android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:src="@drawable/ic_incognito_white_24dp" />
 
             </LinearLayout>
@@ -1613,11 +1847,11 @@
 
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    >
+                    android:layout_marginTop="10dp">
 
                     <com.chicsol.alfalah.widgets.mTextView
                         android:layout_width="wrap_content"
@@ -1687,8 +1921,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorGreenButtonHighlight"
-                    android:paddingBottom="5dp"
                     android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:src="@drawable/ic_vector_difference_white_24dp" />
 
             </LinearLayout>
@@ -1772,8 +2006,8 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@color/colorUserProfileSeparationLine"></View>
 
             </LinearLayout>

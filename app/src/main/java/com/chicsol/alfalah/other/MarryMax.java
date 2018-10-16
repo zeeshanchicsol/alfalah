@@ -416,8 +416,8 @@ public class MarryMax {
                     memResultsObj.setUserpath(member.getUserpath());
                     Intent intent = new Intent(context, UserProfileActivityWithSlider.class);
 
-
-                    if (TAG.equals("SavedNotes") || TAG.equals("AccpetedMembers") || TAG.equals("FavouriteMembers")) {
+                    // uncomment if slider need to be activated
+                  // if (TAG.equals("SavedNotes") || TAG.equals("AccpetedMembers") || TAG.equals("FavouriteMembers")) {
 
 
                         Gson gsonc;
@@ -439,12 +439,10 @@ public class MarryMax {
 
                         intent.putExtra("selectedposition", "-1");
                         SharedPreferenceManager.setMemberDataList(context, gsonc.toJson(membersDataLista));
-                    } else {
+                  /*  } else {
                         intent.putExtra("selectedposition", selectedPosition);
                         SharedPreferenceManager.setMemberDataList(context, memberDataList);
-                    }
-                  /*  intent.putExtra("selectedposition", selectedPosition);
-                    SharedPreferenceManager.setMemberDataList(context, memberDataList);*/
+                   }*/
 
                     Gson gson = new Gson();
                     intent.putExtra("memresult", gson.toJson(memResultsObj));
@@ -1416,7 +1414,7 @@ public class MarryMax {
             }.getType();
             List<WebArd> dataListHeight = new ArrayList<>();
             try {
-                dataListHeight = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(10).toString(), listType);
+                dataListHeight = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(11).toString(), listType);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

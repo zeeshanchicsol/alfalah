@@ -33,8 +33,8 @@ public class BasicInfoFragment extends Fragment {
     private Members member, memberChoice;
     private mTextView tvDesc, tvMostThankful, tvWhatIdoFor, tvMyStrengths, tvABoutMyChoice, tvAge, tvHeight, tvPhysique, tvComplexion, tvEyeColor, tvHairColor, tvChoiceAge,
             tvChoiceHeight, tvChoicePhysique, tvChoiceComplexion, tvChoiceEyeColor, tvChoiceHairColor;
-    private mTextView tvMyEducation, tvMyEducationField, tvGraduated, tvOccupation, tvEconomy, tvIncome, tvCastSurname, tvRaised, tvFamilyValues, tvHijab, tvLiving, tvMaritalStatus, tvChildren, tvChildrenDetail, tvEthnicity, tvReligiousSect, tvBrothers, tvSisters, tvSiblingPosiiton, tvSmoke, tvDrink,
-            tvChoiceMyEducation, tvChoiceOccupation, tvChoiceEconomy, tvChoiceRaised, tvChoiceFamilyValues, tvChoiceHijab, tvChoiceLiving, tvChoiceMaritalStatus, tvChoiceChildren, tvChoiceEthnicity, tvChoiceReligiousSect, tvChoiceCountry, tvChoiceVisaStatus, tvChoiceSmoke, tvChoiceDrink;
+    private mTextView tvMyEducation, tvMyEducationField, tvGraduated, tvOccupation, tvEconomy, tvIncome, tvCastSurname, tvRaised, tvFamilyValues, tvHijab, tvLiving, tvRelocation, tvMarryTime, tvWantChildren, tvKeepHalal, tvReligious, tvMaritalStatus, tvChildren, tvChildrenDetail, tvEthnicity, tvReligiousSect, tvBrothers, tvSisters, tvSiblingPosiiton, tvSmoke, tvDrink,
+            tvLanguage, tvRevert, tvPhysicallyChallenged, tvBeard, tvSalah, tvChoiceMyEducation, tvChoiceOccupation, tvChoiceEconomy, tvChoiceRaised, tvChoiceFamilyValues, tvChoiceHijab, tvChoiceLiving, tvChoiceMaritalStatus, tvChoiceChildren, tvChoiceEthnicity, tvChoiceReligiousSect, tvChoiceCountry, tvChoiceVisaStatus, tvChoiceSmoke, tvChoiceDrink;
 
     private TextView pref1, pref2, pref3, pref4;
 
@@ -132,7 +132,7 @@ public class BasicInfoFragment extends Fragment {
         tvGraduated = (mTextView) view.findViewById(R.id.TextViewUPGraduatedFrom);
         tvOccupation = (mTextView) view.findViewById(R.id.TextViewUPOccupationDetail);
         tvEconomy = (mTextView) view.findViewById(R.id.TextViewUPEconomy);
-        tvIncome = (mTextView) view.findViewById(R.id.TextViewUPIncome);
+        //   tvIncome = (mTextView) view.findViewById(R.id.TextViewUPIncome);
         tvCastSurname = (mTextView) view.findViewById(R.id.TextViewUPCastSurname);
 
 
@@ -140,9 +140,17 @@ public class BasicInfoFragment extends Fragment {
         tvFamilyValues = (mTextView) view.findViewById(R.id.TextViewUPFamilyValues);
         tvHijab = (mTextView) view.findViewById(R.id.TextViewUPHijaab);
         tvLiving = (mTextView) view.findViewById(R.id.TextViewUPLivingArrangements);
+
+        tvRelocation = (mTextView) view.findViewById(R.id.TextViewUPRelocationType);
+        tvMarryTime = (mTextView) view.findViewById(R.id.TextViewUPMarrytimeType);
+        tvWantChildren = (mTextView) view.findViewById(R.id.TextViewUPWantChildrenType);
+        tvKeepHalal = (mTextView) view.findViewById(R.id.TextViewUPKeepHalalType);
+        tvReligious = (mTextView) view.findViewById(R.id.TextViewUPReligiousType);
+
+
         tvMaritalStatus = (mTextView) view.findViewById(R.id.TextViewUPMaritalStatus);
         tvChildren = (mTextView) view.findViewById(R.id.TextViewUPChildren);
-        tvChildrenDetail = (mTextView) view.findViewById(R.id.TextViewUPChildrenDetail);
+        // tvChildrenDetail = (mTextView) view.findViewById(R.id.TextViewUPChildrenDetail);
         tvEthnicity = (mTextView) view.findViewById(R.id.TextViewUPEthnicity);
         tvReligiousSect = (mTextView) view.findViewById(R.id.TextViewUPReligiousSect);
         tvBrothers = (mTextView) view.findViewById(R.id.TextViewUPBrothers);
@@ -150,6 +158,13 @@ public class BasicInfoFragment extends Fragment {
         tvSiblingPosiiton = (mTextView) view.findViewById(R.id.TextViewUPSiblingPosition);
         tvSmoke = (mTextView) view.findViewById(R.id.TextViewUPSmoke);
         tvDrink = (mTextView) view.findViewById(R.id.TextViewUPDrink);
+
+        tvLanguage = (mTextView) view.findViewById(R.id.TextViewUPLanguage);
+        tvRevert = (mTextView) view.findViewById(R.id.TextViewUPRevertType);
+        tvPhysicallyChallenged = (mTextView) view.findViewById(R.id.TextViewUPPhysicallyChallengeType);
+        tvBeard = (mTextView) view.findViewById(R.id.TextViewUPBeardType);
+        tvSalah = (mTextView) view.findViewById(R.id.TextViewUPSalahType);
+
 
         //choice
         tvChoiceMyEducation = (mTextView) view.findViewById(R.id.TextViewUPChoiceEducationDetail);
@@ -340,7 +355,7 @@ public class BasicInfoFragment extends Fragment {
             tvGraduated.setText(member.get_notes() + in);
             tvOccupation.setText(member.get_occupation_types());
             tvEconomy.setText(member.get_about_type());
-            tvIncome.setText(member.get_income_level());
+            // tvIncome.setText(member.get_income_level());
             tvCastSurname.setText(member.get_caste_name());
 
 
@@ -348,9 +363,17 @@ public class BasicInfoFragment extends Fragment {
             tvFamilyValues.setText(member.get_family_values_types());
             tvHijab.setText(member.get_hijab_types());
             tvLiving.setText(member.get_living_arrabgements_types());
+
+            tvRelocation.setText(member.getRelocation_type());
+            tvMarryTime.setText(member.getMarrytime_type());
+            tvWantChildren.setText(member.getWant_children_type());
+            tvKeepHalal.setText(member.getKeep_halal_type());
+            tvReligious.setText(member.getReligious_type());
+
+
             tvMaritalStatus.setText(member.get_marital_status_types());
             tvChildren.setText(member.get_children_types());
-            tvChildrenDetail.setText(member.get_choice_children());
+            //  tvChildrenDetail.setText(member.get_choice_children());
             tvEthnicity.setText(member.get_ethnic_background_types());
             tvReligiousSect.setText(member.getReligious_sec_type());
             tvBrothers.setText(member.get_brothers_count());
@@ -358,6 +381,13 @@ public class BasicInfoFragment extends Fragment {
             tvSiblingPosiiton.setText(member.get_sibling_types());
             tvSmoke.setText(member.get_smoking_types());
             tvDrink.setText(member.get_drinks_types());
+
+            tvLanguage.setText(member.getLanguage());
+            tvRevert.setText(member.getRevert_type());
+            tvPhysicallyChallenged.setText(member.getPhysically_challenged_type());
+            tvBeard.setText(member.getBeard_type());
+            tvSalah.setText(member.getSalah_type());
+
 
             tvChoiceMyEducation.setText(memberChoice.get_choice_education());
 

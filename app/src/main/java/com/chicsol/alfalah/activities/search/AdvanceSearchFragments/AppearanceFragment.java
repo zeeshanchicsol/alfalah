@@ -130,7 +130,7 @@ public class AppearanceFragment extends Fragment implements CompoundButton.OnChe
             viewGenerator.generateDynamicCheckBoxesLL(dataList3, llAdvSearchEyeColor);
 
 
-            List<WebArd> dataListHeight = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(10).toString(), listType);
+            List<WebArd> dataListHeight = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(11).toString(), listType);
 
             if (dataListHeight.size() > 0) {
 

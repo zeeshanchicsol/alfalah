@@ -611,6 +611,11 @@ public class Members {
     private String choice_language_ids;
 
 
+
+    @SerializedName("language")
+    private String language;
+
+
     @SerializedName("relocation_id")
     private long relocation_id;
     @SerializedName("marrytime_id")
@@ -649,6 +654,113 @@ public class Members {
     private String choice_salah_ids;
     @SerializedName("choice_religious_ids")
     private String choice_religious_ids;
+
+
+    @SerializedName("relocation_type")
+    public String relocation_type;
+    @SerializedName("marrytime_type")
+    public String marrytime_type;
+    @SerializedName("want_children_type")
+    public String want_children_type;
+    @SerializedName("physically_challenged_type")
+    public String physically_challenged_type;
+    @SerializedName("revert_type")
+    public String revert_type;
+    @SerializedName("beard_type")
+    public String beard_type;
+    @SerializedName("keep_halal_type")
+    public String keep_halal_type;
+    @SerializedName("religious_type")
+    public String religious_type;
+
+    public String getSalah_type() {
+        return salah_type;
+    }
+
+    public void setSalah_type(String salah_type) {
+        this.salah_type = salah_type;
+    }
+
+    @SerializedName("salah_type")
+    public String salah_type;
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public void setRelocation_type(String relocation_type) {
+        this.relocation_type = relocation_type;
+    }
+
+    public void setMarrytime_type(String marrytime_type) {
+        this.marrytime_type = marrytime_type;
+    }
+
+    public void setWant_children_type(String want_children_type) {
+        this.want_children_type = want_children_type;
+    }
+
+    public void setPhysically_challenged_type(String physically_challenged_type) {
+        this.physically_challenged_type = physically_challenged_type;
+    }
+
+    public void setRevert_type(String revert_type) {
+        this.revert_type = revert_type;
+    }
+
+    public void setBeard_type(String beard_type) {
+        this.beard_type = beard_type;
+    }
+
+    public void setKeep_halal_type(String keep_halal_type) {
+        this.keep_halal_type = keep_halal_type;
+    }
+
+    public void setReligious_type(String religious_type) {
+        this.religious_type = religious_type;
+    }
+
+
+
+
+
+
+    public String getRelocation_type() {
+        return relocation_type;
+    }
+
+    public String getMarrytime_type() {
+        return marrytime_type;
+    }
+
+    public String getWant_children_type() {
+        return want_children_type;
+    }
+
+    public String getPhysically_challenged_type() {
+        return physically_challenged_type;
+    }
+
+    public String getRevert_type() {
+        return revert_type;
+    }
+
+    public String getBeard_type() {
+        return beard_type;
+    }
+
+    public String getKeep_halal_type() {
+        return keep_halal_type;
+    }
+
+    public String getReligious_type() {
+        return religious_type;
+    }
+
 
     public long getRelocation_id() {
         return relocation_id;
