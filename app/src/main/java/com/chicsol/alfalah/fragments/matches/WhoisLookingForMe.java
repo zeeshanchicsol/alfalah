@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -26,7 +25,6 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.chicsol.alfalah.R;
-import com.chicsol.alfalah.activities.DashboarMainActivityWithBottomNav;
 import com.chicsol.alfalah.activities.DrawerActivity;
 import com.chicsol.alfalah.adapters.RecyclerViewAdapterMyMatches;
 import com.chicsol.alfalah.dialogs.dialogProfileCompletion;
@@ -34,7 +32,6 @@ import com.chicsol.alfalah.dialogs.dialogRemoveFromSearch;
 import com.chicsol.alfalah.dialogs.dialogRequest;
 import com.chicsol.alfalah.dialogs.dialogRequestPhone;
 import com.chicsol.alfalah.dialogs.dialogShowInterest;
-import com.chicsol.alfalah.dialogs.dialogWithdrawInterest;
 import com.chicsol.alfalah.fragments.DashboardMatchesMainFragment;
 import com.chicsol.alfalah.interfaces.MatchesRefreshCallBackInterface;
 import com.chicsol.alfalah.interfaces.UpdateMatchesCountCallback;
@@ -126,13 +123,13 @@ public class WhoisLookingForMe extends Fragment implements RecyclerViewAdapterMy
 
             Members memberSearchObj = DrawerActivity.rawSearchObj;
             if (memberSearchObj != null) {
-                memberSearchObj.set_path(SharedPreferenceManager.getUserObject(getContext()).get_path());
-                memberSearchObj.set_member_status(SharedPreferenceManager.getUserObject(getContext()).get_member_status());
-                memberSearchObj.set_phone_verified(SharedPreferenceManager.getUserObject(getContext()).get_phone_verified());
-                memberSearchObj.set_email_verified(SharedPreferenceManager.getUserObject(getContext()).get_email_verified());
+                memberSearchObj.setPath(SharedPreferenceManager.getUserObject(getContext()).getPath());
+                memberSearchObj.setMember_status(SharedPreferenceManager.getUserObject(getContext()).getMember_status());
+                memberSearchObj.setPhone_verified(SharedPreferenceManager.getUserObject(getContext()).getPhone_verified());
+                memberSearchObj.setEmail_verified(SharedPreferenceManager.getUserObject(getContext()).getEmail_verified());
                 //page and type
-                memberSearchObj.set_page_no(1);
-                memberSearchObj.set_type("lfm");
+                memberSearchObj.setPage_no(1);
+                memberSearchObj.setType("lfm");
 
                 Gson gson = new Gson();
                 String params = gson.toJson(memberSearchObj);
@@ -274,8 +271,8 @@ public class WhoisLookingForMe extends Fragment implements RecyclerViewAdapterMy
     private void getData() {
         //  String.Max
         pDialog.setVisibility(View.VISIBLE);
-        //  Log.e("url", Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-        JsonArrayRequest req = new JsonArrayRequest(Urls.getSearchLists + SharedPreferenceManager.getUserObject(getContext()).get_path(),
+        //  Log.e("url", Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+        JsonArrayRequest req = new JsonArrayRequest(Urls.getSearchLists + SharedPreferenceManager.getUserObject(getContext()).getPath(),
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -312,13 +309,13 @@ public class WhoisLookingForMe extends Fragment implements RecyclerViewAdapterMy
             Log.e("", "las p: " + lastPage + " Total Pages:" + totalPages);
        /*     Members memberSearchObj = DrawerActivity.rawSearchObj;
 
-            memberSearchObj.set_path(SharedPreferenceManager.getUserObject(getContext()).get_path());
-            memberSearchObj.set_member_status(SharedPreferenceManager.getUserObject(getContext()).get_member_status());
-            memberSearchObj.set_phone_verified(SharedPreferenceManager.getUserObject(getContext()).get_phone_verified());
-            memberSearchObj.set_email_verified(SharedPreferenceManager.getUserObject(getContext()).get_email_verified());
+            memberSearchObj.setPath(SharedPreferenceManager.getUserObject(getContext()).getPath());
+            memberSearchObj.setMember_status(SharedPreferenceManager.getUserObject(getContext()).getMember_status());
+            memberSearchObj.setPhone_verified(SharedPreferenceManager.getUserObject(getContext()).getPhone_verified());
+            memberSearchObj.setEmail_verified(SharedPreferenceManager.getUserObject(getContext()).getEmail_verified());
             //page and type
-            memberSearchObj.set_page_no(lastPage);
-            memberSearchObj.set_type("");
+            memberSearchObj.setPage_no(lastPage);
+            memberSearchObj.setType("");
 
             Gson gson = new Gson();
             String params = gson.toJson(memberSearchObj);*/
@@ -330,7 +327,7 @@ public class WhoisLookingForMe extends Fragment implements RecyclerViewAdapterMy
             Type membert = new TypeToken<Members>() {
             }.getType();
             Members memberObj = (Members) gsont.fromJson(params, membert);
-            memberObj.set_page_no(lastPage);
+            memberObj.setPage_no(lastPage);
             gsont.toString();
             // Log.e("params json", gsont.toJson(memberObj));
             loadMoreData(gsont.toJson(memberObj));
@@ -352,13 +349,13 @@ public class WhoisLookingForMe extends Fragment implements RecyclerViewAdapterMy
                 //  Toast.makeText(getContext(), "" + message, Toast.LENGTH_SHORT).show();
                 //   textView1.setText(message);
 
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_path(SharedPreferenceManager.getUserObject(getContext()).get_path());
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_member_status(SharedPreferenceManager.getUserObject(getContext()).get_member_status());
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_phone_verified(SharedPreferenceManager.getUserObject(getContext()).get_phone_verified());
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_email_verified(SharedPreferenceManager.getUserObject(getContext()).get_email_verified());
+                ListViewAdvSearchFragment.defaultSelectionsObj.setPath(SharedPreferenceManager.getUserObject(getContext()).getPath());
+                ListViewAdvSearchFragment.defaultSelectionsObj.setMember_status(SharedPreferenceManager.getUserObject(getContext()).getMember_status());
+                ListViewAdvSearchFragment.defaultSelectionsObj.setPhone_verified(SharedPreferenceManager.getUserObject(getContext()).getPhone_verified());
+                ListViewAdvSearchFragment.defaultSelectionsObj.setEmail_verified(SharedPreferenceManager.getUserObject(getContext()).getEmail_verified());
                 //page and type
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_page_no(1);
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_type("");
+                ListViewAdvSearchFragment.defaultSelectionsObj.setPage_no(1);
+                ListViewAdvSearchFragment.defaultSelectionsObj.setType("");
 
 
                 Gson gson = new Gson();
@@ -384,13 +381,13 @@ public class WhoisLookingForMe extends Fragment implements RecyclerViewAdapterMy
             new MarryMax(null).getRawData(context, 2);
             if (memberSearchObj != null) {
 
-                memberSearchObj.set_path(SharedPreferenceManager.getUserObject(getContext()).get_path());
-                memberSearchObj.set_member_status(SharedPreferenceManager.getUserObject(getContext()).get_member_status());
-                memberSearchObj.set_phone_verified(SharedPreferenceManager.getUserObject(getContext()).get_phone_verified());
-                memberSearchObj.set_email_verified(SharedPreferenceManager.getUserObject(getContext()).get_email_verified());
+                memberSearchObj.setPath(SharedPreferenceManager.getUserObject(getContext()).getPath());
+                memberSearchObj.setMember_status(SharedPreferenceManager.getUserObject(getContext()).getMember_status());
+                memberSearchObj.setPhone_verified(SharedPreferenceManager.getUserObject(getContext()).getPhone_verified());
+                memberSearchObj.setEmail_verified(SharedPreferenceManager.getUserObject(getContext()).getEmail_verified());
                 //page and type
-                memberSearchObj.set_page_no(1);
-                memberSearchObj.set_type("lfm");
+                memberSearchObj.setPage_no(1);
+                memberSearchObj.setType("lfm");
 
                 Gson gson = new Gson();
                 params = gson.toJson(memberSearchObj);
@@ -474,18 +471,18 @@ public class WhoisLookingForMe extends Fragment implements RecyclerViewAdapterMy
                                     Members memberTotalPages = (Members) gson.fromJson(jsonarrayTotalPages.getJSONObject(0).toString(), membert);
 
 
-                                    totalPages = memberTotalPages.get_total_pages();
+                                    totalPages = memberTotalPages.getTotal_pages();
                                     lastPage = 1;
                                     Log.e("total pages", "" + totalPages);
                                     swipeRefresh.setRefreshing(false);
-                                    if (memberTotalPages.get_total_member_count() > 0) {
+                                    if (memberTotalPages.getTotal_member_count() > 0) {
                                         if (getView() != null) {
                                            /* getView().findViewById(R.id.TextViewMatchesTotalCount).setVisibility(View.VISIBLE);
-                                            ((TextView) getView().findViewById(R.id.TextViewMatchesTotalCount)).setText("" + memberTotalPages.get_total_member_count() + " Matches Found");
+                                            ((TextView) getView().findViewById(R.id.TextViewMatchesTotalCount)).setText("" + memberTotalPages.getTotal_member_count() + " Matches Found");
 */
 
                                             tvMatchesCount.setVisibility(View.VISIBLE);
-                                            totalMatchesCount = memberTotalPages.get_total_member_count();
+                                            totalMatchesCount = memberTotalPages.getTotal_member_count();
                                             setMatchesCount();
 
 
@@ -497,7 +494,7 @@ public class WhoisLookingForMe extends Fragment implements RecyclerViewAdapterMy
                                 } else {
                                     recyclerAdapter.clear();
                                     swipeRefresh.setRefreshing(false);
-                                    if (SharedPreferenceManager.getUserObject(context).get_member_status() >= 0 && SharedPreferenceManager.getUserObject(context).get_member_status() <= 2) {
+                                    if (SharedPreferenceManager.getUserObject(context).getMember_status() >= 0 && SharedPreferenceManager.getUserObject(context).getMember_status() <= 2) {
 
                                         Gson gsont;
                                         GsonBuilder gsonBuildert = new GsonBuilder();
@@ -508,10 +505,10 @@ public class WhoisLookingForMe extends Fragment implements RecyclerViewAdapterMy
 
 
                                         llMMMatchesNotFoundCompleteProfile.setVisibility(View.VISIBLE);
-                                        tvMatchesCountCp.setText(memberTotalPages.get_total_member_count() + "");
+                                        tvMatchesCountCp.setText(memberTotalPages.getTotal_member_count() + "");
                                         tvComplProfioleTitle.setText("Matches, Looking For Me!");
 
-                                    } else if (SharedPreferenceManager.getUserObject(context).get_member_status() == 3) {
+                                    } else if (SharedPreferenceManager.getUserObject(context).getMember_status() == 3) {
 
                                         GsonBuilder gsonBuildert = new GsonBuilder();
                                         Type membert = new TypeToken<Members>() {
@@ -520,7 +517,7 @@ public class WhoisLookingForMe extends Fragment implements RecyclerViewAdapterMy
 
 
                                         llSubscribeNow.setVisibility(View.VISIBLE);
-                                        tvMatchesCountSubscribeNow.setText(memberTotalPages.get_total_member_count() + "");
+                                        tvMatchesCountSubscribeNow.setText(memberTotalPages.getTotal_member_count() + "");
                                         tvSubscribeNowTitle.setText("Matches, Looking For Me!");
 
 

@@ -68,10 +68,10 @@ public class dialogShowInterest extends DialogFragment {
 
 
         args.putBoolean("replyCheck", replyCheck);
-        args.putString("name", String.valueOf(member2.get_interested_id()));
-        args.putString("desc", String.valueOf(member2.get_image_view()));
-        args.putString("param", String.valueOf(member2.get_phone_view()));
-        args.putString("my_id", String.valueOf(member2.get_my_id()));
+        args.putString("name", String.valueOf(member2.getInterested_id()));
+        args.putString("desc", String.valueOf(member2.getImage_view()));
+        args.putString("param", String.valueOf(member2.getPhone_view()));
+        args.putString("my_id", String.valueOf(member2.getMy_id()));
         args.putString("alias", member.getAlias());
         args.putString("userpath", userpath);
 
@@ -144,7 +144,7 @@ public class dialogShowInterest extends DialogFragment {
 
             String desctxt = "";
 
-            if (SharedPreferenceManager.getUserObject(getContext()).get_member_status() == 3) {
+            if (SharedPreferenceManager.getUserObject(getContext()).getMember_status() == 3) {
 
                 desctxt = "<ul><li>Your complimentary free member communication quota is exhausted.</li>\n" +
                         "<br><li>You need to wait 72 hours before you can send new request.</li>\n" +
@@ -154,7 +154,7 @@ public class dialogShowInterest extends DialogFragment {
                 mOkButton.setText("Subscribe");
                 subscribe = true;
 
-            } else if (SharedPreferenceManager.getUserObject(getContext()).get_member_status() == 4) {
+            } else if (SharedPreferenceManager.getUserObject(getContext()).getMember_status() == 4) {
 
 
                 desctxt = "<ul><li>Your complimentary paid member communication quota is exhausted.</li>\n" +
@@ -281,7 +281,7 @@ public class dialogShowInterest extends DialogFragment {
 
                         params.put("alias", SharedPreferenceManager.getUserObject(getContext()).getAlias());
                         params.put("userpath", userpath);
-                        params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+                        params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
 
                         Log.e("showInterest params ", "" + params);
                     } catch (JSONException e) {

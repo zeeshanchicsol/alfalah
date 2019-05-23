@@ -4,7 +4,6 @@ package com.chicsol.alfalah.fragments.inbox;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -13,12 +12,8 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -34,7 +29,6 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.chicsol.alfalah.R;
 import com.chicsol.alfalah.activities.UserProfileActivityWithSlider;
 import com.chicsol.alfalah.adapters.RecyclerViewAdapterQuestionsList;
-import com.chicsol.alfalah.adapters.RecyclerViewAdapterChatList;
 import com.chicsol.alfalah.modal.Members;
 import com.chicsol.alfalah.modal.mCommunication;
 import com.chicsol.alfalah.modal.mIceBreak;
@@ -198,7 +192,7 @@ public class DashboardQuestionsDetailActivity extends AppCompatActivity implemen
          /*   session_id: request_type_id,
                     answered: answered,
                     num: self*/
-            params.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+            params.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
             params.put("userpath", obj.getUserpath());
             params.put("session_id", obj.getRequest_type_id());
             params.put("answered", obj.getAnswered());
@@ -272,8 +266,8 @@ public class DashboardQuestionsDetailActivity extends AppCompatActivity implemen
 
                             JSONObject params = new JSONObject();
                             try {
-                                params.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-                                params.put("alias", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+                                params.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+                                params.put("alias", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
                                 params.put("answerids", stringBuilder.toString());
                                 params.put("session_id", objCom.getRequest_type_id());
                                 putSendAnswer(params);
@@ -345,7 +339,7 @@ public class DashboardQuestionsDetailActivity extends AppCompatActivity implemen
 
 
                             JSONObject params1 = new JSONObject();
-                            params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+                            params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
                             params1.put("id", objCom.getRequest_type_id());
                             deleteQuestion(params1);
 
@@ -401,7 +395,7 @@ public class DashboardQuestionsDetailActivity extends AppCompatActivity implemen
                                 finish();
 
                              /*   JSONObject params1 = new JSONObject();
-                                params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+                                params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
                                 params1.put("userpath", objCom.getUserpath());
                                 getChatRequest(params1);*/
 
@@ -432,7 +426,7 @@ public class DashboardQuestionsDetailActivity extends AppCompatActivity implemen
                             if (dlist.size() > 0) {
                                 mCommunication mCommunication = dlist.get(0);
                                 if (mCommunication.write_quota == 0) {
-                                    if (SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status() == 4) {
+                                    if (SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status() == 4) {
 
                                         Toast.makeText(DashboardQuestionsDetailActivity.this, "Dear " + SharedPreferenceManager.getUserObject(getApplicationContext()).getAlias() + ", you have send too many messages. In order to avoid spam please wait for sometime to send more messages.", Toast.LENGTH_LONG).show();
 
@@ -446,7 +440,7 @@ public class DashboardQuestionsDetailActivity extends AppCompatActivity implemen
                                     JSONObject params1 = new JSONObject();
 
 
-                                    params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+                                    params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
                                     params1.put("userpath", objCom.getUserpath());
                                     params1.put("request_type_id", objCom.getRequest_type_id());
                                     params1.put("alias", objCom.getAlias());
@@ -513,7 +507,7 @@ public class DashboardQuestionsDetailActivity extends AppCompatActivity implemen
                                 finish();
 
                              /*   JSONObject params1 = new JSONObject();
-                                params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+                                params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
                                 params1.put("userpath", objCom.getUserpath());
                                 getChatRequest(params1);*/
 
@@ -634,7 +628,7 @@ public class DashboardQuestionsDetailActivity extends AppCompatActivity implemen
                      /*       if (dlist.size() > 0) {
                                 ll_DeleteChat.setVisibility(View.VISIBLE);
 
-                                if (SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status() == 3) {
+                                if (SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status() == 3) {
                                     if (dlist2.size() > 0) {
                                         mCommunication mCom = dlist2.get(0);
                                         if (mCom.read_quota == 0 && mCom.count > 0) {
@@ -643,7 +637,7 @@ public class DashboardQuestionsDetailActivity extends AppCompatActivity implemen
                                             tvReadQuotaHeading.setText(Html.fromHtml(headertxt));
                                             String subheadertxt = "Dear <font color='#9a0606'><b>" + SharedPreferenceManager.getUserObject(getApplicationContext()).getAlias() + "<b></font> , your free message quota is exhausted. <font color='#9a0606'>" + "<b>" + "</b></font>";
                                             tvReadQuotaSubHeading.setText(Html.fromHtml(subheadertxt));
-                                            if (SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status() >= 4) {
+                                            if (SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status() >= 4) {
                                                 btSubscribe.setVisibility(View.GONE);
                                             }
 

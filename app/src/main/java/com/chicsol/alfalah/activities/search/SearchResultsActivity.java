@@ -2,7 +2,6 @@ package com.chicsol.alfalah.activities.search;
 
 import android.content.Context;
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -126,13 +125,13 @@ public class SearchResultsActivity extends AppCompatActivity implements Recycler
    /*     if (ConnectCheck.isConnected(LinearLayoutMMMatchesNotFound)) {
 
             if (defaultSelectionsObj != null) {
-                defaultSelectionsObj.set_path(SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-                defaultSelectionsObj.set_member_status(SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status());
-                defaultSelectionsObj.set_phone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_phone_verified());
-                defaultSelectionsObj.set_email_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_email_verified());
+                defaultSelectionsObj.setPath(SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+                defaultSelectionsObj.setMember_status(SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status());
+                defaultSelectionsObj.setPhone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getPhone_verified());
+                defaultSelectionsObj.setEmail_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getEmail_verified());
                 //page and type
-                defaultSelectionsObj.set_page_no(1);
-                defaultSelectionsObj.set_type("");
+                defaultSelectionsObj.setPage_no(1);
+                defaultSelectionsObj.setType("");
 
                 Gson gson = new Gson();
                 params = gson.toJson(defaultSelectionsObj);
@@ -149,13 +148,13 @@ public class SearchResultsActivity extends AppCompatActivity implements Recycler
         if (ConnectCheck.isConnected(LinearLayoutMMMatchesNotFound)) {
             Members memberSearchObj = defaultSelectionsObj;
             if (memberSearchObj != null) {
-                memberSearchObj.set_path(SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-                memberSearchObj.set_member_status(SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status());
-                memberSearchObj.set_phone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_phone_verified());
-                memberSearchObj.set_email_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_email_verified());
+                memberSearchObj.setPath(SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+                memberSearchObj.setMember_status(SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status());
+                memberSearchObj.setPhone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getPhone_verified());
+                memberSearchObj.setEmail_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getEmail_verified());
                 //page and type
-                memberSearchObj.set_page_no(1);
-                memberSearchObj.set_type("");
+                memberSearchObj.setPage_no(1);
+                memberSearchObj.setType("");
 
                 Gson gson = new Gson();
                 params = gson.toJson(memberSearchObj);
@@ -178,13 +177,13 @@ public class SearchResultsActivity extends AppCompatActivity implements Recycler
 
        Members memberSearchObjDefault = DrawerActivity.rawSearchObj;
         if (memberSearchObjDefault != null) {
-            memberSearchObjDefault.set_path(SharedPreferenceManager.getUserObject(getApplicationContext().getApplicationContext()).get_path());
-            memberSearchObjDefault.set_member_status(SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status());
-            memberSearchObjDefault.set_phone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_phone_verified());
-            memberSearchObjDefault.set_email_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_email_verified());
+            memberSearchObjDefault.setPath(SharedPreferenceManager.getUserObject(getApplicationContext().getApplicationContext()).getPath());
+            memberSearchObjDefault.setMember_status(SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status());
+            memberSearchObjDefault.setPhone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getPhone_verified());
+            memberSearchObjDefault.setEmail_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getEmail_verified());
             //page and type
-            memberSearchObjDefault.set_page_no(1);
-            memberSearchObjDefault.set_type("");
+            memberSearchObjDefault.setPage_no(1);
+            memberSearchObjDefault.setType("");
 
             Gson gson = new Gson();
             String params = gson.toJson(memberSearchObj);
@@ -260,8 +259,8 @@ public class SearchResultsActivity extends AppCompatActivity implements Recycler
 /*    private void getData() {
         //  String.Max
         pDialog.setVisibility(View.VISIBLE);
-        //  Log.e("url", Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-        JsonArrayRequest req = new JsonArrayRequest(Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).get_path(),
+        //  Log.e("url", Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+        JsonArrayRequest req = new JsonArrayRequest(Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).getPath(),
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -289,13 +288,13 @@ public class SearchResultsActivity extends AppCompatActivity implements Recycler
             Log.e("", "las p: " + lastPage + " Total Pages:" + totalPages);
        /*     Members memberSearchObj = DrawerActivity.rawSearchObj;
 
-            memberSearchObj.set_path(SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-            memberSearchObj.set_member_status(SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status());
-            memberSearchObj.set_phone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_phone_verified());
-            memberSearchObj.set_email_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_email_verified());
+            memberSearchObj.setPath(SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+            memberSearchObj.setMember_status(SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status());
+            memberSearchObj.setPhone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getPhone_verified());
+            memberSearchObj.setEmail_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getEmail_verified());
             //page and type
-            memberSearchObj.set_page_no(lastPage);
-            memberSearchObj.set_type("");
+            memberSearchObj.setPage_no(lastPage);
+            memberSearchObj.setType("");
 
             Gson gson = new Gson();
             String params = gson.toJson(memberSearchObj);*/
@@ -307,8 +306,8 @@ public class SearchResultsActivity extends AppCompatActivity implements Recycler
             Type membert = new TypeToken<Members>() {
             }.getType();
             //   Members memberObj = (Members) gsont.fromJson(params, membert);
-            //   memberObj.set_page_no(lastPage);
-            defaultSelectionsObj.set_page_no(lastPage);
+            //   memberObj.setPage_no(lastPage);
+            defaultSelectionsObj.setPage_no(lastPage);
             //   gsont.toString();
             // Log.e("params json", gsont.toJson(memberObj));
             loadMoreData(gsont.toJson(defaultSelectionsObj));
@@ -330,13 +329,13 @@ public class SearchResultsActivity extends AppCompatActivity implements Recycler
                 //  Toast.makeText(getApplicationContext(), "" + message, Toast.LENGTH_SHORT).show();
                 //   textView1.setText(message);
 
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_path(SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_member_status(SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status());
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_phone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_phone_verified());
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_email_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_email_verified());
+                ListViewAdvSearchFragment.defaultSelectionsObj.setPath(SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+                ListViewAdvSearchFragment.defaultSelectionsObj.setMember_status(SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status());
+                ListViewAdvSearchFragment.defaultSelectionsObj.setPhone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getPhone_verified());
+                ListViewAdvSearchFragment.defaultSelectionsObj.setEmail_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getEmail_verified());
                 //page and type
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_page_no(1);
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_type("");
+                ListViewAdvSearchFragment.defaultSelectionsObj.setPage_no(1);
+                ListViewAdvSearchFragment.defaultSelectionsObj.setType("");
 
 
                 Gson gson = new Gson();
@@ -357,13 +356,13 @@ public class SearchResultsActivity extends AppCompatActivity implements Recycler
 
   /*      if (ConnectCheck.isConnected(LinearLayoutMMMatchesNotFound)) {
 
-            defaultSelectionsObj.set_path(SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-            defaultSelectionsObj.set_member_status(SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status());
-            defaultSelectionsObj.set_phone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_phone_verified());
-            defaultSelectionsObj.set_email_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_email_verified());
+            defaultSelectionsObj.setPath(SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+            defaultSelectionsObj.setMember_status(SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status());
+            defaultSelectionsObj.setPhone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getPhone_verified());
+            defaultSelectionsObj.setEmail_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getEmail_verified());
             //page and type
-            defaultSelectionsObj.set_page_no(1);
-            defaultSelectionsObj.set_type("");
+            defaultSelectionsObj.setPage_no(1);
+            defaultSelectionsObj.setType("");
 
             Gson gson = new Gson();
             params = gson.toJson(defaultSelectionsObj);
@@ -374,13 +373,13 @@ public class SearchResultsActivity extends AppCompatActivity implements Recycler
 
         if (ConnectCheck.isConnected(LinearLayoutMMMatchesNotFound)) {
             Members memberSearchObj = defaultSelectionsObj;
-            memberSearchObj.set_path(SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-            memberSearchObj.set_member_status(SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status());
-            memberSearchObj.set_phone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_phone_verified());
-            memberSearchObj.set_email_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_email_verified());
+            memberSearchObj.setPath(SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+            memberSearchObj.setMember_status(SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status());
+            memberSearchObj.setPhone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getPhone_verified());
+            memberSearchObj.setEmail_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getEmail_verified());
             //page and type
-            memberSearchObj.set_page_no(1);
-            memberSearchObj.set_type("");
+            memberSearchObj.setPage_no(1);
+            memberSearchObj.setType("");
 
             Gson gson = new Gson();
             params = gson.toJson(memberSearchObj);
@@ -464,9 +463,9 @@ public class SearchResultsActivity extends AppCompatActivity implements Recycler
                                     }.getType();
                                     Members memberTotalPages = (Members) gson.fromJson(jsonarrayTotalPages.getJSONObject(0).toString(), membert);
 
-                                    toolbar.setTitle(memberTotalPages.get_total_member_count() + " - Matches Found");
-                                    totalMatchesCount = memberTotalPages.get_total_member_count();
-                                    totalPages = memberTotalPages.get_total_pages();
+                                    toolbar.setTitle(memberTotalPages.getTotal_member_count() + " - Matches Found");
+                                    totalMatchesCount = memberTotalPages.getTotal_member_count();
+                                    totalPages = memberTotalPages.getTotal_pages();
                                     lastPage = 1;
 
                                     //      Log.e("total pages", "" + totalPages);

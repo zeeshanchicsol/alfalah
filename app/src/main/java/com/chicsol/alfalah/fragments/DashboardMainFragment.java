@@ -27,7 +27,6 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -297,11 +296,11 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
         // ll_blocked = (LinearLayout) view.findViewById(R.id.LinearLayoutdmBlocked);
         // ll_removed_from_search = (LinearLayout) view.findViewById(R.id.LinearLayoutdmRemovedFromSearch);
         tv_alias = (mTextView) view.findViewById(R.id.TextViewdmAlias);
-        tv_alias.setText(member.get_personal_name());
+        tv_alias.setText(member.getPersonal_name());
         iv_profile = (ImageView) view.findViewById(R.id.ImageViewDefaultImage);
 
 
-        imageLoader.displayImage(Urls.baseUrl + "/" + member.get_default_image(),
+        imageLoader.displayImage(Urls.baseUrl + "/" + member.getDefault_image(),
                 iv_profile, options,
                 new SimpleImageLoadingListener() {
 
@@ -370,8 +369,8 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
             getDashboardData();
 
 
-            Log.e("Completion Status", member.get_member_status() + "");
-            if (member.get_member_status() < 3 || member.get_member_status() >= 7) {
+            Log.e("Completion Status", member.getMember_status() + "");
+            if (member.getMember_status() < 3 || member.getMember_status() >= 7) {
                 new MarryMax(null).updateStatus(context);
                 //updateStatus();
                 getProfileCompletion();
@@ -399,8 +398,8 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
                     getDashboardData();
 
 
-                    Log.e("Completion Status", member.get_member_status() + "");
-                    if (member.get_member_status() < 3 || member.get_member_status() >= 7) {
+                    Log.e("Completion Status", member.getMember_status() + "");
+                    if (member.getMember_status() < 3 || member.getMember_status() >= 7) {
 
                         new MarryMax(null).updateStatus(getContext());
                         //updateStatus();
@@ -663,7 +662,7 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
         llMembersLookingForMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (SharedPreferenceManager.getUserObject(getContext()).get_member_status() != 0) {
+                if (SharedPreferenceManager.getUserObject(getContext()).getMember_status() != 0) {
 
                     Intent in = new Intent(getContext(), MainDirectiveActivity.class);
                     in.putExtra("type", 4);
@@ -675,7 +674,7 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
         llMatchesLookingForMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (SharedPreferenceManager.getUserObject(getContext()).get_member_status() != 0) {
+                if (SharedPreferenceManager.getUserObject(getContext()).getMember_status() != 0) {
 
                     Intent in = new Intent(getContext(), MainDirectiveActivity.class);
                     in.putExtra("type", 3);
@@ -729,7 +728,7 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
             public void onClick(View v) {
 
                 String reviewStatus = "";
-                if (member.get_member_status() == 7) {
+                if (member.getMember_status() == 7) {
                     reviewStatus = "Review Notes";
 
                 } else {
@@ -854,10 +853,10 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
 
         JSONObject params = new JSONObject();
         try {
-            params.put("member_status", SharedPreferenceManager.getUserObject(context).get_member_status());
-            params.put("phone_verified", SharedPreferenceManager.getUserObject(context).get_phone_verified());
-            params.put("path", SharedPreferenceManager.getUserObject(context).get_path());
-            params.put("email_verified", SharedPreferenceManager.getUserObject(context).get_email_verified());
+            params.put("member_status", SharedPreferenceManager.getUserObject(context).getMember_status());
+            params.put("phone_verified", SharedPreferenceManager.getUserObject(context).getPhone_verified());
+            params.put("path", SharedPreferenceManager.getUserObject(context).getPath());
+            params.put("email_verified", SharedPreferenceManager.getUserObject(context).getEmail_verified());
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -1038,8 +1037,8 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
         pDialog.setVisibility(View.VISIBLE);
         setWaitScreen(true);
         // pDialog.show();
-        Log.e("URL", Urls.getProfileCompletion + SharedPreferenceManager.getUserObject(context).get_path());
-        JsonArrayRequest req = new JsonArrayRequest(Urls.getProfileCompletion + SharedPreferenceManager.getUserObject(context).get_path(),
+        Log.e("URL", Urls.getProfileCompletion + SharedPreferenceManager.getUserObject(context).getPath());
+        JsonArrayRequest req = new JsonArrayRequest(Urls.getProfileCompletion + SharedPreferenceManager.getUserObject(context).getPath(),
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -1092,8 +1091,8 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
                                 ivVerifyEmail.setBackgroundResource(R.drawable.border_dash_main_profilecombox_green);
                                 Members memberObj = SharedPreferenceManager.getUserObject(context);
 
-                                if (memberObj.get_email_verified() == 0) {
-                                    memberObj.set_email_verified(1);
+                                if (memberObj.getEmail_verified() == 0) {
+                                    memberObj.setEmail_verified(1);
                                     SharedPreferenceManager.setUserObject(context, memberObj);
                                 }
 
@@ -1111,8 +1110,8 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
                                 ivVerifyPhone.setOnClickListener(null);
                                 Members memberObj = SharedPreferenceManager.getUserObject(context);
 
-                                if (memberObj.get_phone_verified() == 0) {
-                                    memberObj.set_phone_verified(1);
+                                if (memberObj.getPhone_verified() == 0) {
+                                    memberObj.setPhone_verified(1);
                                     SharedPreferenceManager.setUserObject(context, memberObj);
                                 }
 
@@ -1120,8 +1119,8 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
                             }
                             if (dashboards.getAdmin_approved_status().equals("0")) {
                                 pCOmpleteStatus = false;
-                                Log.e("mem status", member.get_member_status() + "");
-                                if (member.get_member_status() == 7) {
+                                Log.e("mem status", member.getMember_status() + "");
+                                if (member.getMember_status() == 7) {
                                     ivReviewPending.setImageResource(R.drawable.ver_step4);
                                     ivReviewPending.setBackgroundResource(R.drawable.border_dash_main_profilecombox_red);
                                     getAdminNotes();
@@ -1141,8 +1140,8 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
 
                                 Members memberObj = SharedPreferenceManager.getUserObject(context);
 
-                                if (memberObj.get_member_status() <= 1) {
-                                    memberObj.set_member_status(2);
+                                if (memberObj.getMember_status() <= 1) {
+                                    memberObj.setMember_status(2);
                                     SharedPreferenceManager.setUserObject(context, memberObj);
                                 }
 
@@ -1152,7 +1151,7 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
                             if (pCOmpleteStatus) {
                                 cardViewProfileCompletionStatus.setVisibility(View.GONE);
                                 Members memberObj = SharedPreferenceManager.getUserObject(context);
-                                memberObj.set_member_status(3);
+                                memberObj.setMember_status(3);
                                 SharedPreferenceManager.setUserObject(context, memberObj);
                             }
 
@@ -1196,7 +1195,7 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
 
     @Override
     public void onItemClick(View view, Members members, int position, List<Members> items, Members memResultsObj) {
-        //  Toast.makeText(getActivity(), members.get_path() + " clicked", Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(getActivity(), members.getPath() + " clicked", Toast.LENGTH_SHORT).show();
  /*       Intent intent = new Intent(getActivity(), UserProfileActivity.class);
         intent.putExtra("userpath", members.getUserpath());
         startActivity(intent);*/
@@ -1235,10 +1234,10 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
     private void viewProfile() {
       /*  if (ConnectCheck.isConnected(getActivity().findViewById(android.R.id.content))) {
 
-            if (SharedPreferenceManager.getUserObject(getContext()).get_member_status() != 0) {
-                if (SharedPreferenceManager.getUserObject(getContext()).get_path() != null && SharedPreferenceManager.getUserObject(getContext()).get_path() != "") {
+            if (SharedPreferenceManager.getUserObject(getContext()).getMember_status() != 0) {
+                if (SharedPreferenceManager.getUserObject(getContext()).getPath() != null && SharedPreferenceManager.getUserObject(getContext()).getPath() != "") {
                     Intent intent = new Intent(getActivity(), MyProfileActivity.class);
-                    intent.putExtra("userpath", SharedPreferenceManager.getUserObject(getContext()).get_path());
+                    intent.putExtra("userpath", SharedPreferenceManager.getUserObject(getContext()).getPath());
                     startActivity(intent);
                 } else {
                     Toast.makeText(getContext(), "Error ! ", Toast.LENGTH_SHORT).show();
@@ -1250,13 +1249,13 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
         }*/
 
 
-        if (member.get_member_status() == 0 || member.get_member_status() >= 7) {
+        if (member.getMember_status() == 0 || member.getMember_status() >= 7) {
             MarryMax marryMax = new MarryMax(getActivity());
             marryMax.getProfileProgress(context, member, getActivity());
         } else {
             Intent intent = new Intent(getActivity(), MyProfileActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra("userpath", SharedPreferenceManager.getUserObject(context).get_path());
+            intent.putExtra("userpath", SharedPreferenceManager.getUserObject(context).getPath());
             startActivity(intent);
         }
 
@@ -1279,9 +1278,9 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
         pDialog.show();*/
 
         pDialog.setVisibility(View.VISIBLE);
-        Log.e("getAdminNotes path", "" + Urls.getAdminNotes + SharedPreferenceManager.getUserObject(context).get_path());
+        Log.e("getAdminNotes path", "" + Urls.getAdminNotes + SharedPreferenceManager.getUserObject(context).getPath());
 
-        JsonArrayRequest req = new JsonArrayRequest(Urls.getAdminNotes + SharedPreferenceManager.getUserObject(context).get_path(),
+        JsonArrayRequest req = new JsonArrayRequest(Urls.getAdminNotes + SharedPreferenceManager.getUserObject(context).getPath(),
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -1321,16 +1320,16 @@ public class DashboardMainFragment extends Fragment implements RecyclerViewAdapt
     private void getStatus() {
 
 
-        ///  Log.e("getStatus ", "" + Urls.getStatus + SharedPreferenceManager.getUserObject(getContext()).get_path());
-        StringRequest req = new StringRequest(Urls.getStatus + SharedPreferenceManager.getUserObject(context).get_path(),
+        ///  Log.e("getStatus ", "" + Urls.getStatus + SharedPreferenceManager.getUserObject(getContext()).getPath());
+        StringRequest req = new StringRequest(Urls.getStatus + SharedPreferenceManager.getUserObject(context).getPath(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         Log.e("getStatus Response", response.toString());
 
                         Members member1 = SharedPreferenceManager.getUserObject(context);
-                        if (member1.get_member_status() != Long.parseLong(response)) {
-                            member1.set_member_status(Long.parseLong(response));
+                        if (member1.getMember_status() != Long.parseLong(response)) {
+                            member1.setMember_status(Long.parseLong(response));
                             SharedPreferenceManager.setUserObject(context, member1);
                             member = member1;
                         }

@@ -20,7 +20,6 @@ import com.chicsol.alfalah.R;
 import com.chicsol.alfalah.activities.DashboarMainActivityWithBottomNav;
 import com.chicsol.alfalah.fragments.matches.LookingForEachOther;
 import com.chicsol.alfalah.fragments.matches.MatchesWithPhotoUpdate2Fragment;
-import com.chicsol.alfalah.fragments.matches.MyFavouriteMatches;
 import com.chicsol.alfalah.fragments.matches.MyMatchesFragment;
 import com.chicsol.alfalah.fragments.matches.PrefferedMatchingProfileFragment;
 import com.chicsol.alfalah.fragments.matches.WhoisLookingForMe;
@@ -60,7 +59,7 @@ public class DashboardMatchesMainFragment extends Fragment implements DashboarMa
     public void onResume() {
         super.onResume();
         Members member = SharedPreferenceManager.getUserObject(context);
-        if (member.get_member_status() < 3 || member.get_member_status() >= 7) {
+        if (member.getMember_status() < 3 || member.getMember_status() >= 7) {
             new MarryMax(null).updateStatus(context);
 
         }

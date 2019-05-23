@@ -296,7 +296,7 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
 
-    private void LoginUser(final String email, String password) {
+    private void LoginUser(final String email, final String password) {
 
 
         pDialog.show();
@@ -339,15 +339,20 @@ public class ActivityLogin extends AppCompatActivity {
 
 
                                 SharedPreferenceManager.setUserObject(getApplicationContext(), response.getJSONObject("data"));
-                                session.createUserLoginSession(response.getJSONObject("data").get("alias").toString(), response.getJSONObject("data").getLong("memberid") + "", response.getJSONObject("data").getInt("member_status") + "");
+                                session.createUserLoginSession(response.getJSONObject("data").get("alias").toString(), response.getJSONObject("data").getString("path") + "", response.getJSONObject("data").getInt("member_status") + "");
 
                                 //  Log.d("Member id", response.getLong("memberid") + "");
                                 //  Log.d("Alias", response.get("alias").toString());
                                 //   Log.d("member type", response.getInt("member_status") + "");
                                 Members member = SharedPreferenceManager.getUserObject(getApplication());
 
+                                member.setPassword(password);
+
+                                SharedPreferenceManager.setUserObject(getApplicationContext(), member);
+
+
                                 checkUserStatus(member);
-                                //   Log.e("Reggggggggggg type",member.get_registration_within_id() + "");
+                                //   Log.e("Reggggggggggg type",member.getRegistration_within_id() + "");
 
                             } else {
 
@@ -400,33 +405,33 @@ public class ActivityLogin extends AppCompatActivity {
             finish();
         }
 
-    /*    if (member.get_registration_within_id() != 5 && member.get_member_status() == 0) {
-            if (member.get_registration_within_id() == -1) {
+    /*    if (member.getRegistration_within_id() != 5 && member.getMember_status() == 0) {
+            if (member.getRegistration_within_id() == -1) {
                 Intent intent = new Intent(ActivityLogin.this, RegisterGeographicActivity.class);
                 startActivity(intent);
                 finish();
                 //  HttpContext.Current.Response.Redirect("~/1_Geographic", false);
-            } else if (member.get_registration_within_id() == 0) {
+            } else if (member.getRegistration_within_id() == 0) {
                 Intent intent = new Intent(ActivityLogin.this, RegisterAppearanceActivity.class);
                 startActivity(intent);
                 finish();
                 // HttpContext.Current.Response.Redirect("~/2_Appearance", false);
-            } else if (member.get_registration_within_id() == 1) {
+            } else if (member.getRegistration_within_id() == 1) {
                 Intent intent = new Intent(ActivityLogin.this, RegisterLifeStyleActivity1.class);
                 startActivity(intent);
                 finish();
                 //   HttpContext.Current.Response.Redirect("~/3_LifeStyle", false);
-            } else if (member.get_registration_within_id() == 2) {
+            } else if (member.getRegistration_within_id() == 2) {
                 Intent intent = new Intent(ActivityLogin.this, RegisterLifeStyleActivity2.class);
                 startActivity(intent);
                 finish();
                 //  HttpContext.Current.Response.Redirect("~/3_LifeStyle2", false);
-            } else if (member.get_registration_within_id() == 3) {
+            } else if (member.getRegistration_within_id() == 3) {
                 Intent intent = new Intent(ActivityLogin.this, RegisterInterest.class);
                 startActivity(intent);
                 finish();
                 // HttpContext.Current.Response.Redirect("~/4_Interest", false);
-            } else if (member.get_registration_within_id() == 4) {
+            } else if (member.getRegistration_within_id() == 4) {
                 Intent intent = new Intent(ActivityLogin.this, RegisterPersonalityActivity.class);
                 startActivity(intent);
                 finish();

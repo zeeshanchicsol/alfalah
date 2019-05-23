@@ -120,12 +120,13 @@ public class Urls {
 
     //Search Data
     public static String getSaveSearchLists = baseUrl + "/api/WebArd/GetSaveSearchLists/";
-    public static String getSearchLists = baseUrl + "/api/WebArd/GetSearchLists/";
+    public static String getSearchLists = baseUrl + "/api/WebArd/GetSearchListsAdv/";
     public static String getRawData = baseUrl + "/api/WebArd/GetRawData/";
     public static String getSrhRawData = baseUrl + "/api/WebArd/GetSrhRawData/";
 
     public static String getStates = baseUrl + "/api/WebArd/GetStates/";
-    public static String saveSearch = baseUrl + "/api/WebArd/SaveSearch";
+    public static String saveSearch = baseUrl + "" +
+            "/api/WebArd/SaveSearch";
 
     public static String getCities = baseUrl + "/api/WebArd/GetCities/";
 
@@ -134,6 +135,7 @@ public class Urls {
 
 
     public static String searchProfiles = baseUrl + "/api/WebArd/SearchProfiles";//search profiles
+    public static String searchedCount = baseUrl + "/api/WebArd/SearchedCount";//search profiles count
 
     public static String listProfiles = baseUrl + "/api/WebArd/ListProfiles";//list profiles
 
@@ -148,6 +150,7 @@ public class Urls {
     public static String editContact = baseUrl + "/api/WebArd/EditContact";
     public static String deleteContact = baseUrl + "/api/WebArd/DeleteContact";
     public static String getMobileCode = baseUrl + "/api/WebArd/GetMobileCode/";
+    public static String getValidCode = baseUrl + "/api/WebArd/GetValidCode/";
     public static String validateMobile = baseUrl + "/api/WebArd/ValidateMobile";
     public static String getPreferences = baseUrl + "/api/WebArd/GetPreferences/";
     public static String editPreferences = baseUrl + "/api/WebArd/EditPreferences";
@@ -268,6 +271,10 @@ public class Urls {
     //===============My Profile Status ==================
     public static String getPhn = baseUrl + "/api/WebArd/GetPhn/";
 
+
+    //==================Contact Us==================
+    public static String getContactList = baseUrl + "/api/WebArd/GetContactList/";
+    public static String contactUs = baseUrl + "/api/WebArd/ContactUs";
 
     //===============Questions ==================
     public static String getQuestionAnswers = baseUrl + "/api/WebArd/GetQuestionAnswers/";

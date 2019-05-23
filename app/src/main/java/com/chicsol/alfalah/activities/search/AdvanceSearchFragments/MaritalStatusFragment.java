@@ -68,7 +68,7 @@ public class MaritalStatusFragment extends Fragment implements CompoundButton.On
 
 
         try {
-            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(15).toString(), listType);
+            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(16).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLL(dataList0, LinearLayoutAdvSearchMaritalStatus);
 
             List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(1).toString(), listType);
@@ -82,8 +82,8 @@ public class MaritalStatusFragment extends Fragment implements CompoundButton.On
     private void setSelection() {
 Log.e("set selection","sett selection");
         if (defaultSelectionsObj != null) {
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchMaritalStatus, defaultSelectionsObj.get_choice_marital_status_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchChildren, defaultSelectionsObj.get_choice_children_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchMaritalStatus, defaultSelectionsObj.getChoice_marital_status_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchChildren, defaultSelectionsObj.getChoice_children_ids());
 
         }
 
@@ -113,8 +113,8 @@ Log.e("set selection","sett selection");
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        defaultSelectionsObj.set_choice_marital_status_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchMaritalStatus));
-        defaultSelectionsObj.set_choice_children_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchChildren));
+        defaultSelectionsObj.setChoice_marital_status_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchMaritalStatus));
+        defaultSelectionsObj.setChoice_children_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchChildren));
 
     }
 

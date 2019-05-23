@@ -203,7 +203,7 @@ public class ListViewAdvSearchFragment extends Fragment {
                             }.getType();
 
                             defaultSelectionsObj = gsonc.fromJson(jsonCountryStaeObj.toString(), listType);
-                            Log.e("body ids rawww", ListViewAdvSearchFragment.defaultSelectionsObj.get_choice_smoking_ids() + "  --");
+                            Log.e("body ids rawww", ListViewAdvSearchFragment.defaultSelectionsObj.getChoice_smoking_ids() + "  --");
                             listener.onItemSelected(dataList.get(0));
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -228,8 +228,8 @@ public class ListViewAdvSearchFragment extends Fragment {
         final ProgressDialog pDialog = new ProgressDialog(getContext());
         pDialog.setMessage("Loading...");
         pDialog.show();
-        Log.e("getRawData started", Urls.getRawData + SharedPreferenceManager.getUserObject(getContext()).get_path());
-        JsonArrayRequest req = new JsonArrayRequest(Urls.getRawData + SharedPreferenceManager.getUserObject(getContext()).get_path(),
+        Log.e("getRawData started", Urls.getRawData + SharedPreferenceManager.getUserObject(getContext()).getPath());
+        JsonArrayRequest req = new JsonArrayRequest(Urls.getRawData + SharedPreferenceManager.getUserObject(getContext()).getPath(),
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -247,7 +247,7 @@ public class ListViewAdvSearchFragment extends Fragment {
                             }.getType();
 
                             defaultSelectionsObj = gsonc.fromJson(jsonCountryStaeObj.toString(), listType);
-                            //      Log.e("body ids rawww", ListViewAdvSearchFragment.defaultSelectionsObj.get_choice_body_ids() + "  --");
+                            //      Log.e("body ids rawww", ListViewAdvSearchFragment.defaultSelectionsObj.getChoice_body_ids() + "  --");
                             listener.onItemSelected(dataList.get(0));
                         } catch (JSONException e) {
                             e.printStackTrace();

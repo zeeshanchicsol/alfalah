@@ -143,7 +143,7 @@ public class ChangePasswordFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.e("Loggggg", etOldPassword.getText().toString());
-                Log.e("Loggggg", SharedPreferenceManager.getUserObject(getContext()).get_password());
+                Log.e("Loggggg", SharedPreferenceManager.getUserObject(getContext()).getPassword());
                 View focusView = null;
                 String oldpass = etOldPassword.getText().toString();
                 String newpass = etNewPassword.getText().toString();
@@ -179,16 +179,16 @@ public class ChangePasswordFragment extends Fragment {
                     focusView = etConfirmNewPassword;
 
                     focusView.requestFocus();
-                } else if (!oldpass.equals(SharedPreferenceManager.getUserObject(getContext()).get_password())) {
+                } else if (!oldpass.equals(SharedPreferenceManager.getUserObject(getContext()).getPassword())) {
                     Toast.makeText(getContext(), "Old Password Incorrect", Toast.LENGTH_SHORT).show();
                 } else if (!newpass.equals(confirmnewpass)) {
                     Toast.makeText(getContext(), "New Password Does Not Match", Toast.LENGTH_SHORT).show();
                 } else {
 
                     Members members = new Members();
-                    members.set_password(etOldPassword.getText().toString());
-                    members.set_new_password(etNewPassword.getText().toString());
-                    members.set_path(SharedPreferenceManager.getUserObject(getContext()).get_path());
+                    members.setPassword(etOldPassword.getText().toString());
+                    members.setNew_password(etNewPassword.getText().toString());
+                    members.setPath(SharedPreferenceManager.getUserObject(getContext()).getPath());
                     Gson gson = new Gson();
                     String memString = gson.toJson(members);
 
@@ -230,9 +230,11 @@ public class ChangePasswordFragment extends Fragment {
                             int responseid = response.getInt("id");
                             if (responseid == 1) {
                                 Toast.makeText(getContext(), "Password Updated", Toast.LENGTH_SHORT).show();
-                                SharedPreferenceManager.getUserObject(getContext()).set_password(password);
-                                SharedPreferenceManager.setUserObject(getContext(), params);
 
+                                Members member = SharedPreferenceManager.getUserObject(getContext());
+                                member.setPassword(password);
+
+                                SharedPreferenceManager.setUserObject(getContext(), member);
                                 etNewPassword.setText("");
                                 etOldPassword.setText("");
                                 etConfirmNewPassword.setText("");
@@ -273,7 +275,7 @@ public class ChangePasswordFragment extends Fragment {
                 0,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjReq,Tag);
+        MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjReq, Tag);
 
     }
 
@@ -293,7 +295,6 @@ public class ChangePasswordFragment extends Fragment {
         MySingleton.getInstance(getContext()).cancelPendingRequests(Tag);
 
     }
-
 
 
 }

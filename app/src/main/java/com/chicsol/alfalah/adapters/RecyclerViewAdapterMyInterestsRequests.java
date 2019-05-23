@@ -353,7 +353,7 @@ public class RecyclerViewAdapterMyInterestsRequests extends RecyclerView.Adapter
                     JSONObject params = new JSONObject();
                     try {
                         params.put("userpath", obj.getUserpath());
-                        params.put("path", SharedPreferenceManager.getUserObject(context).get_path());
+                        params.put("path", SharedPreferenceManager.getUserObject(context).getPath());
                         params.put("interested_id", obj.getRequest_id());
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -400,7 +400,7 @@ public class RecyclerViewAdapterMyInterestsRequests extends RecyclerView.Adapter
                         JSONObject params = new JSONObject();
                         try {
                             params.put("userpath", obj.getUserpath());
-                            params.put("path", SharedPreferenceManager.getUserObject(context).get_path());
+                            params.put("path", SharedPreferenceManager.getUserObject(context).getPath());
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -416,7 +416,7 @@ public class RecyclerViewAdapterMyInterestsRequests extends RecyclerView.Adapter
                             params.put("request_id", obj.getRequest_id());
                             params.put("type", obj.getRequest_type_id());
                             params.put("userpath", obj.getUserpath());
-                            params.put("path", SharedPreferenceManager.getUserObject(context).get_path());
+                            params.put("path", SharedPreferenceManager.getUserObject(context).getPath());
                             params.put("alias", SharedPreferenceManager.getUserObject(context).getAlias());
 
                         } catch (JSONException e) {
@@ -445,7 +445,7 @@ public class RecyclerViewAdapterMyInterestsRequests extends RecyclerView.Adapter
                             params.put("request_id", obj.getRequest_id());
                             params.put("type", obj.getRequest_type_id());
                             params.put("userpath", obj.getUserpath());
-                            params.put("path", SharedPreferenceManager.getUserObject(context).get_path());
+                            params.put("path", SharedPreferenceManager.getUserObject(context).getPath());
 
 
                         } catch (JSONException e) {
@@ -536,20 +536,20 @@ public class RecyclerViewAdapterMyInterestsRequests extends RecyclerView.Adapter
         switch (id) {
    /*         case 1:
 
-                items.get(selectedPosition).set_photo_upload_request_id(0);
+                items.get(selectedPosition).setPhoto_upload_request_id(0);
 
                 break;
             case 2:
-                items.get(selectedPosition).set_photo_request_id(0);
+                items.get(selectedPosition).setPhoto_request_id(0);
                 break;
             case 3:
-                items.get(selectedPosition).set_profile_request_id(0);
+                items.get(selectedPosition).setProfile_request_id(0);
                 break;
             case 4:
-                items.get(selectedPosition).set_phone_request_id(0);
+                items.get(selectedPosition).setPhone_request_id(0);
                 break;*/
             case 5:
-                //  items.get(selectedPosition).set_interested_id(0);
+                //  items.get(selectedPosition).setInterested_id(0);
 
                 items.remove(selectedPosition);
 

@@ -30,8 +30,6 @@ import com.chicsol.alfalah.dialogs.dialogDeclineInterestInbox;
 import com.chicsol.alfalah.dialogs.dialogReplyOnAcceptInterestInbox;
 import com.chicsol.alfalah.dialogs.dialogRequestPhone;
 import com.chicsol.alfalah.dialogs.dialogShowInterest;
-import com.chicsol.alfalah.dialogs.dialogWithdrawInterest;
-import com.chicsol.alfalah.modal.Members;
 import com.chicsol.alfalah.modal.mComCount;
 import com.chicsol.alfalah.modal.mCommunication;
 import com.chicsol.alfalah.preferences.SharedPreferenceManager;
@@ -132,7 +130,7 @@ public class DashboardRequestsFragment extends Fragment implements RecyclerViewA
             getCommunicationCount();
             JSONObject params = new JSONObject();
             try {
-                params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+                params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
                 params.put("page_no", 1);
                 params.put("type", type);
 
@@ -201,7 +199,7 @@ public class DashboardRequestsFragment extends Fragment implements RecyclerViewA
 
             JSONObject params = new JSONObject();
             try {
-                params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+                params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
                 params.put("page_no", lastPage);
                 params.put("type", type);
 
@@ -223,7 +221,7 @@ public class DashboardRequestsFragment extends Fragment implements RecyclerViewA
 
             JSONObject params = new JSONObject();
             try {
-                params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+                params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
                 params.put("page_no", 1);
                 params.put("type", type);
 
@@ -311,7 +309,7 @@ public class DashboardRequestsFragment extends Fragment implements RecyclerViewA
 
 
                             if (type.equals("requestsent")) {
-                                if (SharedPreferenceManager.getUserObject(context).get_member_status() < 3 || SharedPreferenceManager.getUserObject(context).get_member_status() > 4) {
+                                if (SharedPreferenceManager.getUserObject(context).getMember_status() < 3 || SharedPreferenceManager.getUserObject(context).getMember_status() > 4) {
 
 
                                     tvInterestRequestEmptyState.setText("You haven’t sent any request yet!  " +
@@ -323,11 +321,11 @@ public class DashboardRequestsFragment extends Fragment implements RecyclerViewA
                                         tvInterestRequestEmptyState.setText("There are " + memberC.getRequesting_members_count() + " requests sent.Please complete & verify your profile to send requests.");
                                     }*/
                                 } else {
-                                    if (SharedPreferenceManager.getUserObject(context).get_member_status() == 3 || SharedPreferenceManager.getUserObject(context).get_member_status() == 4) {
+                                    if (SharedPreferenceManager.getUserObject(context).getMember_status() == 3 || SharedPreferenceManager.getUserObject(context).getMember_status() == 4) {
                                         if (membersDataList.size() == 0) {
 
                                             htmlDescriptionText.append(" You haven’t sent any request yet!\n");
-                                            if (SharedPreferenceManager.getUserObject(context).get_member_status() == 3) {
+                                            if (SharedPreferenceManager.getUserObject(context).getMember_status() == 3) {
                                                 htmlDescriptionText.append(" Subscribe now to enjoy following benefits.");
 
                                                /* htmlDescriptionText.append(" Priority Profile Listing.\n");
@@ -391,7 +389,7 @@ public class DashboardRequestsFragment extends Fragment implements RecyclerViewA
 
                             } else {
                                 //request receieved
-                                if (SharedPreferenceManager.getUserObject(context).get_member_status() < 3 || SharedPreferenceManager.getUserObject(context).get_member_status() > 4) {
+                                if (SharedPreferenceManager.getUserObject(context).getMember_status() < 3 || SharedPreferenceManager.getUserObject(context).getMember_status() > 4) {
                                     if (memberC.getRequesting_members_count() == 0) {
                                         tvInterestRequestEmptyState.setText("There are " + getNew_requests_count + " requests. " +
                                                 "\nPlease complete & verify your profile to view the requests," +
@@ -421,11 +419,11 @@ public class DashboardRequestsFragment extends Fragment implements RecyclerViewA
 
                                 } else {
 
-                                    if (SharedPreferenceManager.getUserObject(context).get_member_status() == 3 || SharedPreferenceManager.getUserObject(context).get_member_status() == 4) {
+                                    if (SharedPreferenceManager.getUserObject(context).getMember_status() == 3 || SharedPreferenceManager.getUserObject(context).getMember_status() == 4) {
                                         if (membersDataList.size() == 0) {
 
                                             htmlDescriptionText.append(" You have 0 requests. \n");
-                                            if (SharedPreferenceManager.getUserObject(context).get_member_status() == 3) {
+                                            if (SharedPreferenceManager.getUserObject(context).getMember_status() == 3) {
                                                 htmlDescriptionText.append("Subscribe now to enjoy following benefits. ");
 
                                           /*      htmlDescriptionText.append(" Priority Profile Listing. \n");
@@ -635,7 +633,7 @@ public class DashboardRequestsFragment extends Fragment implements RecyclerViewA
         if (ConnectCheck.isConnected(getActivity().findViewById(android.R.id.content))) {
             JSONObject params = new JSONObject();
             try {
-                params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+                params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
                 params.put("page_no", 1);
                 params.put("type", type);
 
@@ -652,8 +650,8 @@ public class DashboardRequestsFragment extends Fragment implements RecyclerViewA
       /*  final ProgressDialog pDialog = new ProgressDialog(getContext());
         pDialog.setMessage("Loading...");
         pDialog.show();*/
-        Log.e("url", Urls.getCommunicationCount + SharedPreferenceManager.getUserObject(context).get_path());
-        JsonArrayRequest req = new JsonArrayRequest(Urls.getCommunicationCount + SharedPreferenceManager.getUserObject(context).get_path(),
+        Log.e("url", Urls.getCommunicationCount + SharedPreferenceManager.getUserObject(context).getPath());
+        JsonArrayRequest req = new JsonArrayRequest(Urls.getCommunicationCount + SharedPreferenceManager.getUserObject(context).getPath(),
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {

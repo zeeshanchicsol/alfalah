@@ -33,7 +33,7 @@ public class Subscription {
     @SerializedName("trans_order_id")
     public long trans_order_id;
     @SerializedName("total_cost")
-    public long total_cost;
+    public float total_cost;
     @SerializedName("member_id")
     public long member_id;
     @SerializedName("path")
@@ -206,11 +206,11 @@ public class Subscription {
         this.trans_order_id = trans_order_id;
     }
 
-    public long getTotal_cost() {
+    public float getTotal_cost() {
         return total_cost;
     }
 
-    public void setTotal_cost(long total_cost) {
+    public void setTotal_cost(float total_cost) {
         this.total_cost = total_cost;
     }
 

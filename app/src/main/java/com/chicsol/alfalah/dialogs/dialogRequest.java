@@ -157,7 +157,7 @@ public class dialogRequest extends DialogFragment {
 
                     //   params.put("selectdlist", selectdlist);
 
-                    params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+                    params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }*/
@@ -272,7 +272,7 @@ public class dialogRequest extends DialogFragment {
                             } else if (responseid == -1) {
                                 String desctxt = "";
 
-                                if (SharedPreferenceManager.getUserObject(getContext()).get_member_status() == 3) {
+                                if (SharedPreferenceManager.getUserObject(getContext()).getMember_status() == 3) {
                                     mOkButton.setVisibility(View.GONE);
                                     btSubscribe.setVisibility(View.VISIBLE);
                                     desctxt = "<ul><li>Your complimentary free member communication quota is exhausted.</li>\n" +
@@ -281,7 +281,7 @@ public class dialogRequest extends DialogFragment {
                                             "</ul>";
 
 
-                                } else if (SharedPreferenceManager.getUserObject(getContext()).get_member_status() == 4) {
+                                } else if (SharedPreferenceManager.getUserObject(getContext()).getMember_status() == 4) {
                                     mOkButton.setVisibility(View.GONE);
                                     btSubscribe.setVisibility(View.GONE);
 

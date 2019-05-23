@@ -58,8 +58,8 @@ public class dialogReplyOnAcceptInterestInbox extends DialogFragment {
 
         args.putBoolean("replyCheck", replyCheck);
         args.putString("request_id", String.valueOf(member.getRequest_id()));
-        args.putString("desc", String.valueOf(member2.get_image_view()));
-        args.putString("param", String.valueOf(member2.get_phone_view()));
+        args.putString("desc", String.valueOf(member2.getImage_view()));
+        args.putString("param", String.valueOf(member2.getPhone_view()));
 
         args.putString("alias", member.getAlias());
         args.putString("userpath", userpath);
@@ -175,7 +175,7 @@ public class dialogReplyOnAcceptInterestInbox extends DialogFragment {
                     params.put("request_id", request_id);
                     params.put("type", "4");
                     params.put("userpath", userpath);
-                    params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+                    params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
                     params.put("alias", SharedPreferenceManager.getUserObject(getContext()).getAlias());
                 } catch (JSONException e) {
                     e.printStackTrace();

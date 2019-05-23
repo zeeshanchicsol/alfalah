@@ -38,7 +38,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Enter Code "
+                        android:text="Verify Your Number "
                         android:textColor="@color/colorWhite"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -58,10 +58,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginRight="10dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
                     android:orientation="vertical">
 
 
@@ -69,14 +69,47 @@
                         android:id="@+id/LinearlayoutAccountSettingMyContactErrorVerficationCode"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:orientation="vertical"
                         android:visibility="gone">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="  We are unable to send text message on your mobile number. Please contact MarryMax support."
+                            android:text=" \u25CF  We are unable to send text message on your mobile number."
                             android:textColor="@color/colorTextRed" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text=" \u25CF  Please "
+                                android:textColor="@color/colorTextRed" />
+
+                            <TextView
+                                android:id="@+id/TextViewInformSupport"
+                                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/selectableItemBackground"
+                                android:gravity="center"
+                                android:text="CLICK HERE"
+                                android:textColor="@color/colorDefaultGreen"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="to inform MarryMax support."
+                                android:textColor="@color/colorTextRed" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -90,13 +123,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="3dp"
+                            android:gravity="left"
                             android:text="Please Verify Your Phone Number."
                             android:textColor="@color/colorBlack" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="#ccc"
+                            android:background="#D3D3D3"
                             android:orientation="horizontal"
                             android:padding="10dp">
 
@@ -123,8 +157,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
-                            android:text="If mobile number is correct then click &quot; Send Verification Code&quot;.
-Once you receive verification code, then enter the code on this page to verify your phone."
+                            android:text="\u25CF  If mobile number is correct then click &quot; Send Verification Code&quot;. \n
+\u25CF  Once you receive verification code, then enter the code on this page to verify your phone."
                             android:textColor="@color/colorBlack" />
 
 
@@ -140,6 +174,40 @@ Once you receive verification code, then enter the code on this page to verify y
                             android:textColor="@color/colorWhite"
 
                             app:backgroundTint="@color/colorDefaultGreen" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="To enter mobile verification code"
+                                    android:textColor="@color/colorBlack" />
+                                <TextView
+                                    android:id="@+id/TextViewClickHereToEnterCode"
+                                    style="@style/Base.Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:gravity="center"
+                                    android:text="CLICK HERE"
+                                    android:textColor="@color/colorDefaultGreen"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout
@@ -152,15 +220,15 @@ Once you receive verification code, then enter the code on this page to verify y
                         <com.chicsol.alfalah.widgets.mTextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Please Verify Your Phone Number."
-                            android:textColor="@color/colorTextRed"
+                            android:text="Please enter the verification code that you have received on your given mobile number."
+                            android:textColor="@color/colorBlack"
                             android:textStyle="bold" />
 
                         <android.support.v7.widget.AppCompatEditText
                             android:id="@+id/EditTextAccountSettingMyContactVerifyCode"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Enter Code"
+                            android:hint="Enter Verification Code Here"
 
                             android:imeOptions="actionDone"
                             android:inputType="number" />

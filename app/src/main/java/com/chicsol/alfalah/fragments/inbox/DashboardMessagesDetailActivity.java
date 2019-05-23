@@ -184,7 +184,7 @@ public class DashboardMessagesDetailActivity extends AppCompatActivity implement
         try {
 
 
-            params.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+            params.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
             params.put("userpath", obj.getUserpath());
             getChatRequest(params);
 
@@ -230,10 +230,10 @@ public class DashboardMessagesDetailActivity extends AppCompatActivity implement
 
                         //   path, userpath , checkedTextView , default_image
 
-                        params.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+                        params.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
                         params.put("userpath", objCom.getUserpath());
                         params.put("alias", SharedPreferenceManager.getUserObject(getApplicationContext()).getAlias());
-                        params.put("default_image", SharedPreferenceManager.getUserObject(getApplicationContext()).get_default_image());
+                        params.put("default_image", SharedPreferenceManager.getUserObject(getApplicationContext()).getDefault_image());
                         params.put("message", etSendMessage.getText().toString());
                         putSendMessage(params);
                     } catch (JSONException e) {
@@ -262,7 +262,7 @@ public class DashboardMessagesDetailActivity extends AppCompatActivity implement
 
 
                             JSONObject params1 = new JSONObject();
-                            params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+                            params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
                             params1.put("userpath", objCom.getUserpath());
                             deleteRequest(params1);
 
@@ -326,7 +326,7 @@ public class DashboardMessagesDetailActivity extends AppCompatActivity implement
                             if (dlist.size() > 0) {
                                 mCommunication mCommunication = dlist.get(0);
                                 if (mCommunication.write_quota == 0) {
-                                    if (SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status() == 4) {
+                                    if (SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status() == 4) {
 
                                         Toast.makeText(DashboardMessagesDetailActivity.this, "Dear " + SharedPreferenceManager.getUserObject(getApplicationContext()).getAlias() + ", you have send too many messages. In order to avoid spam please wait for sometime to send more messages.", Toast.LENGTH_LONG).show();
 
@@ -340,7 +340,7 @@ public class DashboardMessagesDetailActivity extends AppCompatActivity implement
                                     JSONObject params1 = new JSONObject();
 
 
-                                    params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+                                    params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
                                     params1.put("userpath", objCom.getUserpath());
                                     getChatRequest(params1);
                                 }
@@ -405,7 +405,7 @@ public class DashboardMessagesDetailActivity extends AppCompatActivity implement
                                 finish();
 
                              /*   JSONObject params1 = new JSONObject();
-                                params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+                                params1.put("path", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
                                 params1.put("userpath", objCom.getUserpath());
                                 getChatRequest(params1);*/
 
@@ -487,7 +487,7 @@ public class DashboardMessagesDetailActivity extends AppCompatActivity implement
                             if (dlist.size() > 0) {
                                 ll_DeleteChat.setVisibility(View.VISIBLE);
 
-                                if (SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status() == 3) {
+                                if (SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status() == 3) {
                                     if (dlist2.size() > 0) {
                                         mCommunication mCom = dlist2.get(0);
                                         if (mCom.read_quota == 0 && mCom.count > 0) {
@@ -496,7 +496,7 @@ public class DashboardMessagesDetailActivity extends AppCompatActivity implement
                                             tvReadQuotaHeading.setText(Html.fromHtml(headertxt));
                                             String subheadertxt = "Dear <font color='#9a0606'><b>" + SharedPreferenceManager.getUserObject(getApplicationContext()).getAlias() + "<b></font> , your free message quota is exhausted. <font color='#9a0606'>" + "<b>" + "</b></font>";
                                             tvReadQuotaSubHeading.setText(Html.fromHtml(subheadertxt));
-                                            if (SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status() >= 4) {
+                                            if (SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status() >= 4) {
                                                 btSubscribe.setVisibility(View.GONE);
                                             }
 

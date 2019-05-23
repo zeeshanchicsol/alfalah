@@ -18,7 +18,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
@@ -136,11 +135,11 @@ DrawerActivity extends AppCompatActivity {
 
 
         m_adapter = new NotificationSpinnerAdapter(this, R.layout.item_spinner_notifications, m_NotificationDataList);
-        tcUserName.setText(member.get_personal_name());
+        tcUserName.setText(member.getPersonal_name());
 
 
         iv_profile = (ImageView) findViewById(R.id.imageViewNavDefaultImage);
-        imageLoader.displayImage(Urls.baseUrl + "/" + SharedPreferenceManager.getUserObject(getApplicationContext()).get_default_image(),
+        imageLoader.displayImage(Urls.baseUrl + "/" + SharedPreferenceManager.getUserObject(getApplicationContext()).getDefault_image(),
                 iv_profile, options,
                 new SimpleImageLoadingListener() {
 
@@ -223,16 +222,16 @@ DrawerActivity extends AppCompatActivity {
     private void viewProfile() {
 
     /*    if (ConnectCheck.isConnected(findViewById(android.R.id.content))) {
-         if (SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status() != 0) {
-                if (SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status() != 0 || SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status() != 7) {
+         if (SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status() != 0) {
+                if (SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status() != 0 || SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status() != 7) {
 
                     if (drawer != null) {
                         drawer.closeDrawers();
                     }
-                    if (SharedPreferenceManager.getUserObject(getApplicationContext()).get_path() != null && SharedPreferenceManager.getUserObject(getApplicationContext()).get_path() != "") {
+                    if (SharedPreferenceManager.getUserObject(getApplicationContext()).getPath() != null && SharedPreferenceManager.getUserObject(getApplicationContext()).getPath() != "") {
                         Intent intent = new Intent(DrawerActivity.this, MyProfileActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        intent.putExtra("userpath", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+                        intent.putExtra("userpath", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
 
                         startActivity(intent);
                     } else {
@@ -260,14 +259,14 @@ DrawerActivity extends AppCompatActivity {
             if (acheck) {
                 Intent intent = new Intent(DrawerActivity.this, MyProfileActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("userpath", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+                intent.putExtra("userpath", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
 
                 startActivity(intent);
             }*/
 
 
 
-       if(     member.get_member_status() == 0 || member.get_member_status() >= 7){
+       if(     member.getMember_status() == 0 || member.getMember_status() >= 7){
 
 
            MarryMax marryMax = new MarryMax(DrawerActivity.this);
@@ -276,7 +275,7 @@ DrawerActivity extends AppCompatActivity {
        else {
            Intent intent = new Intent(DrawerActivity.this, MyProfileActivity.class);
            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-           intent.putExtra("userpath", SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
+           intent.putExtra("userpath", SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
 
            startActivity(intent);
        }
@@ -406,8 +405,8 @@ DrawerActivity extends AppCompatActivity {
     public void getNotificationCount() {
 
 
-        Log.e(" Notification url", Urls.getNotificationCount + SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-        StringRequest req = new StringRequest(Urls.getNotificationCount + SharedPreferenceManager.getUserObject(getApplicationContext()).get_path(),
+        Log.e(" Notification url", Urls.getNotificationCount + SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+        StringRequest req = new StringRequest(Urls.getNotificationCount + SharedPreferenceManager.getUserObject(getApplicationContext()).getPath(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -437,8 +436,8 @@ DrawerActivity extends AppCompatActivity {
 
     private void getSearchListData() {
 
-        Log.e("Search Lists url", Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-        JsonArrayRequest req = new JsonArrayRequest(Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).get_path(),
+        Log.e("getSearchLists", Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+        JsonArrayRequest req = new JsonArrayRequest(Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).getPath(),
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {

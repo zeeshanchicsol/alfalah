@@ -321,7 +321,7 @@ public class RecyclerViewAdapterMyContacts extends RecyclerView.Adapter<Recycler
                     JSONObject jsonObject = new JSONObject();
                     try {
                         jsonObject.put("id", obj.getPhone_request_id());
-                        jsonObject.put("path", SharedPreferenceManager.getUserObject(context).get_path());
+                        jsonObject.put("path", SharedPreferenceManager.getUserObject(context).getPath());
 
                         deleteMyContact(jsonObject);
                     } catch (JSONException e) {

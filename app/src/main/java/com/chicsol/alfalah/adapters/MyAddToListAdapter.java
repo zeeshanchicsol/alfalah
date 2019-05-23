@@ -3,7 +3,6 @@ package com.chicsol.alfalah.adapters;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatImageView;
 import android.text.TextUtils;
@@ -30,11 +29,8 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.chicsol.alfalah.R;
-import com.chicsol.alfalah.activities.search.SearchResultsActivity;
-import com.chicsol.alfalah.modal.Members;
 import com.chicsol.alfalah.modal.mMemList;
 import com.chicsol.alfalah.preferences.SharedPreferenceManager;
 import com.chicsol.alfalah.urls.Urls;
@@ -52,8 +48,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import static com.chicsol.alfalah.utils.Constants.defaultSelectionsObj;
 
 public class MyAddToListAdapter extends ArrayAdapter<mMemList> {
     Fragment fragment;
@@ -238,7 +232,7 @@ public class MyAddToListAdapter extends ArrayAdapter<mMemList> {
         try {
 
 
-            params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+            params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
 
             params.put("id", id);
 
@@ -326,7 +320,7 @@ public class MyAddToListAdapter extends ArrayAdapter<mMemList> {
         try {
 
 
-            params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+            params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
             params.put("my_id", my_id);
             params.put("id", id);
             params.put("userpath", userpath);
@@ -409,7 +403,7 @@ public class MyAddToListAdapter extends ArrayAdapter<mMemList> {
         try {
 
 
-            params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+            params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
             params.put("userpath", userpath);
 
 
@@ -491,7 +485,7 @@ public class MyAddToListAdapter extends ArrayAdapter<mMemList> {
         try {
 
 
-            params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+            params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
             params.put("notes", notes);
             params.put("id", id);
 

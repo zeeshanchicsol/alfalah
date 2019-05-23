@@ -33,7 +33,6 @@ import com.chicsol.alfalah.dialogs.dialogRemoveFromSearch;
 import com.chicsol.alfalah.dialogs.dialogRequest;
 import com.chicsol.alfalah.dialogs.dialogRequestPhone;
 import com.chicsol.alfalah.dialogs.dialogShowInterest;
-import com.chicsol.alfalah.dialogs.dialogWithdrawInterest;
 import com.chicsol.alfalah.interfaces.MatchesRefreshCallBackInterface;
 import com.chicsol.alfalah.interfaces.UpdateMatchesCountCallback;
 import com.chicsol.alfalah.modal.Members;
@@ -140,13 +139,13 @@ TextView tvMatchesCount;
     //    super.onPrepareOptionsMenu(menu);
     //      Members memberSearchObj = DrawerActivity.rawSearchObj;
 /*        if (memberSearchObj != null) {
-            memberSearchObj.set_path(SharedPreferenceManager.getUserObject(getActivity().getApplicationContext()).get_path());
-            memberSearchObj.set_member_status(SharedPreferenceManager.getUserObject(getContext()).get_member_status());
-            memberSearchObj.set_phone_verified(SharedPreferenceManager.getUserObject(getContext()).get_phone_verified());
-            memberSearchObj.set_email_verified(SharedPreferenceManager.getUserObject(getContext()).get_email_verified());
+            memberSearchObj.setPath(SharedPreferenceManager.getUserObject(getActivity().getApplicationContext()).getPath());
+            memberSearchObj.setMember_status(SharedPreferenceManager.getUserObject(getContext()).getMember_status());
+            memberSearchObj.setPhone_verified(SharedPreferenceManager.getUserObject(getContext()).getPhone_verified());
+            memberSearchObj.setEmail_verified(SharedPreferenceManager.getUserObject(getContext()).getEmail_verified());
             //page and type
-            memberSearchObj.set_page_no(1);
-            memberSearchObj.set_type("");
+            memberSearchObj.setPage_no(1);
+            memberSearchObj.setType("");
 
             Gson gson = new Gson();
             String params = gson.toJson(memberSearchObj);
@@ -255,8 +254,8 @@ TextView tvMatchesCount;
     private void getData() {
         //  String.Max
         pDialog.setVisibility(View.VISIBLE);
-        //  Log.e("url", Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-        JsonArrayRequest req = new JsonArrayRequest(Urls.getSearchLists + SharedPreferenceManager.getUserObject(getContext()).get_path(),
+        //  Log.e("url", Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+        JsonArrayRequest req = new JsonArrayRequest(Urls.getSearchLists + SharedPreferenceManager.getUserObject(getContext()).getPath(),
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -294,13 +293,13 @@ TextView tvMatchesCount;
             Log.e("", "las p: " + lastPage + " Total Pages:" + totalPages);
        /*     Members memberSearchObj = DrawerActivity.rawSearchObj;
 
-            memberSearchObj.set_path(SharedPreferenceManager.getUserObject(getContext()).get_path());
-            memberSearchObj.set_member_status(SharedPreferenceManager.getUserObject(getContext()).get_member_status());
-            memberSearchObj.set_phone_verified(SharedPreferenceManager.getUserObject(getContext()).get_phone_verified());
-            memberSearchObj.set_email_verified(SharedPreferenceManager.getUserObject(getContext()).get_email_verified());
+            memberSearchObj.setPath(SharedPreferenceManager.getUserObject(getContext()).getPath());
+            memberSearchObj.setMember_status(SharedPreferenceManager.getUserObject(getContext()).getMember_status());
+            memberSearchObj.setPhone_verified(SharedPreferenceManager.getUserObject(getContext()).getPhone_verified());
+            memberSearchObj.setEmail_verified(SharedPreferenceManager.getUserObject(getContext()).getEmail_verified());
             //page and type
-            memberSearchObj.set_page_no(lastPage);
-            memberSearchObj.set_type("");
+            memberSearchObj.setPage_no(lastPage);
+            memberSearchObj.setType("");
 
             Gson gson = new Gson();
             String params = gson.toJson(memberSearchObj);*/
@@ -312,7 +311,7 @@ TextView tvMatchesCount;
             Type membert = new TypeToken<Members>() {
             }.getType();
             Members memberObj = (Members) gsont.fromJson(params, membert);
-            memberObj.set_page_no(lastPage);
+            memberObj.setPage_no(lastPage);
             gsont.toString();
             // Log.e("params json", gsont.toJson(memberObj));
             loadMoreData(gsont.toJson(memberObj));
@@ -334,13 +333,13 @@ TextView tvMatchesCount;
                 //  Toast.makeText(getContext(), "" + message, Toast.LENGTH_SHORT).show();
                 //   textView1.setText(message);
 
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_path(SharedPreferenceManager.getUserObject(getContext()).get_path());
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_member_status(SharedPreferenceManager.getUserObject(getContext()).get_member_status());
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_phone_verified(SharedPreferenceManager.getUserObject(getContext()).get_phone_verified());
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_email_verified(SharedPreferenceManager.getUserObject(getContext()).get_email_verified());
+                ListViewAdvSearchFragment.defaultSelectionsObj.setPath(SharedPreferenceManager.getUserObject(getContext()).getPath());
+                ListViewAdvSearchFragment.defaultSelectionsObj.setMember_status(SharedPreferenceManager.getUserObject(getContext()).getMember_status());
+                ListViewAdvSearchFragment.defaultSelectionsObj.setPhone_verified(SharedPreferenceManager.getUserObject(getContext()).getPhone_verified());
+                ListViewAdvSearchFragment.defaultSelectionsObj.setEmail_verified(SharedPreferenceManager.getUserObject(getContext()).getEmail_verified());
                 //page and type
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_page_no(1);
-                ListViewAdvSearchFragment.defaultSelectionsObj.set_type("");
+                ListViewAdvSearchFragment.defaultSelectionsObj.setPage_no(1);
+                ListViewAdvSearchFragment.defaultSelectionsObj.setType("");
 
 
                 Gson gson = new Gson();
@@ -363,13 +362,13 @@ TextView tvMatchesCount;
         if (ConnectCheck.isConnected(getActivity().findViewById(android.R.id.content))) {
             Members memberSearchObj = DrawerActivity.rawSearchObj;
             if (memberSearchObj != null) {
-                memberSearchObj.set_path(SharedPreferenceManager.getUserObject(getContext()).get_path());
-                memberSearchObj.set_member_status(SharedPreferenceManager.getUserObject(getContext()).get_member_status());
-                memberSearchObj.set_phone_verified(SharedPreferenceManager.getUserObject(getContext()).get_phone_verified());
-                memberSearchObj.set_email_verified(SharedPreferenceManager.getUserObject(getContext()).get_email_verified());
+                memberSearchObj.setPath(SharedPreferenceManager.getUserObject(getContext()).getPath());
+                memberSearchObj.setMember_status(SharedPreferenceManager.getUserObject(getContext()).getMember_status());
+                memberSearchObj.setPhone_verified(SharedPreferenceManager.getUserObject(getContext()).getPhone_verified());
+                memberSearchObj.setEmail_verified(SharedPreferenceManager.getUserObject(getContext()).getEmail_verified());
                 //page and type
-                memberSearchObj.set_page_no(1);
-                memberSearchObj.set_type("");
+                memberSearchObj.setPage_no(1);
+                memberSearchObj.setType("");
 
                 Gson gson = new Gson();
                 params = gson.toJson(memberSearchObj);
@@ -454,19 +453,19 @@ TextView tvMatchesCount;
                                     Members memberTotalPages = (Members) gson.fromJson(jsonarrayTotalPages.getJSONObject(0).toString(), membert);
 
 
-                                    totalPages = memberTotalPages.get_total_pages();
+                                    totalPages = memberTotalPages.getTotal_pages();
                                     lastPage = 1;
                                     //      Log.e("total pages", "" + totalPages);
                                     swipeRefresh.setRefreshing(false);
 
-                                    if (memberTotalPages.get_total_member_count() > 0) {
+                                    if (memberTotalPages.getTotal_member_count() > 0) {
 
                                         if (getView() != null) {
                                           /*  getView().findViewById(R.id.TextViewMatchesTotalCount).setVisibility(View.VISIBLE);
-                                            ((TextView) getView().findViewById(R.id.TextViewMatchesTotalCount)).setText("" + memberTotalPages.get_total_member_count() + " Matches Found");
+                                            ((TextView) getView().findViewById(R.id.TextViewMatchesTotalCount)).setText("" + memberTotalPages.getTotal_member_count() + " Matches Found");
                               */
                                             tvMatchesCount.setVisibility(View.VISIBLE);
-                                            totalMatchesCount = memberTotalPages.get_total_member_count();
+                                            totalMatchesCount = memberTotalPages.getTotal_member_count();
                                             setMatchesCount();
 
                                         }
@@ -616,8 +615,8 @@ TextView tvMatchesCount;
        }*/
     private void getRawData() {
 
-        Log.e("getRawData started", Urls.getRawData + SharedPreferenceManager.getUserObject(context).get_path() + "/0");
-        JsonArrayRequest req = new JsonArrayRequest(Urls.getRawData + SharedPreferenceManager.getUserObject(context).get_path() + "/0",
+        Log.e("getRawData started", Urls.getRawData + SharedPreferenceManager.getUserObject(context).getPath() + "/0");
+        JsonArrayRequest req = new JsonArrayRequest(Urls.getRawData + SharedPreferenceManager.getUserObject(context).getPath() + "/0",
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -639,13 +638,13 @@ TextView tvMatchesCount;
 
                             Members memberSearchObj = DrawerActivity.rawSearchObj;
                             if (memberSearchObj != null) {
-                                memberSearchObj.set_path(SharedPreferenceManager.getUserObject(context).get_path());
-                                memberSearchObj.set_member_status(SharedPreferenceManager.getUserObject(context).get_member_status());
-                                memberSearchObj.set_phone_verified(SharedPreferenceManager.getUserObject(context).get_phone_verified());
-                                memberSearchObj.set_email_verified(SharedPreferenceManager.getUserObject(context).get_email_verified());
+                                memberSearchObj.setPath(SharedPreferenceManager.getUserObject(context).getPath());
+                                memberSearchObj.setMember_status(SharedPreferenceManager.getUserObject(context).getMember_status());
+                                memberSearchObj.setPhone_verified(SharedPreferenceManager.getUserObject(context).getPhone_verified());
+                                memberSearchObj.setEmail_verified(SharedPreferenceManager.getUserObject(context).getEmail_verified());
                                 //page and type
-                                memberSearchObj.set_page_no(1);
-                                memberSearchObj.set_type("");
+                                memberSearchObj.setPage_no(1);
+                                memberSearchObj.setType("");
 
                                 Gson gson = new Gson();
                                 params = gson.toJson(memberSearchObj);

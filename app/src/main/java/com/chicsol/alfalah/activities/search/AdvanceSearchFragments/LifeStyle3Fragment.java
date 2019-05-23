@@ -78,31 +78,31 @@ public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnChe
 
 
         try {
-            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(26).toString(), listType);
+            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(29).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList0, LinearLayoutAdvSearchRelocation, "relocation");
 
-            List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(27).toString(), listType);
+            List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(30).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList1, LinearLayoutAdvSearchMarrytime, "marrytime");
 
-            List<WebArd> dataList2 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(28).toString(), listType);
+            List<WebArd> dataList2 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(31).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList2, LinearLayoutAdvSearchWantChildren, "wantchildren");
 
-            List<WebArd> dataList3 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(29).toString(), listType);
+            List<WebArd> dataList3 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(32).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList3, LinearLayoutAdvSearchPhysicallyChallenged, "physicallychallenged");
 
-            List<WebArd> dataList4 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(30).toString(), listType);
+            List<WebArd> dataList4 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(33).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList4, LinearLayoutAdvSearchRevert, "revert");
 
-            List<WebArd> dataList5 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(31).toString(), listType);
+            List<WebArd> dataList5 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(34).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList5, LinearLayoutAdvSearchBeard, "beard");
 
-            List<WebArd> dataList6 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(32).toString(), listType);
+            List<WebArd> dataList6 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(35).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList6, LinearLayoutAdvSearchKeepHalal, "keephalal");
 
-            List<WebArd> dataList7 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(33).toString(), listType);
+            List<WebArd> dataList7 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(36).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList7, LinearLayoutAdvSearchSalah, "salah");
 
-            List<WebArd> dataList8 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(34).toString(), listType);
+            List<WebArd> dataList8 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(37).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList8, LinearLayoutAdvSearchReligious, "religious");
 
         } catch (JSONException e) {
@@ -224,7 +224,7 @@ public class LifeStyle3Fragment extends Fragment implements CompoundButton.OnChe
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
         if (buttonView.getTag() != null) {
-            //  Log.e("sibling ids",""+ defaultSelectionsObj.get_choice_raised_ids());
+            //  Log.e("sibling ids",""+ defaultSelectionsObj.getChoice_raised_ids());
 
             if (buttonView.getTag().equals("relocation")) {
                 defaultSelectionsObj.setChoice_relocation_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchRelocation));

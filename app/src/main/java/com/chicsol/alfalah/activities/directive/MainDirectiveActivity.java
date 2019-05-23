@@ -17,7 +17,7 @@ import com.chicsol.alfalah.activities.search.SearchMainActivity;
 import com.chicsol.alfalah.dialogs.dialogProfileCompletion;
 import com.chicsol.alfalah.fragments.AccountSetting.MatchingAttributeFragment;
 import com.chicsol.alfalah.fragments.AccountSetting.MyContactFragment;
-import com.chicsol.alfalah.fragments.AccountSetting.MyProfileStatusFragment;
+import com.chicsol.alfalah.fragments.AccountSetting.MyProfileSettingFragment;
 import com.chicsol.alfalah.fragments.inbox.DashboardMessagesFragment;
 import com.chicsol.alfalah.fragments.inbox.interests.DashboardMyInterestsMainFragment;
 import com.chicsol.alfalah.fragments.inbox.permissions.DashboardMyPermissionsMainFragment;
@@ -186,7 +186,7 @@ public class MainDirectiveActivity extends AppCompatActivity implements dialogPr
                 break;
             case 22:
                 getSupportActionBar().setTitle("Profile Settings");
-                fragment = new MyProfileStatusFragment();
+                fragment = new MyProfileSettingFragment();
                 break;
             case 23:
                 getSupportActionBar().setTitle("My Contact");
@@ -247,8 +247,8 @@ public class MainDirectiveActivity extends AppCompatActivity implements dialogPr
     private void getData() {
         //  String.Max
         //  pDialog.setVisibility(View.VISIBLE);
-        //  Log.e("url", Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-        JsonArrayRequest req = new JsonArrayRequest(Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).get_path(),
+        //  Log.e("url", Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+        JsonArrayRequest req = new JsonArrayRequest(Urls.getSearchLists + SharedPreferenceManager.getUserObject(getApplicationContext()).getPath(),
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {

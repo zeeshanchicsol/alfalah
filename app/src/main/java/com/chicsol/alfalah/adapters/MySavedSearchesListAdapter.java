@@ -30,7 +30,6 @@ import com.chicsol.alfalah.activities.search.SearchResultsActivity;
 import com.chicsol.alfalah.dialogs.dialogUpdateSavedSearch;
 import com.chicsol.alfalah.modal.Members;
 import com.chicsol.alfalah.modal.cModel;
-import com.chicsol.alfalah.other.MarryMax;
 import com.chicsol.alfalah.preferences.SharedPreferenceManager;
 import com.chicsol.alfalah.urls.Urls;
 import com.chicsol.alfalah.utils.Constants;
@@ -137,7 +136,7 @@ public class MySavedSearchesListAdapter extends ArrayAdapter<cModel> {
                                     try {
                                         params.put("id", item1.getId());
                                         params.put("name", item1.getName());
-                                        params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+                                        params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
@@ -328,11 +327,11 @@ public class MySavedSearchesListAdapter extends ArrayAdapter<cModel> {
                             Log.e("body ids rawww", gson.toJson(defaultSelectionsObj) + "  --");
 */
 
-                            Log.e("body ids rawww", defaultSelectionsObj.get_choice_height_from_id() + "  --");
-                            Log.e("body ids rawww", defaultSelectionsObj.get_choice_height_to_id() + "  --");
-                            /*Log.e("body ids rawww", defaultSelectionsObj.get_country_id() + "  --");
-                            Log.e("body ids rawww", defaultSelectionsObj.get_choice_country_ids() + "  --");
-                            Log.e("body ids rawww", defaultSelectionsObj.get_choice_country_names() + "  --");*/
+                            Log.e("body ids rawww", defaultSelectionsObj.getChoice_height_from_id() + "  --");
+                            Log.e("body ids rawww", defaultSelectionsObj.getChoice_height_to_id() + "  --");
+                            /*Log.e("body ids rawww", defaultSelectionsObj.getCountry_id() + "  --");
+                            Log.e("body ids rawww", defaultSelectionsObj.getChoice_country_ids() + "  --");
+                            Log.e("body ids rawww", defaultSelectionsObj.getChoice_country_names() + "  --");*/
                             Constants.searchFromSavedListings = true;
                             Intent intent = new Intent(getContext(), SearchResultsActivity.class);
                             context.startActivity(intent);

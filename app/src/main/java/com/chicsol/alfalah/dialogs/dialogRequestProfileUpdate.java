@@ -237,7 +237,7 @@ public class dialogRequestProfileUpdate extends DialogFragment {
                     JSONObject params = new JSONObject();
                     try {
 
-                        params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+                        params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
 
                         params.put("ID", cat.getId());
                         params.put("ID2", sub.getId());

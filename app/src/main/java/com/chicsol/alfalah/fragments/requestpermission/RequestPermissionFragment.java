@@ -1,6 +1,5 @@
 package com.chicsol.alfalah.fragments.requestpermission;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -21,7 +20,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.chicsol.alfalah.R;
-import com.chicsol.alfalah.activities.RequestPermissionsActivity;
 import com.chicsol.alfalah.adapters.RecyclerViewAdapterRequestPermissions;
 import com.chicsol.alfalah.modal.Members;
 import com.chicsol.alfalah.modal.mRequestPermission;
@@ -122,7 +120,7 @@ public class RequestPermissionFragment extends Fragment implements RecyclerViewA
 
 
             params.put("userpath", member.getUserpath());
-            params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+            params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
 
 
         } catch (JSONException e) {

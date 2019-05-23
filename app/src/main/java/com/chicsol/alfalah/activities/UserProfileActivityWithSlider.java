@@ -1,7 +1,6 @@
 package com.chicsol.alfalah.activities;
 
 import android.app.ProgressDialog;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
@@ -10,7 +9,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -22,7 +20,6 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.chicsol.alfalah.R;
 import com.chicsol.alfalah.adapters.ProfilePagerAdapter;
 import com.chicsol.alfalah.adapters.ProfileSliderPagerAdapter;
-import com.chicsol.alfalah.fragments.inbox.DashboardQuestionsFragment;
 import com.chicsol.alfalah.modal.Members;
 import com.chicsol.alfalah.preferences.SharedPreferenceManager;
 import com.chicsol.alfalah.urls.Urls;
@@ -41,8 +38,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import static com.chicsol.alfalah.utils.Constants.defaultSelectionsObj;
 
 public class UserProfileActivityWithSlider extends AppCompatActivity {
     private ViewPager viewPagerProfileSlider;
@@ -92,7 +87,7 @@ public class UserProfileActivityWithSlider extends AppCompatActivity {
 
             memberSearchObj = gson.fromJson(getIntent().getStringExtra("memresult"), Members.class);
 
-            Log.e(TAG + " TYPE", "=- " + memberSearchObj.get_type());
+            Log.e(TAG + " TYPE", "=- " + memberSearchObj.getType());
             Log.e(TAG + " memresult", "=- " + getIntent().getStringExtra("memresult"));
             Log.e(TAG + " userpath", "=- " + SharedPreferenceManager.getUserObject(getApplicationContext()).getUserpath());
 
@@ -125,16 +120,16 @@ public class UserProfileActivityWithSlider extends AppCompatActivity {
 
   /*      Members memberSearchObj = defaultSelectionsObj;
         if (memberSearchObj != null) {
-            memberSearchObj.set_path(SharedPreferenceManager.getUserObject(getApplicationContext()).get_path());
-            memberSearchObj.set_member_status(SharedPreferenceManager.getUserObject(getApplicationContext()).get_member_status());
-            memberSearchObj.set_phone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_phone_verified());
-            memberSearchObj.set_email_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).get_email_verified());
+            memberSearchObj.setPath(SharedPreferenceManager.getUserObject(getApplicationContext()).getPath());
+            memberSearchObj.setMember_status(SharedPreferenceManager.getUserObject(getApplicationContext()).getMember_status());
+            memberSearchObj.setPhone_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getPhone_verified());
+            memberSearchObj.setEmail_verified(SharedPreferenceManager.getUserObject(getApplicationContext()).getEmail_verified());
             //page and type
-            memberSearchObj.set_page_no(pageNumber);
-            memberSearchObj.set_type("");
+            memberSearchObj.setPage_no(pageNumber);
+            memberSearchObj.setType("");
 
-            Log.e(TAG + " page_no", "= " + memberSearchObj.get_page_no());
-            current_page = (int) memberSearchObj.get_page_no();
+            Log.e(TAG + " page_no", "= " + memberSearchObj.getPage_no());
+            current_page = (int) memberSearchObj.getPage_no();
 
             Gson gson = new Gson();
             String params = gson.toJson(memberSearchObj);
@@ -145,11 +140,11 @@ public class UserProfileActivityWithSlider extends AppCompatActivity {
 
             current_page = pageNumber;
       /*  Members memberSearchObj = SharedPreferenceManager.getMemResultsObject(getApplicationContext());
-        memberSearchObj.set_page_no(pageNumber);
+        memberSearchObj.setPage_no(pageNumber);
         Gson gson = new Gson();*/
 
 
-            memberSearchObj.set_page_no(pageNumber);
+            memberSearchObj.setPage_no(pageNumber);
             String params = gson.toJson(memberSearchObj);
             Log.e(TAG + "params  memberSearchObj", "=- " + params);
             listUserProfiles(params);
@@ -197,7 +192,7 @@ public class UserProfileActivityWithSlider extends AppCompatActivity {
 
                     //  Members memberSearchObj = SharedPreferenceManager.getMemResultsObject(getApplicationContext());
                     current_page = current_page + 1;
-                    memberSearchObj.set_page_no(current_page);
+                    memberSearchObj.setPage_no(current_page);
                     Gson gson = new Gson();
                     String params = gson.toJson(memberSearchObj);
                     Log.e(TAG + " params string", params + "==");
@@ -221,7 +216,7 @@ public class UserProfileActivityWithSlider extends AppCompatActivity {
                     current_page = current_page - 1;
 
 
-                    memberSearchObj.set_page_no(current_page);
+                    memberSearchObj.setPage_no(current_page);
                     Gson gson = new Gson();
                     String params = gson.toJson(memberSearchObj);
                     Log.e(TAG + " params string", params + "==");

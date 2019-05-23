@@ -3,7 +3,6 @@ package com.chicsol.alfalah.helperMethods;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
-import android.view.MenuItem;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -14,8 +13,6 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
-import com.chicsol.alfalah.BuildConfig;
-import com.chicsol.alfalah.R;
 import com.chicsol.alfalah.modal.Members;
 import com.chicsol.alfalah.modal.WebArd;
 import com.chicsol.alfalah.preferences.SharedPreferenceManager;
@@ -41,7 +38,7 @@ import java.util.Map;
 public class APIHelper {
     Context context;
 
-    /* ListViewAdvSearchFragment.defaultSelectionsObj.set_path(SharedPreferenceManager.getUserObject(getContext()).get_path());
+    /* ListViewAdvSearchFragment.defaultSelectionsObj.setPath(SharedPreferenceManager.getUserObject(getContext()).getPath());
      */
 /*    Gson gson = new Gson();
     String memString = gson.toJson(ListViewAdvSearchFragment.defaultSelectionsObj);
@@ -75,7 +72,7 @@ public class APIHelper {
         final ProgressDialog pDialog = new ProgressDialog(context);
         pDialog.setMessage("Loading...");
         pDialog.show();
-        Log.e("api path", "" + Urls.getStatesUrl + SharedPreferenceManager.getUserObject(context).get_path());
+        Log.e("api path", "" + Urls.getStatesUrl + SharedPreferenceManager.getUserObject(context).getPath());
 
         JsonArrayRequest req = new JsonArrayRequest(Urls.getStatesUrl + country_id,
                 new Response.Listener<JSONArray>() {
@@ -256,8 +253,8 @@ public class APIHelper {
     private void getNotificationCount() {
 
 
-        Log.e(" Notification url", Urls.getNotificationCount + SharedPreferenceManager.getUserObject(context).get_path());
-        StringRequest req = new StringRequest(Urls.getNotificationCount + SharedPreferenceManager.getUserObject(context).get_path(),
+        Log.e(" Notification url", Urls.getNotificationCount + SharedPreferenceManager.getUserObject(context).getPath());
+        StringRequest req = new StringRequest(Urls.getNotificationCount + SharedPreferenceManager.getUserObject(context).getPath(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

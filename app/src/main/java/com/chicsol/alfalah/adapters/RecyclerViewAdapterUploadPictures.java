@@ -159,8 +159,8 @@ public class RecyclerViewAdapterUploadPictures extends RecyclerView.Adapter<Recy
         holder.tvphotoUploadStatus.setVisibility(View.GONE);
 
 
-        if (obj.get_default_image() != null) {
-            if (obj.get_default_image().equals("1")) {
+        if (obj.getDefault_image() != null) {
+            if (obj.getDefault_image().equals("1")) {
                 holder.defaultCheckbox.setVisibility(View.GONE);
                 holder.tvDefaultImage.setVisibility(View.VISIBLE);
             } else {
@@ -169,7 +169,7 @@ public class RecyclerViewAdapterUploadPictures extends RecyclerView.Adapter<Recy
                 holder.tvDefaultImage.setVisibility(View.GONE);
             }
         }
-        if (obj.get_photo_path() == null) {
+        if (obj.getPhoto_path() == null) {
             holder.tvDefaultImage.setVisibility(View.GONE);
             holder.defaultCheckbox.setVisibility(View.GONE);
             holder.imageDeleteImage.setVisibility(View.GONE);
@@ -178,10 +178,10 @@ public class RecyclerViewAdapterUploadPictures extends RecyclerView.Adapter<Recy
 
         } else {
 
-            if(obj.get_photo_name().equals("Approved")){
+            if(obj.getPhoto_name().equals("Approved")){
 
                 holder.tvphotoUploadStatus.setVisibility(View.VISIBLE);
-                holder.tvphotoUploadStatus.setText(obj.get_photo_name());
+                holder.tvphotoUploadStatus.setText(obj.getPhoto_name());
                 holder.tvphotoUploadStatus.setTextColor(context.getResources().getColor(R.color.colorDefaultGreen));
 
             }
@@ -195,7 +195,7 @@ public class RecyclerViewAdapterUploadPictures extends RecyclerView.Adapter<Recy
 
             holder.imageDeleteImage.setVisibility(View.VISIBLE);
           holder.imagePerView.setTag("-");
-            imageLoader.displayImage(Urls.baseUrl + "/" + obj.get_photo_path(),
+            imageLoader.displayImage(Urls.baseUrl + "/" + obj.getPhoto_path(),
                     holder.imagePerView, options,
                     new SimpleImageLoadingListener() {
 
@@ -239,10 +239,10 @@ public class RecyclerViewAdapterUploadPictures extends RecyclerView.Adapter<Recy
                 try {
                     //    path, photo_id,photo_path_thb,photo_server_name
 
-                    params.put("path", SharedPreferenceManager.getUserObject(context).get_path());
-                    params.put("photo_id", obj.get_photo_id());
-                    params.put("photo_path_thb", obj.get_photo_path_thb());
-                    params.put("photo_server_name", obj.get_photo_server_name());
+                    params.put("path", SharedPreferenceManager.getUserObject(context).getPath());
+                    params.put("photo_id", obj.getPhoto_id());
+                    params.put("photo_path_thb", obj.getPhoto_path_thb());
+                    params.put("photo_server_name", obj.getPhoto_server_name());
 
                     deleteImageRequest(params, obj, position, holder);
                 } catch (JSONException e) {
@@ -261,8 +261,8 @@ public class RecyclerViewAdapterUploadPictures extends RecyclerView.Adapter<Recy
                     try {
 
                         //  path, ID,ID2
-                        params.put("path", SharedPreferenceManager.getUserObject(context).get_path());
-                        params.put("ID", obj.get_photo_id());
+                        params.put("path", SharedPreferenceManager.getUserObject(context).getPath());
+                        params.put("ID", obj.getPhoto_id());
                         params.put("ID2", 1);
                         //  Toast.makeText(context, "checked", Toast.LENGTH_SHORT).show();
 

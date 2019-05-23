@@ -7,7 +7,7 @@
     <color name="colorDefaultGreen">#216917</color>
     <color name="colorTextRed">#88B14B</color>
     <color name="colorSpinnerLabel">@color/colorGrey</color>
-
+    <color name="colorLightGrey">#eee</color>
 
     <!--    LoginActivityColor-->
     <color name="colorWhite">#ffffff</color>

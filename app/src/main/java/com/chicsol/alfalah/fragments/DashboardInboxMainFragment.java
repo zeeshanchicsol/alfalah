@@ -3,7 +3,6 @@ package com.chicsol.alfalah.fragments;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -22,8 +21,6 @@ import com.chicsol.alfalah.activities.DashboarMainActivityWithBottomNav;
 import com.chicsol.alfalah.fragments.inbox.DashboardMessagesFragment;
 import com.chicsol.alfalah.fragments.inbox.DashboardQuestionsFragment;
 import com.chicsol.alfalah.fragments.inbox.interests.DashboardMyInterestsMainFragment;
-import com.chicsol.alfalah.fragments.inbox.permissions.DashboardMyPermissionsMainFragment;
-import com.chicsol.alfalah.fragments.inbox.permissions.DashboardPermissionsFragment;
 import com.chicsol.alfalah.fragments.inbox.requests.DashboardMyRequestsMainFragment;
 import com.chicsol.alfalah.modal.Members;
 import com.chicsol.alfalah.other.MarryMax;
@@ -59,7 +56,7 @@ public class DashboardInboxMainFragment extends Fragment implements DashboarMain
     public void onResume() {
         super.onResume();
         Members member = SharedPreferenceManager.getUserObject(context);
-        if (member.get_member_status() < 3 || member.get_member_status() >= 7) {
+        if (member.getMember_status() < 3 || member.getMember_status() >= 7) {
             new MarryMax(null).updateStatus(context);
 
         }

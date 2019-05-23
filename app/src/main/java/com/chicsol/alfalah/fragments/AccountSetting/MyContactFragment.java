@@ -1,6 +1,6 @@
 package com.chicsol.alfalah.fragments.AccountSetting;
 
-import android.content.Context;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -22,7 +22,6 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -37,12 +36,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.chicsol.alfalah.R;
 import com.chicsol.alfalah.adapters.MySpinnerAdapter;
 import com.chicsol.alfalah.adapters.MySpinnerCSCAdapter;
 import com.chicsol.alfalah.dialogs.dialogProfileCompletion;
 import com.chicsol.alfalah.dialogs.dialogVerifyphone;
-import com.chicsol.alfalah.modal.Dashboards;
 import com.chicsol.alfalah.modal.Members;
 import com.chicsol.alfalah.modal.WebArd;
 import com.chicsol.alfalah.modal.WebCSC;
@@ -96,7 +95,7 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
     private Members member = null;
     private Snackbar snackbarNotVerified;
     RelativeLayout tvHeading;
-
+    private String country_id = "";
     private ProgressBar pDialog;
     /*  private AppCompatButton  btResendVerificationEmail, btUpdateEmail, btEmailCancel;*/
 
@@ -231,18 +230,46 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
 
 
                 String mobNum = EditTextAScontactMobileNumber.getText().toString();
+                String countryCode = EditTextAScontactMobileNumber.getTag().toString();
+
+
                 String landNum = EditTextAScontactLandlineNumber.getText().toString();
+
                 String personName = EditTextAScontactPersonName.getText().toString();
 
-              /*  tvMobile.setText(member.get_phone_mobile());
-                tvCountry.setText(member.get_country_name());
-                tvLandline.setText(member.get_phone_home());
-                tvNameOfContactPerson.setText(member.get_personal_name());
-                tvRelationshipWithMember.setText(member.get_profile_owner());
-                tvConvenientCallTime.setText(member.get_notes());*/
-                View focusView = null;
-                Log.e("length is ", mobNum.length() + "");
+                if (spinnerAScontactCountry.getSelectedItemPosition() != 0) {
+                    countryCode = countryCode.replace("+", "");
+                }
 
+                //   Log.e("111 countryCode ", Integer.parseInt(countryCode.trim() )+ "");
+                //   Log.e("111 land number is", Integer.parseInt(mobNum.substring(0, countryCode.trim().length())) + "");
+
+
+                if (!TextUtils.isEmpty(mobNum.trim()) && spinnerAScontactCountry.getSelectedItemPosition() != 0) {
+                    if (!countryCodeCheck(Integer.parseInt(countryCode.trim()), Integer.parseInt(mobNum.substring(0, countryCode.trim().length())))) {
+                        mobNum = mobNum.substring(countryCode.trim().length(), mobNum.length());
+
+
+                    }
+                }
+
+                //    Log.e("111 mob number is", mobNum);
+                if (!TextUtils.isEmpty(landNum.trim()) && spinnerAScontactCountry.getSelectedItemPosition() != 0) {
+                    if (!countryCodeCheck(Integer.parseInt(countryCode.trim()), Integer.parseInt(landNum.substring(0, countryCode.trim().length())))) {
+                        landNum = landNum.substring(countryCode.trim().length(), landNum.length());
+
+                    }
+                }
+                //     Log.e("111 land number is", landNum);
+
+
+              /*  tvMobile.setText(member.getPhone_mobile());
+                tvCountry.setText(member.getCountry_name());
+                tvLandline.setText(member.getPhone_home());
+                tvNameOfContactPerson.setText(member.getPersonal_name());
+                tvRelationshipWithMember.setText(member.getProfile_owner());
+                tvConvenientCallTime.setText(member.getNotes());*/
+                View focusView = null;
 
                 if (spinnerAScontactCountry.getSelectedItemPosition() == 0) {
                     Toast.makeText(getContext(), "Select Country", Toast.LENGTH_SHORT).show();
@@ -253,8 +280,25 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
                     focusView = EditTextAScontactMobileNumber;
 
                     focusView.requestFocus();
-                } else if (!isPhone(mobNum)) {
-                    EditTextAScontactMobileNumber.setError("Invalid  phone format");
+                }
+                /*else if (!countryCodeCheck(Integer.parseInt(countryCode.trim()), Integer.parseInt(mobNum.substring(0, countryCode.length() - 1)))) {
+                    EditTextAScontactMobileNumber.setError("Invalid Mobile Number");
+                    focusView = EditTextAScontactMobileNumber;
+                    focusView.requestFocus();
+
+                } else if (!TextUtils.isEmpty(landNum.trim()) && !countryCodeCheck(Integer.parseInt(countryCode.trim()), Integer.parseInt(landNum.substring(0, countryCode.length() - 1)))) {
+
+                    //     if (!countryCodeCheck(Integer.parseInt(countryCode.trim()), Integer.parseInt(landNum.substring(0, countryCode.length()-1)))) {
+                    EditTextAScontactLandlineNumber.setError("Invalid Landline Number");
+                    focusView = EditTextAScontactLandlineNumber;
+                    focusView.requestFocus();
+
+                    //  }
+
+
+                } */
+                else if (!isPhone(mobNum)) {
+                    EditTextAScontactMobileNumber.setError("Invalid phone format");
                     focusView = EditTextAScontactMobileNumber;
                     focusView.requestFocus();
                 } else if (mobNum.length() > 16) {
@@ -276,8 +320,6 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
                         focusView = EditTextAScontactLandlineNumber;
                         focusView.requestFocus();
                     }
-
-
                 }*/
                 else if (TextUtils.isEmpty(personName.trim())) {
                     EditTextAScontactPersonName.setError("Please Enter Person Name");
@@ -311,15 +353,17 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
 
 
                     Members member = new Members();
-                    member.set_path(SharedPreferenceManager.getUserObject(getContext()).get_path());
+                    member.setPath(SharedPreferenceManager.getUserObject(getContext()).getPath());
                     WebCSC selectedCountry = (WebCSC) spinnerAScontactCountry.getSelectedItem();
-                    member.set_country_id(Long.parseLong(selectedCountry.getId()));
 
+                    if (selectedCountry != null) {
+                        member.setCountry_id(Long.parseLong(selectedCountry.getId()));
+                    }
 
                     WebArd selectedRelationShip = (WebArd) spinnerAScontactRelationShipWithMember.getSelectedItem();
-                    member.set_profile_owner_id(Long.parseLong(selectedRelationShip.getId()));
+                    member.setProfile_owner_id(Long.parseLong(selectedRelationShip.getId()));
                     WebArd selectedTimeToCall = (WebArd) spinnerMyAScontactConvTimeToCall.getSelectedItem();
-                    member.set_notes(selectedTimeToCall.getName());
+                    member.setNotes(selectedTimeToCall.getName());
 
                     // String mobnum = EditTextAScontactMobileNumber.getText().toString();
 
@@ -328,16 +372,16 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
 
                     mobNum = mobNum.replaceAll("[/\\D/g]", "");
 
-                    member.set_phone_mobile(mobNum);
-                    String landline = EditTextAScontactLandlineNumber.getText().toString();
+                    member.setPhone_mobile(mobNum);
+                    //  String landline = EditTextAScontactLandlineNumber.getText().toString();
 
-                    member.set_phone_home(landline);
+                    member.setPhone_home(landNum);
                     String PersonalName = EditTextAScontactPersonName.getText().toString();
-                    member.set_personal_name(PersonalName);
+                    member.setPersonal_name(PersonalName);
 
                     Gson gson = new Gson();
 
-                    Log.e("Loggg", gson.toJson(member));
+                    //  Log.e("Loggg", gson.toJson(member));
                     try {
 
                         if (ConnectCheck.isConnected(getActivity().findViewById(android.R.id.content))) {
@@ -351,15 +395,15 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
         });
 
         if (ConnectCheck.isConnected(getActivity().findViewById(android.R.id.content))) {
-            getRequest(SharedPreferenceManager.getUserObject(getContext()).get_path());
+            getRequest(SharedPreferenceManager.getUserObject(getContext()).getPath());
         }
         snackbarNotVerified = Snackbar.make(getActivity().findViewById(android.R.id.content), "Unable to Verify. Please contact marrymax support", Snackbar.LENGTH_SHORT);
 
 /* email
-        etAsEmail.setText(SharedPreferenceManager.getUserObject(getContext()).get_email());
+        etAsEmail.setText(SharedPreferenceManager.getUserObject(getContext()).getEmail());
         etAsEmail.setEnabled(false);*/
 
-    /*    if (SharedPreferenceManager.getUserObject(getContext()).get_member_status() < 3 || SharedPreferenceManager.getUserObject(getContext()).get_member_status() >= 7) {
+    /*    if (SharedPreferenceManager.getUserObject(getContext()).getMember_status() < 3 || SharedPreferenceManager.getUserObject(getContext()).getMember_status() >= 7) {
             checkEmailStatus(getContext());
             llASEmail.setVisibility(View.VISIBLE);
         } else {
@@ -372,8 +416,8 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
 /*    public void checkEmailStatus(final Context context) {
 
         // pDialog.show();
-        Log.e("status URL", Urls.getProfileCompletion + SharedPreferenceManager.getUserObject(context).get_path());
-        JsonArrayRequest req = new JsonArrayRequest(Urls.getProfileCompletion + SharedPreferenceManager.getUserObject(context).get_path(),
+        Log.e("status URL", Urls.getProfileCompletion + SharedPreferenceManager.getUserObject(context).getPath());
+        JsonArrayRequest req = new JsonArrayRequest(Urls.getProfileCompletion + SharedPreferenceManager.getUserObject(context).getPath(),
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -395,7 +439,7 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
 
                             boolean pCOmpleteStatus = true;
                             Members members = SharedPreferenceManager.getUserObject(context);
-                            //   if (dashboards.getAdmin_approved_status().equals("1") && members.get_member_status() < 3) {
+                            //   if (dashboards.getAdmin_approved_status().equals("1") && members.getMember_status() < 3) {
 
                             if (dashboards.getEmail_complete_status().equals("1")) {
                                 //hide update email
@@ -409,9 +453,9 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
 
                             }
 
-                                *//*else if (members.get_member_status() == 2) {
+                                *//*else if (members.getMember_status() == 2) {
                                     if (dashboards.getEmail_complete_status().equals("1")  && dashboards.getProfile_complete_status().equals("100")) {
-                                        members.set_member_status(3);
+                                        members.setMember_status(3);
                                         SharedPreferenceManager.setUserObject(context,members);
                                     }
 
@@ -448,6 +492,18 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
     }*/
 
 
+    private boolean countryCodeCheck(int countryCode, int mobNum) {
+
+        Log.e("countryCodeCheck", countryCode + "   " + mobNum);
+
+        if (countryCode == mobNum) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
+
     private void setEditValues(Members member) {
         //  spinnerAScontactCountry, EditTextAScontactMobileNumber, EditTextAScontactLandlineNumber, EditTextAScontactPersonName,
         // spinnerAScontactRelationShipWithMember , spinnerMyAScontactConvTimeToCall
@@ -456,28 +512,29 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
         LinearlayoutAccountSettingMyContactNoData.setVisibility(View.VISIBLE);
         btCancel.setVisibility(View.VISIBLE);
         ViewGenerator viewGenerator = new ViewGenerator(getContext());
-        viewGenerator.selectSpinnerItemByIdWebCSC(spinnerAScontactCountry, member.get_country_id(), countryOfLivingDataList);
-        viewGenerator.selectSpinnerItemById(spinnerAScontactRelationShipWithMember, member.get_profile_owner_id(), relationshipDataList);
+        viewGenerator.selectSpinnerItemByIdWebCSC(spinnerAScontactCountry, member.getCountry_id(), countryOfLivingDataList);
+        viewGenerator.selectSpinnerItemById(spinnerAScontactRelationShipWithMember, member.getProfile_owner_id(), relationshipDataList);
 
-        Log.e("Evening aaaaa", "" + member.get_notes() + "===");
 
-        viewGenerator.selectSpinnerItemByValue(spinnerMyAScontactConvTimeToCall, member.get_notes(), covenientTimetoCallDataList);
+        Log.e("Evening aaaaa", "" + member.getNotes() + "===");
 
-        if (member.get_notes().equals("Morning")) {
+        viewGenerator.selectSpinnerItemByValue(spinnerMyAScontactConvTimeToCall, member.getNotes(), covenientTimetoCallDataList);
+
+        if (member.getNotes().equals("Morning")) {
             spinnerMyAScontactConvTimeToCall.setSelection(1);
-        } else if (member.get_notes().equals("Afternoon")) {
+        } else if (member.getNotes().equals("Afternoon")) {
             spinnerMyAScontactConvTimeToCall.setSelection(2);
-        } else if (member.get_notes().equals("Evening")) {
+        } else if (member.getNotes().equals("Evening")) {
             spinnerMyAScontactConvTimeToCall.setSelection(3);
 
         } else {
             spinnerMyAScontactConvTimeToCall.setSelection(0);
         }
 
-        Log.e("get_phone_mobile", "" + member.get_phone_mobile());
+        Log.e("getPhone_mobile", "" + member.getPhone_mobile());
 
         //adapter_countryOfLiving
-        String mobile = member.get_phone_mobile();
+        String mobile = member.getPhone_mobile();
 
         if (mobile.contains("-")) {
             String[] sad = mobile.split("-");
@@ -485,7 +542,7 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
                 EditTextAScontactMobileNumber.setTag("+" + sad[0] + " ");
                 EditTextAScontactMobileNumber.setText(sad[1]);
             } else {
-                EditTextAScontactMobileNumber.setText(member.get_phone_mobile());
+                EditTextAScontactMobileNumber.setText(member.getPhone_mobile());
 
             }
         } else {
@@ -493,7 +550,7 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
         }
 
 
-        String landline = member.get_phone_home();
+        String landline = member.getPhone_home();
         if (!landline.equals("")) {
 
             if (landline.contains("-")) {
@@ -511,13 +568,13 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
 
 
         }
-        //  tvCountry.setText(member.get_country_name());
-        //    EditTextAScontactLandlineNumber.setText(member.get_phone_home());
+        //  tvCountry.setText(member.getCountry_name());
+        //    EditTextAScontactLandlineNumber.setText(member.getPhone_home());
 
 
-        EditTextAScontactPersonName.setText(member.get_personal_name());
-        // tvRelationshipWithMember.setText(member.get_profile_owner());
-        //   tvConvenientCallTime.setText(member.get_notes());
+        EditTextAScontactPersonName.setText(member.getPersonal_name());
+        // tvRelationshipWithMember.setText(member.getProfile_owner());
+        //   tvConvenientCallTime.setText(member.getNotes());
     }
 
     private void resetValues() {
@@ -526,14 +583,14 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
 
 
         EditTextAScontactMobileNumber.setText("");
-        //  tvCountry.setText(member.get_country_name());
+        //  tvCountry.setText(member.getCountry_name());
         EditTextAScontactLandlineNumber.setText("");
         EditTextAScontactPersonName.setText("");
         spinnerAScontactCountry.setSelection(0);
         spinnerAScontactRelationShipWithMember.setSelection(0);
         spinnerMyAScontactConvTimeToCall.setSelection(0);
-        // tvRelationshipWithMember.setText(member.get_profile_owner());
-        //   tvConvenientCallTime.setText(member.get_notes());
+        // tvRelationshipWithMember.setText(member.getProfile_owner());
+        //   tvConvenientCallTime.setText(member.getNotes());
     }
 
     private void setListeners() {
@@ -559,7 +616,7 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
        btEmailCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                etAsEmail.setText(SharedPreferenceManager.getUserObject(getContext()).get_email());
+                etAsEmail.setText(SharedPreferenceManager.getUserObject(getContext()).getEmail());
                 etAsEmail.setEnabled(false);
                 etAsEmail.setError(null);
                 emailEnabled = false;
@@ -603,7 +660,7 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
         btResendVerificationEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialogProfileCompletion dialogP = dialogProfileCompletion.newInstance("Verify Your Email", "Here is your email address that needs to be verified.<br /> <b>  <font color=#216917>" + SharedPreferenceManager.getUserObject(getContext()).get_email() + "</font></b><br /> " +
+                dialogProfileCompletion dialogP = dialogProfileCompletion.newInstance("Verify Your Email", "Here is your email address that needs to be verified.<br /> <b>  <font color=#216917>" + SharedPreferenceManager.getUserObject(getContext()).getEmail() + "</font></b><br /> " +
                         "Please verify your email by using the link, we had emailed you.<br /> <font color=#9a0606> (In case you didn't receive any email,  please check your spam/junk folder or click \"Resend Verification Email\" )</font> ", "Resend Verification Email", 22);
                 dialogP.show(getFragmentManager(), "d");
             }
@@ -613,11 +670,11 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
             @Override
             public void onClick(View v) {
                 if (member != null) {
-                    dialogVerifyphone newFragment = dialogVerifyphone.newInstance(member.get_phone_mobile(), false);
+                    dialogVerifyphone newFragment = dialogVerifyphone.newInstance(member.getPhone_mobile(), country_id, false);
                     newFragment.setTargetFragment(MyContactFragment.this, 3);
                     newFragment.show(getFragmentManager(), "dialog");
-                }else {
-                  Toast.makeText(getContext(), "Click Again", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getContext(), "Click Again", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -639,18 +696,20 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
         llVerifyPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (SharedPreferenceManager.getUserObject(getContext()).get_member_status() == 0) {
-                    dialogProfileCompletion dialogP = dialogProfileCompletion.newInstance("Notification", "Dear <b> <font color=#216917>" + SharedPreferenceManager.getUserObject(getContext()).getAlias() + "</font></b>, you need to complete your profile first before we send sms code.", "Complete Profile", 8);
+
+                if (SharedPreferenceManager.getUserObject(getContext()).getMember_status() == 0 || SharedPreferenceManager.getUserObject(getContext()).getMember_status() >= 7) {
+                    dialogProfileCompletion dialogP = dialogProfileCompletion.newInstance("Notification", "Dear <b> <font color=#216917>" + SharedPreferenceManager.getUserObject(getContext()).getAlias() + "</font></b>, please complete your profile first then we can send you verification code on your Mobile number.", "Complete Profile", 8);
                     dialogP.show(getFragmentManager(), "d");
 
                 } else {
-                    dialogVerifyphone newFragment = dialogVerifyphone.newInstance(member.get_phone_mobile(), true);
-                    newFragment.setTargetFragment(MyContactFragment.this, 3);
-                    newFragment.show(getFragmentManager(), "dialog");
+
+                    getValidCode(SharedPreferenceManager.getUserObject(getContext()).getPath());
 
 
                 }
             }
+
+
         });
 
 
@@ -688,9 +747,9 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
 
                                     if (ConnectCheck.isConnected(getActivity().findViewById(android.R.id.content))) {
                                         Members member = new Members();
-                                        member.set_request_id(about_type_id);
+                                        member.setRequest_id(about_type_id);
 
-                                        member.set_path(SharedPreferenceManager.getUserObject(getContext()).get_path());
+                                        member.setPath(SharedPreferenceManager.getUserObject(getContext()).getPath());
 
                                         Gson gson = new Gson();
 
@@ -783,14 +842,14 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
                                 }.getType();
                                 member = new Members();
                                 member = (Members) gsonc.fromJson(jsonData.getJSONObject(0).toString(), listType);
-                                Log.e("Phone Verified", "" + member.get_phone_verified());
+                                Log.e("Phone Verified", "" + member.getPhone_verified());
 
-                                if (member.get_phone_verified() == 2) {
+                                if (member.getPhone_verified() == 2) {
                                     LinearlayoutAccountSettingMyContactEdiDelete.setVisibility(View.GONE);
                                     //edit and delte buttons hide
                                 }
 
-                                if (member.get_phone_verified() == 1) {
+                                if (member.getPhone_verified() == 1) {
 
                                     //edit and delte buttons visible
                                     LinearlayoutAccountSettingMyContactEdiDelete.setVisibility(View.VISIBLE);
@@ -890,7 +949,9 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
         LinearlayoutAccountSettingMyContact.setVisibility(View.VISIBLE);
         LinearlayoutAccountSettingMyContactNoData.setVisibility(View.GONE);
 
-        String mobile = member.get_phone_mobile();
+        country_id = member.getCountry_id() + "";
+
+        String mobile = member.getPhone_mobile();
         Log.e("mob", "mob==" + mobile);
         // if()
         if (!mobile.equals("") && mobile.contains("-")) {
@@ -908,10 +969,10 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
 
         }
 
-        tvCountry.setText(member.get_country_name());
+        tvCountry.setText(member.getCountry_name());
 
 
-        String landline = member.get_phone_home();
+        String landline = member.getPhone_home();
         if (!landline.equals("")) {
             String[] sad1 = landline.split("-");
             if (sad1.length > 0) {
@@ -932,50 +993,50 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
         AppCompatTextView tvPhoneVerifyLandline;
         ImageView ivPhoneVerifyLandline;
         */
-        if (member.get_phone_view() == 1) {
+        if (member.getPhone_view() == 1) {
             llPhoneVerifyLandline.setVisibility(View.VISIBLE);
-            tvPhoneVerifyLandline.setText("Pending");
-            ivPhoneVerifyLandline.setImageDrawable(getResources().getDrawable(R.drawable.num_not_verified_icon_60));
+            tvPhoneVerifyLandline.setText("Not Verified");
+            ivPhoneVerifyLandline.setImageDrawable(getResources().getDrawable(R.drawable.no_number_icon_60));
             //pending
 
 
-        } else if (member.get_phone_view() == 2) {
+        } else if (member.getPhone_view() == 2) {
 
             //verified
             llPhoneVerifyLandline.setVisibility(View.VISIBLE);
             tvPhoneVerifyLandline.setText("Verified");
             ivPhoneVerifyLandline.setImageDrawable(getResources().getDrawable(R.drawable.ic_num_verified_icon_60));
 
-        } else if (member.get_phone_view() == 3) {
+        } else if (member.getPhone_view() == 3) {
             llPhoneVerifyLandline.setVisibility(View.VISIBLE);
             tvPhoneVerifyLandline.setText("Not Verified");
-            ivPhoneVerifyLandline.setImageDrawable(getResources().getDrawable(R.drawable.num_not_verified_icon_60));
+            ivPhoneVerifyLandline.setImageDrawable(getResources().getDrawable(R.drawable.no_number_icon_60));
             //not verified
 
         }
 
 
-        //  tvLandline.setText(member.get_phone_home());
+        //  tvLandline.setText(member.getPhone_home());
 
 
-        tvNameOfContactPerson.setText(member.get_personal_name());
-        tvRelationshipWithMember.setText(member.get_profile_owner());
-        tvConvenientCallTime.setText(member.get_notes());
-        about_type_id = member.get_about_type_id();
+        tvNameOfContactPerson.setText(member.getPersonal_name());
+        tvRelationshipWithMember.setText(member.getProfile_owner());
+        tvConvenientCallTime.setText(member.getNotes());
+        about_type_id = member.getAbout_type_id();
 
-        if (member.get_phone_verified() == 3) {
+        if (member.getPhone_verified() == 3) {
             llPhoneNotVerified.setVisibility(View.VISIBLE);
             llEnterCode.setVisibility(View.GONE);
             llPhoneVerified.setVisibility(View.GONE);
             llVerifyPhone.setVisibility(View.GONE);
         }
-        if (member.get_phone_verified() == 2) {
+        if (member.getPhone_verified() == 2) {
             llPhoneVerified.setVisibility(View.VISIBLE);
             llEnterCode.setVisibility(View.GONE);
             llPhoneNotVerified.setVisibility(View.GONE);
             llVerifyPhone.setVisibility(View.GONE);
         }
-        if (member.get_phone_verified() == 1) {
+        if (member.getPhone_verified() == 1) {
 
 /*          [4/19/17, 12:08:19 PM] Waqar Afzal: accept_message==1
                     [4/19/17, 12:08:25 PM] Waqar Afzal: verify now
@@ -987,8 +1048,10 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
             llPhoneNotVerified.setVisibility(View.GONE);
             llPhoneVerified.setVisibility(View.GONE);
 
+            //blue icon
+
         }
-        //Log.e("get_phone_home", member.get_phone_verified() + "");
+        //Log.e("getPhone_home", member.getPhone_verified() + "");
     }
 
 
@@ -1010,7 +1073,7 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
 
                             if (res != 0) {
                                 dismissKeyboard();
-                                getRequest(SharedPreferenceManager.getUserObject(getContext()).get_path());
+                                getRequest(SharedPreferenceManager.getUserObject(getContext()).getPath());
                             }
                          /*   Gson gson;
                             GsonBuilder gsonBuilder = new GsonBuilder();
@@ -1078,7 +1141,7 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
                         //if(res!=0){
 
                         Toast.makeText(getContext(), "Contact Details Updated", Toast.LENGTH_SHORT).show();
-                        getRequest(SharedPreferenceManager.getUserObject(getContext()).get_path());
+                        getRequest(SharedPreferenceManager.getUserObject(getContext()).getPath());
                         // }
                          /*   Gson gson;
                             GsonBuilder gsonBuilder = new GsonBuilder();
@@ -1135,70 +1198,120 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
     }
 
 
-/*    private void updateEmail() {
+    /*    private void updateEmail() {
 
-        pDialog.setVisibility(View.VISIBLE);
-        //   RequestQueue rq = Volley.newRequestQueue(getActivity().getApplicationContext());
+            pDialog.setVisibility(View.VISIBLE);
+            //   RequestQueue rq = Volley.newRequestQueue(getActivity().getApplicationContext());
 
-        JSONObject params = new JSONObject();
-        try {
-
-
-            params.put("name", "" + etAsEmail.getText().toString());
-            params.put("path", SharedPreferenceManager.getUserObject(getContext()).get_path());
+            JSONObject params = new JSONObject();
+            try {
 
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        Log.e("updateEmail", Urls.updateEmail + " == " + params);
-
-        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.PUT,
-                Urls.updateEmail, params,
-                new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e("re  update appearance", response + "");
+                params.put("name", "" + etAsEmail.getText().toString());
+                params.put("path", SharedPreferenceManager.getUserObject(getContext()).getPath());
 
 
-                        Gson gson;
-                        GsonBuilder gsonBuilder = new GsonBuilder();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            Log.e("updateEmail", Urls.updateEmail + " == " + params);
 
-                        gson = gsonBuilder.create();
-                        Type type = new TypeToken<WebArd>() {
-                        }.getType();
-                        WebArd webArd = (WebArd) gson.fromJson(response.toString(), type);
-                        if (webArd.getId().equals("0")) {
-                            Toast.makeText(getContext(), "Email Not updated", Toast.LENGTH_SHORT).show();
+            JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.PUT,
+                    Urls.updateEmail, params,
+                    new Response.Listener<JSONObject>() {
 
-                        } else if (webArd.getId().equals("1")) {
-                            Toast.makeText(getContext(), "Email Updated", Toast.LENGTH_SHORT).show();
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            Log.e("re  update appearance", response + "");
 
-                        } else if (webArd.getId().equals("2")) {
-                            Toast.makeText(getContext(), "Not a valid Email", Toast.LENGTH_SHORT).show();
 
-                        } else if (webArd.getId().equals("3")) {
-                            Toast.makeText(getContext(), "Email  Exists", Toast.LENGTH_SHORT).show();
+                            Gson gson;
+                            GsonBuilder gsonBuilder = new GsonBuilder();
 
+                            gson = gsonBuilder.create();
+                            Type type = new TypeToken<WebArd>() {
+                            }.getType();
+                            WebArd webArd = (WebArd) gson.fromJson(response.toString(), type);
+                            if (webArd.getId().equals("0")) {
+                                Toast.makeText(getContext(), "Email Not updated", Toast.LENGTH_SHORT).show();
+
+                            } else if (webArd.getId().equals("1")) {
+                                Toast.makeText(getContext(), "Email Updated", Toast.LENGTH_SHORT).show();
+
+                            } else if (webArd.getId().equals("2")) {
+                                Toast.makeText(getContext(), "Not a valid Email", Toast.LENGTH_SHORT).show();
+
+                            } else if (webArd.getId().equals("3")) {
+                                Toast.makeText(getContext(), "Email  Exists", Toast.LENGTH_SHORT).show();
+
+                            }
+
+
+                            pDialog.setVisibility(View.GONE);
                         }
+                    }, new Response.ErrorListener() {
+
+                @Override
+                public void onErrorResponse(VolleyError error) {
 
 
-                        pDialog.setVisibility(View.GONE);
+                    VolleyLog.e("res err", "Error: " + error);
+                    // Toast.makeText(RegistrationActivity.this, "Incorrect Email or Password !", Toast.LENGTH_SHORT).show();
+
+                    pDialog.setVisibility(View.GONE);
+                }
+
+
+            }) {
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    return Constants.getHashMap();
+                }
+            };
+
+    // Adding request to request queue
+            ///   rq.add(jsonObjReq);
+            jsonObjReq.setRetryPolicy(new DefaultRetryPolicy(
+                    0,
+                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+            MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjReq, Tag);
+
+        }*/
+    private void getValidCode(final String path) {
+        final ProgressDialog pDialog = new ProgressDialog(getContext());
+        pDialog.setMessage("Loading...");
+        pDialog.show();
+        Log.e("path", "" + Urls.getValidCode + path);
+        StringRequest req = new StringRequest(Urls.getValidCode + path,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("Response--", response.toString() + "==");
+                        if (response != null) {
+
+                            if (Long.parseLong(response) == 0) {
+                                dialogVerifyphone newFragment = dialogVerifyphone.newInstance(member.getPhone_mobile(), country_id, false);
+                                newFragment.setTargetFragment(MyContactFragment.this, 3);
+                                newFragment.show(getFragmentManager(), "dialog");
+
+                            } else {
+
+                                dialogVerifyphone newFragment = dialogVerifyphone.newInstance(member.getPhone_mobile(), country_id, true);
+                                newFragment.setTargetFragment(MyContactFragment.this, 3);
+                                newFragment.show(getFragmentManager(), "dialog");
+                            }
+                        }
+                        pDialog.dismiss();
                     }
-                }, new Response.ErrorListener() {
+                }, new Response.ErrorListener()
 
+        {
             @Override
             public void onErrorResponse(VolleyError error) {
-
-
-                VolleyLog.e("res err", "Error: " + error);
-                // Toast.makeText(RegistrationActivity.this, "Incorrect Email or Password !", Toast.LENGTH_SHORT).show();
-
-                pDialog.setVisibility(View.GONE);
+                VolleyLog.d("Err", "Error: " + error.getMessage());
+                pDialog.dismiss();
             }
-
-
         }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
@@ -1206,20 +1319,18 @@ public class MyContactFragment extends Fragment implements dialogVerifyphone.onC
             }
         };
 
-// Adding request to request queue
-        ///   rq.add(jsonObjReq);
-        jsonObjReq.setRetryPolicy(new DefaultRetryPolicy(
+
+        req.setRetryPolicy(new DefaultRetryPolicy(
                 0,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjReq, Tag);
+        MySingleton.getInstance(getActivity()).addToRequestQueue(req);
 
-    }*/
-
+    }
 
     @Override
     public void onComplete(String s) {
-        getRequest(SharedPreferenceManager.getUserObject(getContext()).get_path());
+        getRequest(SharedPreferenceManager.getUserObject(getContext()).getPath());
     }
 
 

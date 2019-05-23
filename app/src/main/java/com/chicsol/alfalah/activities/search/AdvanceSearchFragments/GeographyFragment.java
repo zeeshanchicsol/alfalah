@@ -130,7 +130,7 @@ public class GeographyFragment extends Fragment implements CheckBoxAdvSearchCSCR
 
         List<WebCSC> countriesDataList = null;
         try {
-            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(22).toString(), listType);
+            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(23).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLL(dataList0, LinearLayoutAdvSearchVisaStatus);
 
             countriesDataList = (List<WebCSC>) gsonc.fromJson(jsonArraySearch.getJSONArray(3).toString(), listTypeWebCsc);
@@ -154,10 +154,10 @@ public class GeographyFragment extends Fragment implements CheckBoxAdvSearchCSCR
 
         if (defaultSelectionsObj != null) {
 
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchVisaStatus, defaultSelectionsObj.get_choice_visa_status_ids());
-            countriesAdapter.selectItem(defaultSelectionsObj.get_choice_country_ids());
-            if (defaultSelectionsObj.get_choice_country_ids() != "" && defaultSelectionsObj.get_choice_country_ids() != null) {
-                getStates(defaultSelectionsObj.get_choice_country_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchVisaStatus, defaultSelectionsObj.getChoice_visa_status_ids());
+            countriesAdapter.selectItem(defaultSelectionsObj.getChoice_country_ids());
+            if (defaultSelectionsObj.getChoice_country_ids() != "" && defaultSelectionsObj.getChoice_country_ids() != null) {
+                getStates(defaultSelectionsObj.getChoice_country_ids());
             }
         }
 
@@ -171,26 +171,26 @@ public class GeographyFragment extends Fragment implements CheckBoxAdvSearchCSCR
             case 1:
                 if (!selectedIds.equals("")) {
                     selectedCountries = selectedIds;
-                    defaultSelectionsObj.set_choice_country_ids(selectedIds);
+                    defaultSelectionsObj.setChoice_country_ids(selectedIds);
                     getStates(selectedIds);
                 } else {
                     tvMsgStates.setVisibility(View.VISIBLE);
                     statesAdapter.clear();
-                    defaultSelectionsObj.set_choice_country_ids(selectedIds);
+                    defaultSelectionsObj.setChoice_country_ids(selectedIds);
                 }
                 break;
             case 2:
                 if (!selectedIds.equals("")) {
                     getCities(selectedCountries + "^" + selectedIds);
-                    defaultSelectionsObj.set_choice_state_ids(selectedIds);
+                    defaultSelectionsObj.setChoice_state_ids(selectedIds);
                 } else {
                     tvMsgCities.setVisibility(View.VISIBLE);
                     citiesAdapter.clear();
-                    defaultSelectionsObj.set_choice_state_ids(selectedIds);
+                    defaultSelectionsObj.setChoice_state_ids(selectedIds);
                 }
                 break;
             case 0:
-                defaultSelectionsObj.set_choice_cities_ids(selectedIds);
+                defaultSelectionsObj.setChoice_cities_ids(selectedIds);
 
                 break;
             default:
@@ -329,6 +329,6 @@ public class GeographyFragment extends Fragment implements CheckBoxAdvSearchCSCR
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        defaultSelectionsObj.set_choice_visa_status_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchVisaStatus));
+        defaultSelectionsObj.setChoice_visa_status_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchVisaStatus));
     }
 }

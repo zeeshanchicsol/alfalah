@@ -72,7 +72,7 @@ public class LifeStyle1Fragment extends Fragment implements CompoundButton.OnChe
 
 
         try {
-            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(18).toString(), listType);
+            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(19).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList0, LinearLayoutAdvSearchRaisedWhere, "raised");
 
 
@@ -86,7 +86,7 @@ public class LifeStyle1Fragment extends Fragment implements CompoundButton.OnChe
             List<WebArd> dataList2 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(9).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList2, LinearLayoutAdvSearchFamilyValues, "family");
 
-            List<WebArd> dataList3 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(14).toString(), listType);
+            List<WebArd> dataList3 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(15).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList3, LinearLayoutAdvSearchLivingArrangement, "living");
 
 
@@ -99,11 +99,11 @@ public class LifeStyle1Fragment extends Fragment implements CompoundButton.OnChe
 
         if (defaultSelectionsObj != null) {
 
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchRaisedWhere, defaultSelectionsObj.get_choice_raised_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchRaisedWhere, defaultSelectionsObj.getChoice_raised_ids());
             viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchLanguage, defaultSelectionsObj.getSpoken_language_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchHijab, defaultSelectionsObj.get_choice_hijab_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchFamilyValues, defaultSelectionsObj.get_choice_family_values_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchLivingArrangement, defaultSelectionsObj.get_choice_living_arangment_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchHijab, defaultSelectionsObj.getChoice_hijab_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchFamilyValues, defaultSelectionsObj.getChoice_family_values_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchLivingArrangement, defaultSelectionsObj.getChoice_living_arangment_ids());
 
         }
 
@@ -164,17 +164,17 @@ public class LifeStyle1Fragment extends Fragment implements CompoundButton.OnChe
 
         if (buttonView.getTag() != null) {
             if (buttonView.getTag().equals("raised")) {
-                defaultSelectionsObj.set_choice_raised_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchRaisedWhere));
+                defaultSelectionsObj.setChoice_raised_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchRaisedWhere));
             } else if (buttonView.getTag().equals("hijab")) {
-                defaultSelectionsObj.set_choice_hijab_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchHijab));
+                defaultSelectionsObj.setChoice_hijab_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchHijab));
             } else if (buttonView.getTag().equals("family")) {
-                defaultSelectionsObj.set_choice_family_values_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchFamilyValues));
+                defaultSelectionsObj.setChoice_family_values_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchFamilyValues));
 
             } else if (buttonView.getTag().equals("living")) {
-                defaultSelectionsObj.set_choice_living_arangment_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchLivingArrangement));
+                defaultSelectionsObj.setChoice_living_arangment_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchLivingArrangement));
             }
             else if (buttonView.getTag().equals("language")) {
-              //  defaultSelectionsObj.set_choice_living_arangment_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchLanguage));
+              //  defaultSelectionsObj.setChoice_living_arangment_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchLanguage));
             }
         }
 

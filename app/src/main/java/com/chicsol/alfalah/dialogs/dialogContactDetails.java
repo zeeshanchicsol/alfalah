@@ -46,8 +46,8 @@ public class dialogContactDetails extends DialogFragment {
         // args.putString("name", name);
         args.putString("alias", alias);
         args.putString("params", params);
-        /*args.putString("param", String.valueOf(member2.get_phone_view()));
-        args.putString("my_id", String.valueOf(member2.get_my_id()));
+        /*args.putString("param", String.valueOf(member2.getPhone_view()));
+        args.putString("my_id", String.valueOf(member2.getMy_id()));
         args.putString("checkedTextView", member.getAlias());
         args.putString("userpath", userpath);
 */
@@ -99,16 +99,16 @@ public class dialogContactDetails extends DialogFragment {
         mTextView contactCalltime = (mTextView) rootView.findViewById(R.id.TextViewContactDialogPrefferedCallTime);
         mTextView contactCountryName = (mTextView) rootView.findViewById(R.id.TextViewContactDialogCountryName);
 
-        contactName.setText(""+member.get_personal_name());
+        contactName.setText(""+member.getPersonal_name());
 
-        contactPhone.setText(""+member.get_phone_mobile());
+        contactPhone.setText(""+member.getPhone_mobile());
 
 
-        contactRelationShip.setText(""+member.get_profile_owner());
+        contactRelationShip.setText(""+member.getProfile_owner());
 
-        contactCalltime.setText(""+member.get_notes());
+        contactCalltime.setText(""+member.getNotes());
 
-        contactCountryName.setText(""+member.get_country_name());
+        contactCountryName.setText(""+member.getCountry_name());
 
 
         Button mOkButton = (Button) rootView.findViewById(R.id.ButtonContactDialogCancel);

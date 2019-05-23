@@ -69,10 +69,10 @@ public class LifeStyle2Fragment extends Fragment implements CompoundButton.OnChe
 
 
         try {
-            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(20).toString(), listType);
+            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(21).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList0, LinearLayoutAdvSearchSiblingPosition, "sibling");
 
-            List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(21).toString(), listType);
+            List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(22).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList1, LinearLayoutAdvSearchSmoking, "smoke");
 
 
@@ -88,9 +88,9 @@ public class LifeStyle2Fragment extends Fragment implements CompoundButton.OnChe
 
         if (defaultSelectionsObj != null) {
 
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchSiblingPosition, defaultSelectionsObj.get_choice_sibling_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchSmoking, defaultSelectionsObj.get_choice_smoking_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchDrink, defaultSelectionsObj.get_choice_drink_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchSiblingPosition, defaultSelectionsObj.getChoice_sibling_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchSmoking, defaultSelectionsObj.getChoice_smoking_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchDrink, defaultSelectionsObj.getChoice_drink_ids());
 
         }
 
@@ -132,17 +132,17 @@ public class LifeStyle2Fragment extends Fragment implements CompoundButton.OnChe
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
         if (buttonView.getTag() != null) {
-          //  Log.e("sibling ids",""+ defaultSelectionsObj.get_choice_raised_ids());
+          //  Log.e("sibling ids",""+ defaultSelectionsObj.getChoice_raised_ids());
             if (buttonView.getTag().equals("sibling")) {
-                defaultSelectionsObj.set_choice_sibling_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchSiblingPosition));
+                defaultSelectionsObj.setChoice_sibling_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchSiblingPosition));
 
 
             }
             if (buttonView.getTag().equals("smoke")) {
-                defaultSelectionsObj.set_choice_smoking_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchSmoking));
+                defaultSelectionsObj.setChoice_smoking_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchSmoking));
             }
             if (buttonView.getTag().equals("drink")) {
-                defaultSelectionsObj.set_choice_drink_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchDrink));
+                defaultSelectionsObj.setChoice_drink_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchDrink));
             }
 
 

@@ -70,10 +70,10 @@ public class EthnicBackgroundFragment extends Fragment implements CompoundButton
 
 
         try {
-            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(5).toString(), listType);
+            List<WebArd> dataList0 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(7).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList0, LinearLayoutAdvSearchEthnicBackground, "ethnic");
 
-            List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(19).toString(), listType);
+            List<WebArd> dataList1 = (List<WebArd>) gsonc.fromJson(jsonArraySearch.getJSONArray(20).toString(), listType);
             viewGenerator.generateDynamicCheckBoxesLLWithTag(dataList1, LinearLayoutAdvSearchReligiousSect, "religious");
 
 
@@ -97,9 +97,9 @@ public class EthnicBackgroundFragment extends Fragment implements CompoundButton
 
         if (defaultSelectionsObj != null) {
 
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchEthnicBackground, defaultSelectionsObj.get_choice_ethnic_bground_ids());
-            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchReligiousSect, defaultSelectionsObj.get_choice_religious_sect_ids());
-        //    viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchCaste, defaultSelectionsObj.get_choice_caste_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchEthnicBackground, defaultSelectionsObj.getChoice_ethnic_bground_ids());
+            viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchReligiousSect, defaultSelectionsObj.getChoice_religious_sect_ids());
+        //    viewGenerator.selectCheckBoxes(LinearLayoutAdvSearchCaste, defaultSelectionsObj.getChoice_caste_ids());
         }
 
     }
@@ -143,14 +143,14 @@ public class EthnicBackgroundFragment extends Fragment implements CompoundButton
             if (buttonView.getTag() != null) {
 
                 if (buttonView.getTag().equals("ethnic")) {
-                    defaultSelectionsObj.set_choice_ethnic_bground_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchEthnicBackground));
+                    defaultSelectionsObj.setChoice_ethnic_bground_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchEthnicBackground));
                 }
                 if (buttonView.getTag().equals("religious")) {
-                    defaultSelectionsObj.set_choice_religious_sect_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchReligiousSect));
+                    defaultSelectionsObj.setChoice_religious_sect_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchReligiousSect));
                 }
 
             /*    if (buttonView.getTag().equals("caste")) {
-                    defaultSelectionsObj.set_choice_caste_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchCaste));
+                    defaultSelectionsObj.setChoice_caste_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchCaste));
                 }*/
             }
         }
