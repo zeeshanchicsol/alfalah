@@ -30,7 +30,7 @@ import java.util.List;
 import static com.chicsol.alfalah.utils.Constants.defaultSelectionsObj;
 
 
-public class ListViewAdvSearchFragment extends Fragment implements BasicsFragment.OnChildFragmentInteractionListener, AppearanceFragment.OnChildFragmentInteractionListener, MaritalStatusFragment.OnChildFragmentInteractionListener, EduOccupFragment.OnChildFragmentInteractionListener, EthnicBackgroundFragment.OnChildFragmentInteractionListener, LifeStyle1Fragment.OnChildFragmentInteractionListener, LifeStyle2Fragment.OnChildFragmentInteractionListener, LifeStyle3Fragment.OnChildFragmentInteractionListener, GeographyFragment.OnChildFragmentInteractionListener {
+public class ListViewAdvSearchFragment extends Fragment implements BasicsFragment.OnChildFragmentInteractionListener, AppearanceFragment.OnChildFragmentInteractionListener, MaritalStatusFragment.OnChildFragmentInteractionListener, EduOccupFragment.OnChildFragmentInteractionListener, EthnicBackgroundFragment.OnChildFragmentInteractionListener, LifeStyle1Fragment.OnChildFragmentInteractionListener, LifeStyle2Fragment.OnChildFragmentInteractionListener,LifeStyle3Fragment.OnChildFragmentInteractionListener,  GeographyFragment.OnChildFragmentInteractionListener {
 
     View lasView = null;
     List<mAdvSearchListing> dataList;
@@ -430,20 +430,21 @@ public class ListViewAdvSearchFragment extends Fragment implements BasicsFragmen
                 lifestyle2Selected = false;
             }
 //================Lifestyle 3 ===============
-            if (checkStringWith0andNull(defaultSelectionsObj.getChoice_sibling_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_smoking_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_drink_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_physic_ids())) {
-                lifestyle2Selected = true;
-                filterCount++;
-            } else {
-                lifestyle2Selected = false;
-            }
-
-//================Geography  ===============
             if (checkStringWith0andNull(defaultSelectionsObj.getChoice_relocation_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_marrytime_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_want_children_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_physically_challenged_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_revert_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_beard_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_keep_halal_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_keep_halal_ids())
                     || checkStringWith0andNull(defaultSelectionsObj.getChoice_salah_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_religious_ids())) {
                 lifestyle3Selected = true;
                 filterCount++;
             } else {
                 lifestyle3Selected = false;
+            }
+
+
+//================Geography  ===============
+            if (checkStringWith0andNull(defaultSelectionsObj.getChoice_country_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_state_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_cities_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_visa_status_ids())) {
+                geographySelected = true;
+                filterCount++;
+            } else {
+                geographySelected = false;
             }
 
             SearchMainActivity.filterCount = filterCount;
