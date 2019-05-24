@@ -660,6 +660,19 @@ public class Members {
     @SerializedName("salah_type")
     public String salah_type;
 
+
+    public String getChoice_physic_ids() {
+        return choice_physic_ids;
+    }
+
+    public void setChoice_physic_ids(String choice_physic_ids) {
+        this.choice_physic_ids = choice_physic_ids;
+    }
+
+    @SerializedName("choice_physic_ids")
+    private String choice_physic_ids;
+
+
     public String getInterest_ids() {
         return interest_ids;
     }

@@ -1300,6 +1300,7 @@ drawable circle
 drawable circle2
 drawable circle_grey
 drawable circle_reg_finish
+drawable circle_search_dot
 drawable counter_black
 drawable counter_black_clip
 drawable design_bottom_navigation_item_background
@@ -2274,6 +2275,7 @@ id TextViewUserProfileDeleteMessage
 id TextViewdmAlias
 id TextiewDialogWithdrawRequestTitle
 id ViewAppearance
+id ViewCircleHeight
 id ViewGeographic
 id ViewHorizontalLine
 id ViewInterest

@@ -1,5 +1,6 @@
 package com.chicsol.alfalah.activities.search.AdvanceSearchFragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -38,7 +39,7 @@ public class BasicsFragment extends Fragment implements CompoundButton.OnChecked
     private Spinner spRegisterWithIn, spLastLoginDate;
     private MySpinnerAdapter spinnerAdapterRegisteredWithIn, spinnerAdapterLastLogin;
     private mCheckBox checkboxItemAdvSearchBasicsPicOnly, checkboxItemAdvSearchBasicsOpenToPub;
-
+    private OnChildFragmentInteractionListener fragmentInteractionListener;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,9 +119,11 @@ public class BasicsFragment extends Fragment implements CompoundButton.OnChecked
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                    WebArd selectedItem = (WebArd) spRegisterWithIn.getSelectedItem();
-                    defaultSelectionsObj.setRegistration_within_id(Long.parseLong(selectedItem.getId()));
-                    //    Log.e("set_reg_within_id",""+defaultSelectionsObj.getRegistration_within_id());
+                WebArd selectedItem = (WebArd) spRegisterWithIn.getSelectedItem();
+                defaultSelectionsObj.setRegistration_within_id(Long.parseLong(selectedItem.getId()));
+
+                updateDot();
+                //    Log.e("set_reg_within_id",""+defaultSelectionsObj.getRegistration_within_id());
 
             }
 
@@ -132,11 +135,11 @@ public class BasicsFragment extends Fragment implements CompoundButton.OnChecked
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                    WebArd selectedItem = (WebArd) spLastLoginDate.getSelectedItem();
+                WebArd selectedItem = (WebArd) spLastLoginDate.getSelectedItem();
 
-                    defaultSelectionsObj.setLast_login_date_id(Long.parseLong(selectedItem.getId()));
-                    //  Log.e("set_reg_within_id",""+defaultSelectionsObj.getLast_login_date_id());
-
+                defaultSelectionsObj.setLast_login_date_id(Long.parseLong(selectedItem.getId()));
+                //  Log.e("set_reg_within_id",""+defaultSelectionsObj.getLast_login_date_id());
+                updateDot();
             }
 
             @Override
@@ -256,6 +259,35 @@ public class BasicsFragment extends Fragment implements CompoundButton.OnChecked
 
         }
     }
+
+
+
+
+
+    @Override
+    public void onAttach(Context activity) {
+        super.onAttach(activity);
+        try {
+
+            if (getTargetFragment() != null) {
+                fragmentInteractionListener = (OnChildFragmentInteractionListener) getTargetFragment();
+            } else {
+                fragmentInteractionListener = (OnChildFragmentInteractionListener) activity;
+            }
+        } catch (ClassCastException e) {
+            throw new ClassCastException(e.toString() + " must implement OnCompleteListener");
+        }
+    }
+
+    public interface OnChildFragmentInteractionListener {
+        void messageFromChildToParent();
+    }
+
+    private void updateDot() {
+        fragmentInteractionListener.messageFromChildToParent();
+
+    }
+
 /*    public void resetSearch() {
         Log.e("Dome","Dddddddddddddddddddddddddddddd");
      }*/

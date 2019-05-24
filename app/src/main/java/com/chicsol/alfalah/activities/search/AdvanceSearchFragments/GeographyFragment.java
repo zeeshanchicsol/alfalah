@@ -1,6 +1,7 @@
 package com.chicsol.alfalah.activities.search.AdvanceSearchFragments;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -52,6 +53,8 @@ public class GeographyFragment extends Fragment implements CheckBoxAdvSearchCSCR
     private mTextView tvMsgStates, tvMsgCities;
     private String selectedCountries;
     private int CountryClick = 1, CityClick = 0, StateClick = 2;
+
+    private OnChildFragmentInteractionListener fragmentInteractionListener;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -196,7 +199,7 @@ public class GeographyFragment extends Fragment implements CheckBoxAdvSearchCSCR
             default:
                 break;
         }
-
+        updateDot();
     }
 
 
@@ -330,5 +333,34 @@ public class GeographyFragment extends Fragment implements CheckBoxAdvSearchCSCR
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         defaultSelectionsObj.setChoice_visa_status_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchVisaStatus));
+        updateDot();
     }
+
+
+
+    @Override
+    public void onAttach(Context activity) {
+        super.onAttach(activity);
+        try {
+
+            if (getTargetFragment() != null) {
+                fragmentInteractionListener = (OnChildFragmentInteractionListener) getTargetFragment();
+            } else {
+                fragmentInteractionListener = (OnChildFragmentInteractionListener) activity;
+            }
+        } catch (ClassCastException e) {
+            throw new ClassCastException(e.toString() + " must implement OnCompleteListener");
+        }
+    }
+    public interface OnChildFragmentInteractionListener {
+        void messageFromChildToParent();
+    }
+
+    private void updateDot() {
+        fragmentInteractionListener.messageFromChildToParent();
+
+    }
+
+
+
 }

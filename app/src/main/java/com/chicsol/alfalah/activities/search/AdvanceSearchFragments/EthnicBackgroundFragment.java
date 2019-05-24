@@ -31,6 +31,8 @@ public class EthnicBackgroundFragment extends Fragment implements CompoundButton
    // LinearLayoutAdvSearchCaste
 
     private ViewGenerator viewGenerator;
+    private OnChildFragmentInteractionListener fragmentInteractionListener;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,10 +41,7 @@ public class EthnicBackgroundFragment extends Fragment implements CompoundButton
     }
 
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -154,5 +153,29 @@ public class EthnicBackgroundFragment extends Fragment implements CompoundButton
                 }*/
             }
         }
+
+        updateDot();
+    }
+    @Override
+    public void onAttach(Context activity) {
+        super.onAttach(activity);
+        try {
+
+            if (getTargetFragment() != null) {
+                fragmentInteractionListener = (OnChildFragmentInteractionListener) getTargetFragment();
+            } else {
+                fragmentInteractionListener = (OnChildFragmentInteractionListener) activity;
+            }
+        } catch (ClassCastException e) {
+            throw new ClassCastException(e.toString() + " must implement OnCompleteListener");
+        }
+    }
+    public interface OnChildFragmentInteractionListener {
+        void messageFromChildToParent();
+    }
+
+    private void updateDot() {
+        fragmentInteractionListener.messageFromChildToParent();
+
     }
 }

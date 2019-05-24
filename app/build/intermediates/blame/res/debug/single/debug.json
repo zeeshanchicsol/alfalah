@@ -680,6 +680,10 @@
         "source": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/src/main/res/layout/adv_search_fragment_baiscs.xml"
     },
     {
+        "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/drawable_circle_search_dot.xml.flat",
+        "source": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/src/main/res/drawable/circle_search_dot.xml"
+    },
+    {
         "merged": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/res/merged/debug/raw_joda_america_nipigon.flat",
         "source": "/Users/marrymaxandroid/.gradle/caches/transforms-2/files-2.1/282cfca8a41757360dad5bb1a451ff0c/res/raw/joda_america_nipigon"
     },

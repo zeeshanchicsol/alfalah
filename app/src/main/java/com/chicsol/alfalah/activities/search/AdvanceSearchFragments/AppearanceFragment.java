@@ -1,5 +1,6 @@
 package com.chicsol.alfalah.activities.search.AdvanceSearchFragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -330,6 +331,21 @@ public class AppearanceFragment extends Fragment implements CompoundButton.OnChe
     private void updateDot() {
         fragmentInteractionListener.messageFromChildToParent();
 
+    }
+
+    @Override
+    public void onAttach(Context activity) {
+        super.onAttach(activity);
+        try {
+
+            if (getTargetFragment() != null) {
+                fragmentInteractionListener = (OnChildFragmentInteractionListener) getTargetFragment();
+            } else {
+                fragmentInteractionListener = (OnChildFragmentInteractionListener) activity;
+            }
+        } catch (ClassCastException e) {
+            throw new ClassCastException(e.toString() + " must implement OnCompleteListener");
+        }
     }
 
 

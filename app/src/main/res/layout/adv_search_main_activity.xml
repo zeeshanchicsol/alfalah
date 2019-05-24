@@ -142,7 +142,7 @@
 
             <fragment
                 android:id="@+id/fragmentItemsList"
-                android:name="com.chicsol.marrymax.activities.search.AdvanceSearchFragments.ListViewAdvSearchFragment"
+                android:name="com.chicsol.alfalah.activities.search.AdvanceSearchFragments.ListViewAdvSearchFragment"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"

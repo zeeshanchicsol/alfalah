@@ -1,5 +1,6 @@
 package com.chicsol.alfalah.activities.search.AdvanceSearchFragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -26,9 +27,11 @@ import static com.chicsol.alfalah.utils.Constants.jsonArraySearch;
 
 
 public class LifeStyle1Fragment extends Fragment implements CompoundButton.OnCheckedChangeListener {
-    private LinearLayout LinearLayoutAdvSearchRaisedWhere,LinearLayoutAdvSearchLanguage, LinearLayoutAdvSearchHijab, LinearLayoutAdvSearchFamilyValues, LinearLayoutAdvSearchLivingArrangement;
+    private LinearLayout LinearLayoutAdvSearchRaisedWhere, LinearLayoutAdvSearchLanguage, LinearLayoutAdvSearchHijab, LinearLayoutAdvSearchFamilyValues, LinearLayoutAdvSearchLivingArrangement;
 
     private ViewGenerator viewGenerator;
+    private OnChildFragmentInteractionListener fragmentInteractionListener;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -172,11 +175,36 @@ public class LifeStyle1Fragment extends Fragment implements CompoundButton.OnChe
 
             } else if (buttonView.getTag().equals("living")) {
                 defaultSelectionsObj.setChoice_living_arangment_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchLivingArrangement));
-            }
-            else if (buttonView.getTag().equals("language")) {
-              //  defaultSelectionsObj.setChoice_living_arangment_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchLanguage));
+            } else if (buttonView.getTag().equals("language")) {
+                //  defaultSelectionsObj.setChoice_living_arangment_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchLanguage));
             }
         }
+        updateDot();
+    }
+
+    @Override
+    public void onAttach(Context activity) {
+        super.onAttach(activity);
+        try {
+
+            if (getTargetFragment() != null) {
+                fragmentInteractionListener = (OnChildFragmentInteractionListener) getTargetFragment();
+            } else {
+                fragmentInteractionListener = (OnChildFragmentInteractionListener) activity;
+            }
+        } catch (ClassCastException e) {
+            throw new ClassCastException(e.toString() + " must implement OnCompleteListener");
+        }
+    }
+
+    public interface OnChildFragmentInteractionListener {
+        void messageFromChildToParent();
+    }
+
+    private void updateDot() {
+        fragmentInteractionListener.messageFromChildToParent();
 
     }
+
+
 }

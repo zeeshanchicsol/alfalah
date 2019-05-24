@@ -1,5 +1,6 @@
 package com.chicsol.alfalah.activities.search.AdvanceSearchFragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -29,6 +30,7 @@ public class LifeStyle2Fragment extends Fragment implements CompoundButton.OnChe
 
     private ViewGenerator viewGenerator;
 
+    private OnChildFragmentInteractionListener fragmentInteractionListener;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -147,7 +149,35 @@ public class LifeStyle2Fragment extends Fragment implements CompoundButton.OnChe
 
 
         }
+        updateDot();
     }
 
+
+
+    @Override
+    public void onAttach(Context activity) {
+        super.onAttach(activity);
+        try {
+
+            if (getTargetFragment() != null) {
+                fragmentInteractionListener = (OnChildFragmentInteractionListener) getTargetFragment();
+            } else {
+                fragmentInteractionListener = (OnChildFragmentInteractionListener) activity;
+            }
+        } catch (ClassCastException e) {
+            throw new ClassCastException(e.toString() + " must implement OnCompleteListener");
+        }
+    }
+
+
+
+    public interface OnChildFragmentInteractionListener {
+        void messageFromChildToParent();
+    }
+
+    private void updateDot() {
+        fragmentInteractionListener.messageFromChildToParent();
+
+    }
 
 }

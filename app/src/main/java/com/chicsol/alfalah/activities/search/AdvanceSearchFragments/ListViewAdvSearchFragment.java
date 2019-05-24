@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,17 +15,22 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+
 import com.chicsol.alfalah.R;
-import com.chicsol.alfalah.activities.DrawerActivity;
+import com.chicsol.alfalah.activities.search.SearchMainActivity;
 import com.chicsol.alfalah.adapters.AdvSearchAdapter;
+import com.chicsol.alfalah.modal.MatchesCountUpdateEvent;
 import com.chicsol.alfalah.modal.mAdvSearchListing;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.chicsol.alfalah.utils.Constants.defaultSelectionsObj;
 
-public class ListViewAdvSearchFragment extends Fragment {
+
+public class ListViewAdvSearchFragment extends Fragment implements BasicsFragment.OnChildFragmentInteractionListener, AppearanceFragment.OnChildFragmentInteractionListener, MaritalStatusFragment.OnChildFragmentInteractionListener, EduOccupFragment.OnChildFragmentInteractionListener, EthnicBackgroundFragment.OnChildFragmentInteractionListener, LifeStyle1Fragment.OnChildFragmentInteractionListener, LifeStyle2Fragment.OnChildFragmentInteractionListener, LifeStyle3Fragment.OnChildFragmentInteractionListener, GeographyFragment.OnChildFragmentInteractionListener {
 
     View lasView = null;
     List<mAdvSearchListing> dataList;
@@ -34,6 +40,7 @@ public class ListViewAdvSearchFragment extends Fragment {
     private ListView lvItems;
     private OnItemSelectedListener listener;
     private ProgressDialog pDialog;
+    boolean basicsSelected = false, appearanceSelected = false, eduOccuSelected = false, ethnicSelected = false, geographySelected = false, lifestyle1Selected = false, lifestyle2Selected = false, maritalSelected = false, lifestyle3Selected = false;
 
     public static ListViewAdvSearchFragment newInstance() {
         ListViewAdvSearchFragment fragment = new ListViewAdvSearchFragment();
@@ -54,7 +61,7 @@ public class ListViewAdvSearchFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Log.e("Search after", "after");
+        //   Log.e("Search after", "after");
 /*        if (SearchMainActivity.searchKey != null) {
             getSelectedSearchObject(SearchMainActivity.searchKey);
         } else {*/
@@ -65,7 +72,7 @@ public class ListViewAdvSearchFragment extends Fragment {
            Log.e("not null","raw object");
            defaultSelectionsObj = DrawerActivity.rawSearchObj;
        }*/
-           // }
+        // }
         listener.onItemSelected(dataList.get(0));
         //   }
 
@@ -87,18 +94,7 @@ public class ListViewAdvSearchFragment extends Fragment {
         lvItems = (ListView) view.findViewById(R.id.lvItems);
 
         dataList = new ArrayList<>();
-
-        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu1, R.drawable.ic_adv_s_menu1_active, "Cloudy", new BasicsFragment()));
-        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu2, R.drawable.ic_adv_s_menu2_active, "Showers", new AppearanceFragment()));
-        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu3, R.drawable.ic_adv_s_menu3_active, "Showers", new MaritalStatusFragment()));
-        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu4, R.drawable.ic_adv_s_menu4_active, "Showers", new EduOccupFragment()));
-
-        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu5, R.drawable.ic_adv_s_menu5_active, "Showers", new EthnicBackgroundFragment()));
-        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu6, R.drawable.ic_adv_s_menu6_active, "Showers", new GeographyFragment()));
-        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu7, R.drawable.ic_adv_s_menu7_active, "Showers", new LifeStyle1Fragment()));
-        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu7, R.drawable.ic_adv_s_menu7_active, "Showers", new LifeStyle2Fragment()));
-        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu7, R.drawable.ic_adv_s_menu7_active, "Showers", new LifeStyle3Fragment()));
-
+        initDataList();
 
         //  dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu3, "Snow"));
         //   dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu4, "Storm"));
@@ -111,10 +107,74 @@ public class ListViewAdvSearchFragment extends Fragment {
 
                 };*/
 
-        Log.e("Adaper Initialisezddd", "resetttttttttttt");
+        //Log.e("Adaper Initialisezddd", "resetttttttttttt");
         advSearchAdapter = new AdvSearchAdapter(getActivity(), R.layout.adv_search_item_listview, dataList);
         lvItems.setAdapter(advSearchAdapter);
 
+
+    }
+
+    private void initDataList() {
+        updateAllSelectionsAccordingToSearchCategories();
+
+        BasicsFragment basicsFragment = new BasicsFragment();
+        basicsFragment.setTargetFragment(ListViewAdvSearchFragment.this, 0);
+
+        AppearanceFragment appearanceFragment = new AppearanceFragment();
+        appearanceFragment.setTargetFragment(ListViewAdvSearchFragment.this, 0);
+
+        MaritalStatusFragment maritalStatusFragment = new MaritalStatusFragment();
+        maritalStatusFragment.setTargetFragment(ListViewAdvSearchFragment.this, 0);
+
+        EduOccupFragment eduOccupFragment = new EduOccupFragment();
+        eduOccupFragment.setTargetFragment(ListViewAdvSearchFragment.this, 0);
+
+        EthnicBackgroundFragment ethnicBackgroundFragment = new EthnicBackgroundFragment();
+        ethnicBackgroundFragment.setTargetFragment(ListViewAdvSearchFragment.this, 0);
+
+        GeographyFragment geographyFragment = new GeographyFragment();
+        geographyFragment.setTargetFragment(ListViewAdvSearchFragment.this, 0);
+
+        LifeStyle1Fragment lifeStyle1Fragment = new LifeStyle1Fragment();
+        lifeStyle1Fragment.setTargetFragment(ListViewAdvSearchFragment.this, 0);
+
+        LifeStyle2Fragment lifeStyle2Fragment = new LifeStyle2Fragment();
+        lifeStyle2Fragment.setTargetFragment(ListViewAdvSearchFragment.this, 0);
+
+        LifeStyle3Fragment lifeStyle3Fragment = new LifeStyle3Fragment();
+        lifeStyle3Fragment.setTargetFragment(ListViewAdvSearchFragment.this, 0);
+
+
+        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu1, R.drawable.ic_adv_s_menu1_active, "Cloudy", basicsFragment, basicsSelected));
+        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu2, R.drawable.ic_adv_s_menu2_active, "Showers", appearanceFragment, appearanceSelected));
+        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu3, R.drawable.ic_adv_s_menu3_active, "Showers", maritalStatusFragment, maritalSelected));
+        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu4, R.drawable.ic_adv_s_menu4_active, "Showers", eduOccupFragment, eduOccuSelected));
+
+        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu5, R.drawable.ic_adv_s_menu5_active, "Showers", ethnicBackgroundFragment, ethnicSelected));
+        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu6, R.drawable.ic_adv_s_menu6_active, "Showers", geographyFragment, geographySelected));
+        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu7, R.drawable.ic_adv_s_menu7_active, "Showers", lifeStyle1Fragment, lifestyle1Selected));
+        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu7, R.drawable.ic_adv_s_menu7_active, "Showers", lifeStyle2Fragment, lifestyle2Selected));
+        dataList.add(new mAdvSearchListing(R.drawable.ic_adv_s_menu7, R.drawable.ic_adv_s_menu7_active, "Showers", lifeStyle3Fragment, lifestyle3Selected));
+
+    }
+
+    private boolean checkStringWith0andNull(String str) {
+        if (str != null) {
+            if (!TextUtils.isEmpty(str)) {
+
+                if (!str.equals("0")) {
+                    return true;
+                } else {
+                    return false;
+                }
+
+            } else {
+                return false;
+            }
+
+        } else {
+            return false;
+        }
 
     }
 
@@ -147,9 +207,18 @@ public class ListViewAdvSearchFragment extends Fragment {
 
             }
         });
+        //   lvItems.setSelection(0);
+        /*lvItems.set*/
+        //  listener.onItemSelected(dataList.get(0));
 
-        //   listener.onItemSelected(dataList.get(0));
 
+        //  getActivity().setMenuUpdateListener
+        //    SearchMainActivity.set
+
+    }
+
+    public void selectSearchFragment(int position) {
+        listener.onItemSelected(dataList.get(position));
     }
 
 
@@ -278,14 +347,111 @@ public class ListViewAdvSearchFragment extends Fragment {
         if (advSearchAdapter != null) {
             advSearchAdapter.reset();
         } else {
-            Log.e("Null", "Nullllllllllllllllllll");
+
             ///  Toast.makeText(getContext(), "Null", Toast.LENGTH_SHORT).show();
         }
 
         //Toast.makeText(getContext(), "Clickec", Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void messageFromChildToParent() {
+
+        advSearchAdapter.clear();
+        initDataList();
+
+
+        advSearchAdapter.notifyDataSetChanged();
+        EventBus.getDefault().postSticky(new MatchesCountUpdateEvent("getCount"));
+    }
+
+
     public interface OnItemSelectedListener {
         public void onItemSelected(mAdvSearchListing i);
     }
+
+
+    private void updateAllSelectionsAccordingToSearchCategories() {
+        //    EventBus.getDefault().postSticky(new MatchesCountUpdateEvent("getCount"));
+        int filterCount = 0;
+        if (defaultSelectionsObj != null) {
+
+//===============Basics=======================
+
+            if (defaultSelectionsObj.getPictureonly() != 0 || defaultSelectionsObj.getOpentopublic() != 0 || defaultSelectionsObj.getRegistration_within_id() != 0 || defaultSelectionsObj.getLast_login_date_id() != 0 || checkStringWith0andNull(defaultSelectionsObj.getChoice_profile_owner_Ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_zodiac_sign_ids())) {
+                basicsSelected = true;
+                filterCount++;
+            } else {
+                basicsSelected = false;
+            }
+
+
+//================Appearance===============
+            if (defaultSelectionsObj.getChoice_age_from() != 18 || defaultSelectionsObj.getChoice_age_upto() != 70 || defaultSelectionsObj.getChoice_height_from_id() != 1 || defaultSelectionsObj.getChoice_height_to_id() != 31 || checkStringWith0andNull(defaultSelectionsObj.getChoice_body_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_complexion_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_hair_color_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_eye_color_ids())
+            ) {
+                appearanceSelected = true;
+                filterCount++;
+            } else {
+                appearanceSelected = false;
+            }
+//================Marital Status===============
+            if (checkStringWith0andNull(defaultSelectionsObj.getChoice_marital_status_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_children_ids())) {
+                maritalSelected = true;
+                filterCount++;
+            } else {
+                maritalSelected = false;
+            }
+//================Edu Occupation===============
+            if (checkStringWith0andNull(defaultSelectionsObj.getChoice_education_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_occupation_ids())) {
+                eduOccuSelected = true;
+                filterCount++;
+            } else {
+                eduOccuSelected = false;
+            }
+//================Ethnic Background===============
+            if (checkStringWith0andNull(defaultSelectionsObj.getChoice_ethnic_bground_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_religious_sect_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_caste_ids())) {
+                ethnicSelected = true;
+                filterCount++;
+            } else {
+                ethnicSelected = false;
+            }
+//================Lifestyle 1 ===============
+            if (checkStringWith0andNull(defaultSelectionsObj.getChoice_raised_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_hijab_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_family_values_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_living_arangment_ids())) {
+                lifestyle1Selected = true;
+                filterCount++;
+            } else {
+                lifestyle1Selected = false;
+            }
+//================Lifestyle 2 ===============
+            if (checkStringWith0andNull(defaultSelectionsObj.getChoice_sibling_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_smoking_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_drink_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_physic_ids())) {
+                lifestyle2Selected = true;
+                filterCount++;
+            } else {
+                lifestyle2Selected = false;
+            }
+//================Lifestyle 3 ===============
+            if (checkStringWith0andNull(defaultSelectionsObj.getChoice_sibling_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_smoking_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_drink_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_physic_ids())) {
+                lifestyle2Selected = true;
+                filterCount++;
+            } else {
+                lifestyle2Selected = false;
+            }
+
+//================Geography  ===============
+            if (checkStringWith0andNull(defaultSelectionsObj.getChoice_relocation_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_marrytime_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_want_children_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_physically_challenged_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_revert_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_beard_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_keep_halal_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_keep_halal_ids())
+                    || checkStringWith0andNull(defaultSelectionsObj.getChoice_salah_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_religious_ids())) {
+                lifestyle3Selected = true;
+                filterCount++;
+            } else {
+                lifestyle3Selected = false;
+            }
+
+            SearchMainActivity.filterCount = filterCount;
+            EventBus.getDefault().postSticky(new MatchesCountUpdateEvent("filterCount"));
+
+
+        }
+    }
+
+
 }
