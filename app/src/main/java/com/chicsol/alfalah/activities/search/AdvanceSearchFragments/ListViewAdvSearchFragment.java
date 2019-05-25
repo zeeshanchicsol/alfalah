@@ -416,7 +416,7 @@ public class ListViewAdvSearchFragment extends Fragment implements BasicsFragmen
                 ethnicSelected = false;
             }
 //================Lifestyle 1 ===============
-            if (checkStringWith0andNull(defaultSelectionsObj.getChoice_raised_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_hijab_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_family_values_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_living_arangment_ids())) {
+            if (checkStringWith0andNull(defaultSelectionsObj.getChoice_raised_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_hijab_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_family_values_ids()) || checkStringWith0andNull(defaultSelectionsObj.getChoice_living_arangment_ids())  || checkStringWith0andNull(defaultSelectionsObj.getChoice_language_ids())) {
                 lifestyle1Selected = true;
                 filterCount++;
             } else {

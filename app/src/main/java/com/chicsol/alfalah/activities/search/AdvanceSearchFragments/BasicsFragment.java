@@ -258,6 +258,9 @@ public class BasicsFragment extends Fragment implements CompoundButton.OnChecked
             }
 
         }
+
+        updateDot();
+
     }
 
 

@@ -176,7 +176,7 @@ public class LifeStyle1Fragment extends Fragment implements CompoundButton.OnChe
             } else if (buttonView.getTag().equals("living")) {
                 defaultSelectionsObj.setChoice_living_arangment_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchLivingArrangement));
             } else if (buttonView.getTag().equals("language")) {
-                //  defaultSelectionsObj.setChoice_living_arangment_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchLanguage));
+                  defaultSelectionsObj.setChoice_language_ids(viewGenerator.getSelectionFromCheckbox(LinearLayoutAdvSearchLanguage));
             }
         }
         updateDot();

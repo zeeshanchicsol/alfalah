@@ -320,6 +320,8 @@ public class AppearanceFragment extends Fragment implements CompoundButton.OnChe
         defaultSelectionsObj.setChoice_complexion_ids(viewGenerator.getSelectionFromCheckbox(llAdvSearchComplexion));
         defaultSelectionsObj.setChoice_hair_color_ids(viewGenerator.getSelectionFromCheckbox(llAdvSearchHairColor));
         defaultSelectionsObj.setChoice_eye_color_ids(viewGenerator.getSelectionFromCheckbox(llAdvSearchEyeColor));
+
+        updateDot();
     }
 
 
