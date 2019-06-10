@@ -26,6 +26,7 @@ import com.chicsol.alfalah.activities.registration.RegisterGeographicActivity;
 import com.chicsol.alfalah.activities.registration.RegisterInterest;
 import com.chicsol.alfalah.activities.registration.RegisterLifeStyleActivity1;
 import com.chicsol.alfalah.activities.registration.RegisterLifeStyleActivity2;
+import com.chicsol.alfalah.activities.registration.RegisterLifeStyleActivity3;
 import com.chicsol.alfalah.activities.registration.RegisterPersonalityActivity;
 import com.chicsol.alfalah.activities.search.SearchMainActivity;
 import com.chicsol.alfalah.activities.subscription.SubscriptionPlanActivity;
@@ -117,7 +118,7 @@ public class MarryMax {
 
                     @Override
                     public void onResponse(JSONObject response) {
-                        //     Log.e("res progress", response + "");
+                            Log.e("res progress : "+member.getMember_status(), response + "");
                         try {
 
 
@@ -136,22 +137,30 @@ public class MarryMax {
                                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     context.startActivity(intent);
                                     activity.finish();
-                                } else if (registration_within_id == 35) {
+                                } else if (registration_within_id == 30) {
                                     Intent intent = new Intent(activity, RegisterLifeStyleActivity1.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     context.startActivity(intent);
                                     activity.finish();
-                                } else if (registration_within_id == 55) {
+                                }
+                                else if (registration_within_id == 45) {
                                     Intent intent = new Intent(activity, RegisterLifeStyleActivity2.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     context.startActivity(intent);
                                     activity.finish();
-                                } else if (registration_within_id == 70) {
+                                }
+
+                                else if (registration_within_id == 60) {
+                                    Intent intent = new Intent(activity, RegisterLifeStyleActivity3.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    context.startActivity(intent);
+                                    activity.finish();
+                                } else if (registration_within_id == 75) {
                                     Intent intent = new Intent(activity, RegisterInterest.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     context.startActivity(intent);
                                     activity.finish();
-                                } else if (registration_within_id == 80) {
+                                } else if (registration_within_id == 85) {
                                     Intent intent = new Intent(activity, RegisterPersonalityActivity.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     context.startActivity(intent);
@@ -159,14 +168,14 @@ public class MarryMax {
                                 }
 
 
-                            } else if (member.getMember_status() < 3) {
+                            }  else if (member.getMember_status() < 3) {
                                 if (registration_within_id < 100) {
-                                    if (registration_within_id == 70) {
+                                    if (registration_within_id == 75) {
                                         Intent intent = new Intent(activity, RegisterInterest.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         context.startActivity(intent);
                                         activity.finish();
-                                    } else if (registration_within_id == 80) {
+                                    } else if (registration_within_id == 85) {
                                         Intent intent = new Intent(activity, RegisterPersonalityActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         context.startActivity(intent);

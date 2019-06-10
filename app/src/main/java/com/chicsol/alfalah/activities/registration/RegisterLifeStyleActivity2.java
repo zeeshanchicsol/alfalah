@@ -518,19 +518,20 @@ public class RegisterLifeStyleActivity2 extends BaseRegistrationActivity {
                     public void onResponse(JSONObject response) {
                         Log.e("re  update appearance", response + "");
                         try {
+
                             int responseid = response.getInt("id");
 
 
                             if (responseid == 1) {
 
                                 //updating status
-                                Members member = SharedPreferenceManager.getUserObject(getApplication());
-
+                   /*             Members member = SharedPreferenceManager.getUserObject(getApplication());
 
                                 if (member.getMember_status() == 0) {
                                     member.setMember_status(1);
                                     SharedPreferenceManager.setUserObject(getApplicationContext(), member);
                                 }
+*/
 
 
                                 if (!marryMax.getUpdateCheck(getApplicationContext())) {

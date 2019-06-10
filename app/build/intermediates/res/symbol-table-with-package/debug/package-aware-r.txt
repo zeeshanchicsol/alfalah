@@ -1539,6 +1539,7 @@ id CheckBoxDeclineInterestAllowPics
 id CheckBoxInterestAllowPhone
 id CheckBoxInterestAllowPics
 id CheckBoxMultiChoice
+id CheckBoxPersonalityDeclaration
 id CheckBoxPhotoUploadDefaultImage
 id CheckboxQuestionTitle
 id CheckedTextMulti
@@ -2213,6 +2214,8 @@ id TextViewUPChoiceChildren
 id TextViewUPChoiceChoiceFamilyValues
 id TextViewUPChoiceComplexion
 id TextViewUPChoiceCountry
+id TextViewUPChoiceCountryofLiving
+id TextViewUPChoiceCountryofOrigin
 id TextViewUPChoiceDrink
 id TextViewUPChoiceEconomy
 id TextViewUPChoiceEducationDetail
@@ -2232,6 +2235,8 @@ id TextViewUPChoiceSmoke
 id TextViewUPChoiceSpokenLanguage
 id TextViewUPChoiceVisaStatus
 id TextViewUPComplexion
+id TextViewUPCountryofLiving
+id TextViewUPCountryofOrigin
 id TextViewUPDescription
 id TextViewUPDrink
 id TextViewUPEconomy
@@ -2269,6 +2274,7 @@ id TextViewUPSalahType
 id TextViewUPSiblingPosition
 id TextViewUPSisters
 id TextViewUPSmoke
+id TextViewUPVisaStatus
 id TextViewUPWantChildrenType
 id TextViewUPWhatIdo
 id TextViewUserProfileDeleteMessage
@@ -2281,6 +2287,7 @@ id ViewHorizontalLine
 id ViewInterest
 id ViewLifeStyle
 id ViewPersonality
+id WebViewPersonalityDeclaration
 id accelerate
 id action0
 id action_aboutus
@@ -3648,6 +3655,7 @@ string com_crashlytics_android_build_id
 string common_google_play_services_unknown_issue
 string cvc_amex_hint
 string cvc_number_hint
+string declaration_text_i_understand
 string default_web_client_id
 string ep_desc
 string ep_desc2

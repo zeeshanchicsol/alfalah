@@ -39,9 +39,12 @@ public class BasicInfoFragment extends Fragment {
     private TextView pref1, pref2, pref3, pref4;
 
     private mTextView tvDescribePersonality;
+
+    private mTextView tvCountryOfOrigin,tvCountryOfLiving,tvVisaStatus,tvChoiceCountryOfOrigin,tvChoiceCountryOfLiving;
     private FlexboxLayout flexboxLayoutInterest;
     private LinearLayout llMTO, llWIDFF, llMS, llAMC;
     public String jsona = "";
+
 
     public BasicInfoFragment() {
         // Required empty public constructor
@@ -108,6 +111,16 @@ public class BasicInfoFragment extends Fragment {
         tvWhatIdoFor = (mTextView) view.findViewById(R.id.TextViewUPWhatIdo);
         tvMyStrengths = (mTextView) view.findViewById(R.id.TextViewUPMyStrengths);
         tvABoutMyChoice = (mTextView) view.findViewById(R.id.TextViewUPAboutMyChoice);
+
+
+        tvCountryOfOrigin = (mTextView) view.findViewById(R.id.TextViewUPAge);
+        tvCountryOfLiving = (mTextView) view.findViewById(R.id.TextViewUPAge);
+        tvVisaStatus = (mTextView) view.findViewById(R.id.TextViewUPAge);
+
+        tvChoiceCountryOfOrigin = (mTextView) view.findViewById(R.id.TextViewUPAge);
+        tvChoiceCountryOfLiving = (mTextView) view.findViewById(R.id.TextViewUPAge);
+        tvChoiceVisaStatus = (mTextView) view.findViewById(R.id.TextViewUPChoiceVisaStatus);
+
 
 
         tvAge = (mTextView) view.findViewById(R.id.TextViewUPAge);
@@ -181,7 +194,7 @@ public class BasicInfoFragment extends Fragment {
         tvChoiceReligiousSect = (mTextView) view.findViewById(R.id.TextViewUPChoiceReligiousSect);
 
         tvChoiceCountry = (mTextView) view.findViewById(R.id.TextViewUPChoiceCountry);
-        tvChoiceVisaStatus = (mTextView) view.findViewById(R.id.TextViewUPChoiceVisaStatus);
+
 
 
         tvChoiceSmoke = (mTextView) view.findViewById(R.id.TextViewUPChoiceSmoke);
@@ -323,6 +336,13 @@ public class BasicInfoFragment extends Fragment {
                 llAMC.setVisibility(View.GONE);
 
             }
+
+
+            tvCountryOfOrigin.setText(member.getCountry_name());
+            tvCountryOfLiving.setText(member.getAge());
+            tvVisaStatus.setText(member.getAge());
+            tvChoiceCountryOfOrigin.setText(member.getAge());
+            tvChoiceCountryOfLiving.setText(member.getAge());
 
 
             tvAge.setText(member.getAge());

@@ -13,6 +13,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -62,6 +63,8 @@ public class RegisterPersonalityActivity extends BaseRegistrationActivity implem
     private EditText etAboutMyChoice, etAboutMe, etMyStrength, etMostThankfulFor, etWhatIdoFor;
     private mTextView tvDosDont;
 
+    private CheckBox cbDeclaration;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +92,12 @@ public class RegisterPersonalityActivity extends BaseRegistrationActivity implem
         etMostThankfulFor = (EditText) findViewById(R.id.EditTextMostThankfulPers);
         etMyStrength = (EditText) findViewById(R.id.EditTextmyStrengthsPers);
         etWhatIdoFor = (EditText) findViewById(R.id.EditTextWhatIDoPers);
+        cbDeclaration = (CheckBox) findViewById(R.id.CheckBoxPersonalityDeclaration);
+
+        WebView webView = (WebView) findViewById(R.id.WebViewPersonalityDeclaration);
+        // displaying content in WebView from html file that stored in assets folder
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl("file:///android_asset/" + "declaration.html");
 
         etAboutMe.setHorizontallyScrolling(false);
         etAboutMe.setMaxLines(Integer.MAX_VALUE);
@@ -253,6 +262,7 @@ public class RegisterPersonalityActivity extends BaseRegistrationActivity implem
 
     private boolean checkSelections(View v) {
         boolean ck = false;
+        cbDeclaration.setError(null);
 
         ViewGenerator vg = new ViewGenerator(RegisterPersonalityActivity.this);
 
@@ -316,6 +326,15 @@ public class RegisterPersonalityActivity extends BaseRegistrationActivity implem
                 ck = true;
             }
 
+        }
+
+        if (!updateData) {
+            if (!cbDeclaration.isChecked()) {
+                cbDeclaration.setError("Please check declaration and acknowledgement");
+                Toast.makeText(this, "Please check declaration and acknowledgement", Toast.LENGTH_SHORT).show();
+                cbDeclaration.requestFocus();
+                ck = true;
+            }
         }
         return ck;
     }
@@ -585,7 +604,6 @@ public class RegisterPersonalityActivity extends BaseRegistrationActivity implem
                                     startActivity(in);
 
                                 } else {
-
                                     Toast.makeText(RegisterPersonalityActivity.this, "Updated", Toast.LENGTH_SHORT).show();
                                 }
 

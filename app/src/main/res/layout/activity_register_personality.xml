@@ -309,6 +309,20 @@
                                                 android:textColor="@color/colorBlack"
                                                 app:backgroundTint="@color/colorUnderline" />
 
+                                            <WebView
+                                                android:id="@+id/WebViewPersonalityDeclaration"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                tools:ignore="WebViewLayout">
+
+                                            </WebView>
+                                            <CheckBox
+                                                android:id="@+id/CheckBoxPersonalityDeclaration"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+
+                                                android:text="@string/declaration_text_i_understand" />
+
 
                                         </android.support.v7.widget.GridLayout>
 
