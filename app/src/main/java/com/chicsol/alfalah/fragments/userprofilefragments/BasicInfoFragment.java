@@ -33,14 +33,14 @@ public class BasicInfoFragment extends Fragment {
     private Members member, memberChoice;
     private mTextView tvDesc, tvMostThankful, tvWhatIdoFor, tvMyStrengths, tvABoutMyChoice, tvAge, tvHeight, tvPhysique, tvComplexion, tvEyeColor, tvHairColor, tvChoiceAge,
             tvChoiceHeight, tvChoicePhysique, tvChoiceComplexion, tvChoiceEyeColor, tvChoiceHairColor;
-    private mTextView tvMyEducation, tvMyEducationField, tvGraduated, tvOccupation, tvEconomy, tvIncome, tvCastSurname, tvRaised, tvFamilyValues, tvHijab, tvLiving, tvRelocation, tvMarryTime, tvWantChildren, tvKeepHalal, tvReligious, tvMaritalStatus, tvChildren, tvChildrenDetail, tvEthnicity, tvReligiousSect, tvBrothers, tvSisters, tvSiblingPosiiton, tvSmoke, tvDrink,
+    private mTextView tvMyEducation, tvMyEducationField, tvGraduated, tvOccupation, tvEconomy, tvIncome, tvRaised, tvFamilyValues, tvHijab, tvLiving, tvRelocation, tvMarryTime, tvWantChildren, tvKeepHalal, tvReligious, tvMaritalStatus, tvChildren, tvChildrenDetail, tvEthnicity, tvReligiousSect, tvBrothers, tvSisters, tvSiblingPosiiton, tvSmoke, tvDrink,
             tvLanguage, tvRevert, tvPhysicallyChallenged, tvBeard, tvSalah, tvChoiceMyEducation, tvChoiceOccupation, tvChoiceEconomy, tvChoiceRaised, tvChoiceFamilyValues, tvChoiceHijab, tvChoiceLiving, tvChoiceMaritalStatus, tvChoiceChildren, tvChoiceEthnicity, tvChoiceReligiousSect, tvChoiceCountry, tvChoiceVisaStatus, tvChoiceSmoke, tvChoiceDrink;
 
     private TextView pref1, pref2, pref3, pref4;
-
+ //   tvCastSurname
     private mTextView tvDescribePersonality;
 
-    private mTextView tvCountryOfOrigin,tvCountryOfLiving,tvVisaStatus,tvChoiceCountryOfOrigin,tvChoiceCountryOfLiving;
+    private mTextView tvCountryOfOrigin, tvCountryOfLiving, tvVisaStatus, tvChoiceCountryOfOrigin, tvChoiceCountryOfLiving;
     private FlexboxLayout flexboxLayoutInterest;
     private LinearLayout llMTO, llWIDFF, llMS, llAMC;
     public String jsona = "";
@@ -113,14 +113,13 @@ public class BasicInfoFragment extends Fragment {
         tvABoutMyChoice = (mTextView) view.findViewById(R.id.TextViewUPAboutMyChoice);
 
 
-        tvCountryOfOrigin = (mTextView) view.findViewById(R.id.TextViewUPAge);
-        tvCountryOfLiving = (mTextView) view.findViewById(R.id.TextViewUPAge);
-        tvVisaStatus = (mTextView) view.findViewById(R.id.TextViewUPAge);
+        tvCountryOfOrigin = (mTextView) view.findViewById(R.id.TextViewUPCountryofOrigin);
+        tvCountryOfLiving = (mTextView) view.findViewById(R.id.TextViewUPCountryofLiving);
+        tvVisaStatus = (mTextView) view.findViewById(R.id.TextViewUPVisaStatus);
 
-        tvChoiceCountryOfOrigin = (mTextView) view.findViewById(R.id.TextViewUPAge);
-        tvChoiceCountryOfLiving = (mTextView) view.findViewById(R.id.TextViewUPAge);
+        tvChoiceCountryOfOrigin = (mTextView) view.findViewById(R.id.TextViewUPChoiceCountryofOrigin);
+        tvChoiceCountryOfLiving = (mTextView) view.findViewById(R.id.TextViewUPChoiceCountryofLiving);
         tvChoiceVisaStatus = (mTextView) view.findViewById(R.id.TextViewUPChoiceVisaStatus);
-
 
 
         tvAge = (mTextView) view.findViewById(R.id.TextViewUPAge);
@@ -146,7 +145,7 @@ public class BasicInfoFragment extends Fragment {
         tvOccupation = (mTextView) view.findViewById(R.id.TextViewUPOccupationDetail);
         tvEconomy = (mTextView) view.findViewById(R.id.TextViewUPEconomy);
         //   tvIncome = (mTextView) view.findViewById(R.id.TextViewUPIncome);
-        tvCastSurname = (mTextView) view.findViewById(R.id.TextViewUPCastSurname);
+      //  tvCastSurname = (mTextView) view.findViewById(R.id.TextViewUPCastSurname);
 
 
         tvRaised = (mTextView) view.findViewById(R.id.TextViewUPRaised);
@@ -194,7 +193,6 @@ public class BasicInfoFragment extends Fragment {
         tvChoiceReligiousSect = (mTextView) view.findViewById(R.id.TextViewUPChoiceReligiousSect);
 
         tvChoiceCountry = (mTextView) view.findViewById(R.id.TextViewUPChoiceCountry);
-
 
 
         tvChoiceSmoke = (mTextView) view.findViewById(R.id.TextViewUPChoiceSmoke);
@@ -338,11 +336,23 @@ public class BasicInfoFragment extends Fragment {
             }
 
 
+
+
+
             tvCountryOfOrigin.setText(member.getCountry_name());
-            tvCountryOfLiving.setText(member.getAge());
-            tvVisaStatus.setText(member.getAge());
-            tvChoiceCountryOfOrigin.setText(member.getAge());
-            tvChoiceCountryOfLiving.setText(member.getAge());
+            tvCountryOfLiving.setText( (member.getCity_name() == null ? "" : member.getCity_name()+",")+    (member.getState_name() == null ? "" : member.getState_name())+ (member.getOrigan_country_name() == null ? "" : ",")  + (member.getOrigan_country_name() == null ? "" : member.getOrigan_country_name()));
+
+
+        /*    <%# Eval("city_name") %><%# Eval("city_name") != "" ? "," : "" %> <%# Eval("state_name") %><%# Eval("state_name") != "" ? "," : "" %> <%# Eval("origan_country_name") %>
+      */      // origan_country_name
+            tvVisaStatus.setText(member.getVisa_status_types());
+
+            tvChoiceCountryOfLiving.setText(memberChoice.getChoice_country_names());
+
+            tvChoiceCountryOfOrigin.setText(memberChoice.getChoice_origin_country_ids());
+             Log.e("memberChoice", memberChoice.getChoice_country_names() +"" + memberChoice.getChoice_origin_country_ids());
+
+
 
 
             tvAge.setText(member.getAge());
@@ -376,7 +386,7 @@ public class BasicInfoFragment extends Fragment {
             tvOccupation.setText(member.getOccupation_types());
             tvEconomy.setText(member.getAbout_type());
             // tvIncome.setText(member.getIncome_level());
-            tvCastSurname.setText(member.getCaste_name());
+        //    tvCastSurname.setText(member.getCaste_name());
 
 
             tvRaised.setText(member.getRaised_types());

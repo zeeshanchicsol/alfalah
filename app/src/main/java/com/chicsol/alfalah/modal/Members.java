@@ -575,6 +575,16 @@ public class Members {
     @SerializedName("origin_country_id")
     private long origin_country_id;
 
+    @SerializedName("origan_country_name")
+    private String origan_country_name;
+
+    public String getOrigan_country_name() {
+        return origan_country_name;
+    }
+
+    public void setOrigan_country_name(String origan_country_name) {
+        this.origan_country_name = origan_country_name;
+    }
 
     @SerializedName("choice_origin_country_ids")
     private String choice_origin_country_ids;
