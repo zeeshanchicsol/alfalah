@@ -4,7 +4,7 @@
             "outputFile": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh/values-zh.xml",
             "map": [
                 {
-                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-2/files-2.1/7616b972b264775add49d27be3f12db1/res/values-zh/values-zh.xml",
+                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-2/files-2.1/d41e8c871cba2a6d52d8efde6968fe20/res/values-zh/values-zh.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

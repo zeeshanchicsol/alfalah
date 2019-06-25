@@ -215,7 +215,7 @@ DrawerActivity extends AppCompatActivity {
     public void onEditProfile(View view) {
         drawer.closeDrawers();
 
-
+Log.e("drawer","drawer");
     }
 
 

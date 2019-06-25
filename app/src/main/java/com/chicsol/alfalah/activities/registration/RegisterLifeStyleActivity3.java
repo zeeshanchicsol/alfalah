@@ -440,7 +440,7 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity impleme
                         e.printStackTrace();
                     }
                     if (ConnectCheck.isConnected(findViewById(android.R.id.content))) {
-
+                        Log.e("Params" + Urls.updateLifestyleUrl3, "" + params);
                         updateLifestyle(params);
 
                     }
@@ -888,7 +888,7 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity impleme
         pDialog.show();
 
 
-        Log.e("Params", "" + params);
+        Log.e("Params" + Urls.updateLifestyleUrl3, "" + params);
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.PUT,
                 Urls.updateLifestyleUrl3, params,
                 new Response.Listener<JSONObject>() {
@@ -902,7 +902,7 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity impleme
 
                             if (responseid == 1) {
 
-                             /*   //updating status
+                                //updating status
                                 Members member = SharedPreferenceManager.getUserObject(getApplication());
 
 
@@ -910,10 +910,10 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity impleme
                                     member.setMember_status(1);
                                     SharedPreferenceManager.setUserObject(getApplicationContext(), member);
                                 }
-*/
 
-                                //updating status
-                                Members member = SharedPreferenceManager.getUserObject(getApplication());
+
+                                //auto updating status
+                           /*     Members member = SharedPreferenceManager.getUserObject(getApplication());
 
 
                                 if (member.getMember_status() == 0) {
@@ -921,7 +921,7 @@ public class RegisterLifeStyleActivity3 extends BaseRegistrationActivity impleme
                                     member.setMember_status(status);
                                     SharedPreferenceManager.setUserObject(getApplicationContext(), member);
                                 }
-
+*/
 
 
                                 if (!marryMax.getUpdateCheck(getApplicationContext())) {

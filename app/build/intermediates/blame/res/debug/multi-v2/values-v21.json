@@ -4,7 +4,7 @@
             "outputFile": "/Users/marrymaxandroid/AndroidStudioProjects/alfalah/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-2/files-2.1/af80e9cd562e4516a6236d509420694e/res/values-v21/values-v21.xml",
+                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-2/files-2.1/4377a90b6e1df6f7b6eea6a6649f1792/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
                         "startColumns": "4,4,4,4",
@@ -23,7 +23,26 @@
                     }
                 },
                 {
-                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-2/files-2.1/15cc1763188fa258903dbc4a16b5fea1/res/values-v21/values-v21.xml",
+                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-2/files-2.1/838091394016afca4b58640efae6a13b/res/values-v21/values-v21.xml",
+                    "from": {
+                        "startLines": "2,10,18,26",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,484,910,1333",
+                        "endLines": "9,17,25,33",
+                        "endColumns": "10,10,10,10",
+                        "endOffsets": "479,905,1328,1763"
+                    },
+                    "to": {
+                        "startLines": "335,343,351,359",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "23328,23757,24183,24606",
+                        "endLines": "342,350,358,366",
+                        "endColumns": "10,10,10,10",
+                        "endOffsets": "23752,24178,24601,25036"
+                    }
+                },
+                {
+                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-2/files-2.1/36c7d561500d26db005f60efe21d80fd/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -61,26 +80,7 @@
                     }
                 },
                 {
-                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-2/files-2.1/087f9a85bc8d3d8d56ac08ec991c33ac/res/values-v21/values-v21.xml",
-                    "from": {
-                        "startLines": "2,10,18,26",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,484,910,1333",
-                        "endLines": "9,17,25,33",
-                        "endColumns": "10,10,10,10",
-                        "endOffsets": "479,905,1328,1763"
-                    },
-                    "to": {
-                        "startLines": "335,343,351,359",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "23328,23757,24183,24606",
-                        "endLines": "342,350,358,366",
-                        "endColumns": "10,10,10,10",
-                        "endOffsets": "23752,24178,24601,25036"
-                    }
-                },
-                {
-                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-2/files-2.1/d835da9c695cb9f5972cd2bbd7d5cd77/res/values-v21/values-v21.xml",
+                    "source": "/Users/marrymaxandroid/.gradle/caches/transforms-2/files-2.1/a0dd763036aae7c5a524aced532fd8d3/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,19,20,21,22,24,26,27,28,29,30,32,34,36,38,40,42,43,48,50,52,53,54,56,58,59,60,61,62,63,107,110,154,157,160,162,164,166,169,171,174,175,176,179,180,181,182,183,184,187,188,190,192,194,196,200,202,203,204,205,207,211,213,215,216,217,218,219,221,222,223,233,234,235,247",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

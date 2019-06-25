@@ -118,12 +118,12 @@ public class MarryMax {
 
                     @Override
                     public void onResponse(JSONObject response) {
-                            Log.e("res progress : "+member.getMember_status(), response + "");
+                        Log.e("res progress : " + member.getMember_status(), response + "");
                         try {
 
 
                             int registration_within_id = response.getInt("id");
-
+                            Log.e("status", "" + member.getMember_status());
 
                             if (member.getMember_status() == 0) {
 
@@ -142,15 +142,12 @@ public class MarryMax {
                                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     context.startActivity(intent);
                                     activity.finish();
-                                }
-                                else if (registration_within_id == 45) {
+                                } else if (registration_within_id == 45) {
                                     Intent intent = new Intent(activity, RegisterLifeStyleActivity2.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     context.startActivity(intent);
                                     activity.finish();
-                                }
-
-                                else if (registration_within_id == 60) {
+                                } else if (registration_within_id == 60) {
                                     Intent intent = new Intent(activity, RegisterLifeStyleActivity3.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     context.startActivity(intent);
@@ -168,7 +165,7 @@ public class MarryMax {
                                 }
 
 
-                            }  else if (member.getMember_status() < 3) {
+                            } else if (member.getMember_status() < 3) {
                                 if (registration_within_id < 100) {
                                     if (registration_within_id == 75) {
                                         Intent intent = new Intent(activity, RegisterInterest.class);
@@ -425,28 +422,28 @@ public class MarryMax {
                     Intent intent = new Intent(context, UserProfileActivityWithSlider.class);
 
                     // uncomment if slider need to be activated
-                  // if (TAG.equals("SavedNotes") || TAG.equals("AccpetedMembers") || TAG.equals("FavouriteMembers")) {
+                    // if (TAG.equals("SavedNotes") || TAG.equals("AccpetedMembers") || TAG.equals("FavouriteMembers")) {
 
 
-                        Gson gsonc;
-                        GsonBuilder gsonBuilderc = new GsonBuilder();
-                        gsonc = gsonBuilderc.create();
+                    Gson gsonc;
+                    GsonBuilder gsonBuilderc = new GsonBuilder();
+                    gsonc = gsonBuilderc.create();
 
 
-                        Type listType = new TypeToken<List<Members>>() {
-                        }.getType();
+                    Type listType = new TypeToken<List<Members>>() {
+                    }.getType();
 
-                        List<Members> membersDataLista = (List<Members>) gsonc.fromJson(memberDataList, listType);
+                    List<Members> membersDataLista = (List<Members>) gsonc.fromJson(memberDataList, listType);
 
-                        Members seletedMember = membersDataLista.get(Integer.parseInt(selectedPosition));
-                        membersDataLista.clear();
-                        membersDataLista.add(seletedMember);
+                    Members seletedMember = membersDataLista.get(Integer.parseInt(selectedPosition));
+                    membersDataLista.clear();
+                    membersDataLista.add(seletedMember);
 
 
-                        Log.e("membersDataLista", membersDataLista.size() + "");
+                    Log.e("membersDataLista", membersDataLista.size() + "");
 
-                        intent.putExtra("selectedposition", "-1");
-                        SharedPreferenceManager.setMemberDataList(context, gsonc.toJson(membersDataLista));
+                    intent.putExtra("selectedposition", "-1");
+                    SharedPreferenceManager.setMemberDataList(context, gsonc.toJson(membersDataLista));
                   /*  } else {
                         intent.putExtra("selectedposition", selectedPosition);
                         SharedPreferenceManager.setMemberDataList(context, memberDataList);
